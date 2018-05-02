@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Materials Selection Output</title>
+	<LINK rel=StyleSheet href="StyleSheet1.css" type="text/css"> 
+
+	<style>
+	html,
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+}
+
+/* border-box */
+.search-container *,
+.search-container *:after,
+.search-container *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* search bar focus */
+.search-container *:focus {
+  background: #fbfbfb;
+  color: #333333;
+  outline: 0;
+}
+
+/* search bar container */
+.search-container {
+  display: table;
+  position: relative;
+  width: 51px;
+}
+
+/* search icon button */
+.search-icon-btn {
+  background-color: aquamarine;
+  border: 1px solid aquamarine;
+  display: table-cell;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 50px;
+  z-index: 2;
+}
+
+/* search bar input container */
+.search-input {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+/* search bar input */
+.search-input input.search-bar {
+  border: 1px solid #cccccc;
+  height: 50px;
+  padding: 0px;
+  width: 50px;
+}
+.search-input input.search-bar:focus {
+  padding-left: 60px;
+  padding-right: 10px;
+  width: 200px;
+}
+
+/* transition effect */
+.search-input input.search-bar,
+.search-icon-btn {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* hover on search bar container */
+.search-container:hover > .search-input input.search-bar {
+  padding-left: 60px;
+  padding-right: 10px;
+  width: 200px;
+}
+
+
+	</style>
+
+</head>
+<body>
+
+<header class="header-search">
+
+	<div class="header-limiter">
+
+		<h1><a href="#">World<span> Wildlife Fund</span></a></h1>
+
+		<nav>
+			<a href="#">Home</a>
+			<a href="#" class="selected">Main</a>
+			<a href="#">Help</a>
+		</nav>
+
+		<select id="langselect">
+			<option value="english">English</option>
+			<option value="nepali">Nepali</option>
+			</select>
+
+		<form method="get" action="#">
+			<input type="search" placeholder="Search!" name="search">
+		</form>
+
+		<div class="search-container">
+  <div class="search-icon-btn">
+    <i class="fa fa-search"></i>
+  </div>
+  <div class="search-input">
+    <input type="search" class="search-bar" placeholder="Search...">
+  </div>
+</div>
+
+</header>
+
+
+
+</body>
+</html>
