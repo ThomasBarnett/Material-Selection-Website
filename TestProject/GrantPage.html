@@ -50,27 +50,17 @@
 
 <div class="InputTabs">
 
-<button class="tablink lefttab" onclick="openTab('AvailableMat', this)" id="defaultOpen">Available Materials</button>
+<button class="tablink" onclick="openTab('AvailableMat', this)" id="defaultOpen">Available Materials</button>
 <button class="tablink" onclick="openTab('Location', this)">Location</button>
 <button class="tablink" onclick="openTab('Budget', this)">Budget</button>
-<button class="tablink" class="righttab" onclick="openTab('AdditionalInfo', this)">Additional Input</button> 
+<button class="tablink" onclick="openTab('AdditionalInfo', this)">Additional Input</button> 
 
 <div id="AvailableMat" class="tabcontent">
-  <form action="">
   <h3>Enter available materials here:</h3>
-  <input type="text" name="Material" value=""> <br>
-  <input type="text" name="Material" value=""> <br>
-  <input type="text" name="Material" value=""> <br>
-  <input type="text" name="Material" value=""> <br>
-  <input type="text" name="Material" value=""> <br>
-  <div class="container">
-	<a class="button"><span>✓</span>Add Materials</a>
-	</div>
 </div>
 
 <div id="Location" class="tabcontent">
   <h3>Enter additional information regarding your location here:</h3>
-  
 </div>
 
 <div id="Budget" class="tabcontent">
@@ -84,13 +74,12 @@
 </div>
 
 <div class="InputDisplay">
-	<h3>Previously Entered Info</h3>
+	<p>blah blah blah</p>
 </div>
 </div>
 
-<div class="container">
-<a href="HTMLPage2.html" class="button"><span>✓</span>Recommend Materials</a>
-</div>
+
+<button onclick="location.href = 'HTMLPage2.html';" id="submitButton" class="w3-button w3-white w3-border w3-border-red w3-round-large" >Submit</button>
 
 <script>
 function openTab(tabName,elmnt) {
@@ -113,6 +102,7 @@ function openTab(tabName,elmnt) {
 }
 
 //Get the element with id="defaultOpen" and click on it
+//Another test
 document.getElementById("defaultOpen").click();
 
 
