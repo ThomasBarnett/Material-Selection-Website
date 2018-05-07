@@ -1,15 +1,19 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<!--sets the width of the page to follow the screen-width of the device (which will vary depending on the device), part sets the initial zoom level when the page is first loaded by the browser. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Materials Selection</title>
+    <title>Buidling Options</title>
 
-    <LINK rel=StyleSheet href="StyleSheet1.css" type="text/css">
+    <LINK rel=StyleSheet href="StyleSheet2.css" type="text/css">
 
 </head>
 
@@ -25,7 +29,8 @@
 
             <nav>
                 <a href="#">Home</a>
-                <a href="#" class="selected">Main</a>
+                <a href="#">Main</a>
+                <a href="#" class="selected">Ouput</a>
                 <a href="#">Help</a>
             </nav>
 
@@ -44,7 +49,7 @@
 
 
 
-    <h1>Resource Optimization Input</h1>
+    <h1>Resource Optimization Ouput -- Housing Options</h1>
 
     <div class="InputOverall">
 
@@ -52,25 +57,45 @@
 
             <button class="tablink" onclick="openTab('Envi', this)" id="defaultOpen">Lowest Environmental Impact</button>
             <button class="tablink" onclick="openTab('Cost_Eff', this)">Lowest Cost</button>
-            <button class="tablink" onclick="openTab('Compromise', this)">Cost and Environmental Impact Compromise</button>
+            <button class="tablink" onclick="openTab('Compromise', this)">Cost and Environment Compromise</button>
 
-            <div id="Envi"" class="tabcontent">
+
+            <div id="Envi" " class="tabcontent">
                 <h3>Here is the housing option with the lowest environmental impact:</h3>
+                <h4>House Type: ENVI_HOUSE</h4>
+                <h4>Cost: ENVI_COST </h4>
+                <h4>Stored Energy: ENVI_ENER </h4>
+                <h4>Materials and Amounts: ENVI_MAT</h4>
+                <h4>Weeks to Build: ENVI_TIME</h4>
+                <h4>Workers Needed: ENVI_WORKER</h4>
+                <h4>More information about housing types can be found at: <a href="#">Additional Resources</a></h4>
+
             </div>
 
             <div id="Cost_Eff" class="tabcontent">
                 <h3>Here is the housing option with the lowest cost: </h3>
+                <h4>House Type: COST_HOUSE</h4>
+                <h4>Cost: COST_COST </h4>
+                <h4>Stored Energy: COST_ENER </h4>
+                <h4>Materials and Amounts: COST_MAT</h4>
+                <h4>Weeks to Build: COST_TIME</h4>
+                <h4>Workers Needed: COST_WORKER</h4>
+                <h4>More information about housing types can be found at: <a href="#">Additional Resources</a></h4>
             </div>
 
             <div id="Compromise" class="tabcontent">
                 <h3>Here is the housing option that is a compromise of cost and environmental impact:</h3>
+                <h4>House Type: COMP_HOUSE</h4>
+                <h4>Cost: COMP_COST </h4>
+                <h4>Stored Energy: COMP_ENER </h4>
+                <h4>Materials and Amounts: COMP_MAT</h4>
+                <h4>Weeks to Build: COMP_TIME</h4>
+                <h4>Workers Needed: COMP_WORKER</h4>
+                <h4>More information about housing types can be found at: <a href="#">Additional Resources</a></h4>
             </div>
 
         </div>
     </div>
-
-
-    <button onclick="location.href = 'HTMLPage1.html';" id="submitButton" class="w3-button w3-white w3-border w3-border-red w3-round-large">Back to Input</button>
 
     <script>
 function openTab(tabName,elmnt) {
