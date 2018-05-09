@@ -64,11 +64,10 @@
 <div id="AvailableMat" class="tabcontent">
   <form action="">
   <h3>Enter available materials here:</h3>
-  <input type="text" name="Material" value="" id="Mat1" class="materialInput"> <br>
-  <input type="text" name="Material" value="" id="Mat2" class="materialInput"> <br>
-  <input type="text" name="Material" value="" id="Mat3" class="materialInput"> <br>
-  <input type="text" name="Material" value="" id="Mat4" class="materialInput"> <br>
-  <input type="text" name="Material" value="" id="Mat5" class="materialInput"> <br>
+  Material: <input type="text" name="Material" value="" id="Mat1" class="materialInput"> <br>
+    <div class="smallcontainer" onclick='' value='AddMat'>
+	<a class="button smallbutton"><span style="width: 35px; font-size: 18px">+</span>Add</a>
+	</div>
   <div class="smallcontainer" onclick='updateEnteredInfo(document.getElementById("Mat1").value)' value='Update Info'>
 	<a class="button smallbutton"><span>✓</span>Add Materials</a>
 	</div>
