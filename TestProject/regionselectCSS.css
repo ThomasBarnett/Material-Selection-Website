@@ -113,6 +113,20 @@ h2 {
     text-align: center
 }
 
+#nepal-image img {
+    height: 20px;
+    float: left;
+    padding: 10px;
+}
+
+/* Added to clear the float used above - if you leave
+   out my stuff above, then leave this out too */
+#nepal-image:after {
+    content: '';
+    clear: both;
+    height: 20px;
+}
+
 .header-search {
     background-color: #292c2f;
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
@@ -267,18 +281,4 @@ h2 {
             top: 20px;
             right: 20px;
         }
-}
-
-.USA {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
-}
-
-.Nepal {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
 }
