@@ -268,16 +268,12 @@ h2 {
             right: 20px;
         }
 }
-.USA {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
-}
-.Nepal {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
+.row {
+    display: flex;
 }
 
+.column {
+    flex: 50%;
+    padding: 5px;
+    margin-left: 18%;
+}
