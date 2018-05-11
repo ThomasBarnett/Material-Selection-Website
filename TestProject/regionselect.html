@@ -17,15 +17,13 @@
         font-weight: normal;
     }
 </style>
-
 <body>
-
     <header class="header-search">
         <div class="header-limiter">
             <h1><a href="#">WWF<span>Resource Optimization</span></a></h1>
             <nav>
-                <a href="#" class="selected">Language Select</a>
-                <a href="regionselect.html">Region Select</a>
+                <a href="langselect.html">Language Select</a>
+                <a href="#" class="selected">Region Select</a>
                 <a href="HTMLPage1.html">Main</a>
                 <a href="HTMLPage2.html">Output</a>
                 <a href="#">Help</a>
@@ -39,20 +37,15 @@
             </form>
         </div>
     </header>
+    <h1>Region Select:</h1>
+    <img src="planets.gif" width="145" height="126" alt="Planets"
+         usemap="#planetmap">
 
-    <h1>Please Select Your Language:</h1>
-    <div class="USA">
-        <a href="HTMLPage1.html">
-            <img src="USAUK.png" alt="English" style="width:80%">
-        </a>
-    </div>
-    <div class="Nepal">
-        <a href="HTMLPage1.html">
-            <img src="NepalFlag.png" alt="Nepali" style="width:50%">
-        </a>
-    </div>
-
-
+    <map name="planetmap">
+        <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
+        <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
+        <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
+    </map>
     <script>function openTab(tabName, elmnt) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
@@ -89,6 +82,5 @@ $(document).ready(function() {
 
             });
 });</script>
-
 </body>
 </html>
