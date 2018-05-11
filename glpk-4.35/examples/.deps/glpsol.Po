@@ -1,3 +1,0 @@
-glpsol.o: glpsol.c ../include/glpk.h
-
-../include/glpk.h:
