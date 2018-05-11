@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<!--sets the width of the page to follow the screen-width of the device (which will vary depending on the device), part sets the initial zoom level when the page is first loaded by the browser. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buidling Options</title>
+    <LINK rel=StyleSheet href="langselectCSS.css" type="text/css">
+    <link rel="icon" href="WWFlogo.png">
+</head>
+<style>
+    h4 {
+        font-weight: normal;
+    }
+</style>
+
+<body>
+
+    <header class="header-search">
+        <div class="header-limiter">
+            <h1><a href="#">WWF<span>Resource Optimization</span></a></h1>
+            <nav>
+                <a href="#" class="selected">Language Select</a>
+                <a href="regionselect.html">Region Select</a>
+                <a href="HTMLPage1.html">Material Input</a>
+                <a href="HTMLPage2.html">Building Output</a>
+                <a href="#">Help</a>
+            </nav>
+            <select id="langselect">
+                <option value="english">English</option>
+                <option value="nepali">Nepali</option>
+            </select>
+            <form method="get" action="#">
+                <input type="search" placeholder="Search!" name="search">
+            </form>
+        </div>
+    </header>
+
+    <h1>Please Select Your Language:</h1>
+    <div class="row">
+        <div class="column">
+            <a href="regionselect.html">
+            <img src="USAUK.png" alt="English" style="width:200px; height:200px">
+            </a>
+        </div>
+        <div class="column">
+            <img src="NepalFlag.png" alt="Nepali" style="width:200px; height:200px">
+        </div>
+    </div>
+    <p1>The purpose of this site is to use the Building Materials Environmental Guide (BMEG) and an optimization algortithm developed at Northwestern University
+    to propose cost-efficient and environmentally-friendly housing options for places recovering from natural disasters. This website will guide you to 
+    input available materials and then suggest possible housing options.</p1>
+
+
+
+
+
+    <script>function openTab(tabName, elmnt) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            elmnt.style.backgroundColor = '#f1f1f1';
+            elmnt.style.color = 'black';
+
+
+}
+
+//Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+$(document).ready(function() {
+
+            $('.header-search form').on('click', function(e) {
+
+                // If the form (which is turned into the search button) was
+                // clicked directly, toggle the visibility of the search box.
+
+                if (e.target == this) {
+                    $(this).find('input').toggle();
+                }
+
+            });
+});</script>
+
+</body>
+</html>
