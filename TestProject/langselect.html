@@ -1,71 +1,50 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <!--sets the width of the page to follow the screen-width of the device (which will vary depending on the device), part sets the initial zoom level when the page is first loaded by the browser. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Buidling Options</title>
-
     <LINK rel=StyleSheet href="StyleSheet2.css" type="text/css">
-
 </head>
 <style>
-    h4{
+    h4 {
         font-weight: normal;
     }
 </style>
 
-
-
 <body>
 
-
     <header class="header-search">
-
         <div class="header-limiter">
-
             <h1><a href="#">WWF<span>Resource Optimization</span></a></h1>
-
             <nav>
-                <a href="langselect.html">Language Select</a>
+                <a href="#"class="selected">Language Select</a>
                 <a href="#">Region Select</a>
-                <a href="HTMLPage1.html">Main</a>
-                <a href="#" class="selected">Output</a>
+                <a href="#">Main</a>
+                <a href="#">Output</a>
                 <a href="#">Help</a>
             </nav>
-
             <select id="langselect">
                 <option value="english">English</option>
                 <option value="nepali">Nepali</option>
             </select>
-
             <form method="get" action="#">
                 <input type="search" placeholder="Search!" name="search">
             </form>
-
         </div>
-
     </header>
 
-
-
     <h1>Resource Optimization Ouput -- Housing Options</h1>
-
     <div class="InputOverall">
-
         <div class="InputTabs">
-
             <button class="tablink" onclick="openTab('Envi', this)" id="defaultOpen">Lowest Environmental Impact</button>
             <button class="tablink" onclick="openTab('Cost_Eff', this)">Lowest Cost</button>
             <button class="tablink" onclick="openTab('Compromise', this)">Cost and Environment Compromise</button>
-
 
             <div id="Envi" class="tabcontent">
                 <h3>Here is the housing option with the lowest environmental impact:</h3>
@@ -83,9 +62,7 @@
                 <h4><strong>Weeks to Build:</strong> 6 weeks</h4>
                 <h4><strong> Needed:</strong> 12</h4>
                 <h4>More information about housing types can be found at: <a href="#">Additional Resources</a></h4>
-
             </div>
-
             <div id="Cost_Eff" class="tabcontent">
                 <h3>Here is the housing option with the lowest cost: </h3>
                 <h4> <strong>House Type:</strong>  2 Bedroom House</h4>
@@ -103,7 +80,6 @@
                 <h4><strong> Needed:</strong> 12</h4>
                 <h4>More information about housing types can be found at: <a href="#">Additional Resources</a></h4>
             </div>
-
             <div id="Compromise" class="tabcontent">
                 <h3>Here is the housing option that is a compromise of cost and environmental impact:</h3>
                 <h4> <strong>House Type:</strong>  2 Bedroom House</h4>
@@ -121,10 +97,8 @@
                 <h4><strong> Needed:</strong> 12</h4>
                 <h4>More information about housing types can be found at: <a href="#">Additional Resources</a></h4>
             </div>
-
         </div>
     </div>
-
     <script>function openTab(tabName, elmnt) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
@@ -161,7 +135,6 @@ $(document).ready(function() {
 
             });
 });</script>
-
 
 </body>
 </html>
