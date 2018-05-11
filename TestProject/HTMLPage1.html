@@ -66,13 +66,12 @@
 <div id="AvailableMat" class="tabcontent">
   <form action="">
   <h3>Enter available materials here:</h3>
-  <input type="text" name="Material" value=""> <br>
-  <input type="text" name="Material" value=""> <br>
-  <input type="text" name="Material" value=""> <br>
-  <input type="text" name="Material" value=""> <br>
-  <input type="text" name="Material" value=""> <br>
-  <div class="container">
-	<a class="button"><span>✓</span>Add Materials</a>
+  Material: <input type="text" name="Material" value="" id="Mat1" class="materialInput"> <br>
+    <div class="smallcontainer" onclick='' value='AddMat'>
+	<a class="button smallbutton"><span style="width: 35px; font-size: 18px">+</span>Add</a>
+	</div>
+  <div class="smallcontainer" onclick='updateEnteredInfo(document.getElementById("Mat1").value)' value='Update Info'>
+	<a class="button smallbutton"><span>✓</span>Add Materials</a>
 	</div>
 </div>
 
@@ -93,6 +92,11 @@
 
 <div class="InputDisplay">
 	<h3>Previously Entered Info</h3>
+	<p id="placeholderText">You have not entered any information yet.</p>
+	<p id="PrevInfo"></p> 
+	<div class="smallcontainer" onclick='clearAll()' value='Clear All'>
+	<a class="button smallbutton"><span>✓</span>Clear All</a>
+	</div>
 </div>
 </div>
 
@@ -101,6 +105,19 @@
 </div>
 
 <script>
+
+function updateEnteredInfo(newInfo)
+{
+ document.getElementById('placeholderText').innerHTML = "";
+ currValue = document.getElementById('PrevInfo').innerHTML;
+ document.getElementById('PrevInfo').innerHTML = currValue + "<br />" + newInfo;
+}
+
+function clearAll() {
+	document.getElementById('placeholderText').innerHTML = "You have not entered any information yet";
+	document.getElementById('PrevInfo').innerHTML = "";
+}
+
 function openTab(tabName,elmnt) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
