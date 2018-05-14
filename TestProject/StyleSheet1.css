@@ -296,6 +296,18 @@ body {
 filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=2,Color=#33000000,Positive=true);
 }
 
+.leftfooterbutton {
+	position: fixed;
+	left: 50px;
+	bottom: 10px;
+}
+
+.rightfooterbutton{
+	position: fixed;
+	left: 280px;
+	bottom: 10px;
+}
+
 .smallbutton{
   margin-top: 7.5%;
   height: 30px;
@@ -371,11 +383,11 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ccfffff
 
 .MatInputRow {
 	height: 40px;
-	padding-left: 0px;
-	padding-top: 12px;
-	margin-left: 0px;
-	margin-right: 10px;
-	padding-right: 60px;
+	padding-left: 0%;
+	padding-top: 2%;
+	margin-left: -5%;
+	margin-right: 2%;
+	padding-right: 2%;
 }
 
 #MatInputRow6 {

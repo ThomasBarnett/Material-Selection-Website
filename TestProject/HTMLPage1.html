@@ -164,6 +164,14 @@
 
 	<div class="header-limiter footer-limiter">
 
+<div class="container">
+		<a href="" class="button rightfooterbutton"><span>></span>About Us</a>
+</div>
+
+<div class="container">
+	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
+</div>
+
 		<div class="select-style">
 		<select>
 		<option value="english">English</option>
@@ -180,7 +188,7 @@
 function displayNextRow(RowName, ButtonName, SpanName, newInfo) {
 
 	document.getElementById(ButtonName).style.backgroundColor = 'grey';
-	document.getElementById(SpanName).style.display = "none";
+	document.getElementById(SpanName).style.opacity = "0";
 	document.getElementById(ButtonName).innerHTML = "Edit";
 	document.getElementById(RowName).style.display = 'block';
 
@@ -192,6 +200,17 @@ function displayNextRow(RowName, ButtonName, SpanName, newInfo) {
 
 function updateEnteredInfo(newInfo)
 {
+
+ document.getElementById('addbutton1').innerHTML = "Add";
+ document.getElementById('addbutton1').style.backgroundColor = 'rgb(41,127,184)';
+ document.getElementById('addspan1').style.opacity = "1";
+
+document.getElementById('MatInputRow2').style.display = 'none';
+document.getElementById('MatInputRow3').style.display = 'none';
+document.getElementById('MatInputRow4').style.display = 'none';
+document.getElementById('MatInputRow5').style.display = 'none';
+document.getElementById('MatInputRow6').style.display = 'none';
+
  document.getElementById('placeholderText').innerHTML = "";
  currValue = document.getElementById('PrevInfo').innerHTML;
  document.getElementById('PrevInfo').innerHTML = currValue + "<br />" + newInfo;
@@ -202,6 +221,11 @@ function updateEnteredInfo(newInfo)
  document.getElementById('Mat4').value = "";
  document.getElementById('Mat5').value = "";
  document.getElementById('Mat6').value = "";
+
+
+
+
+
 
 }
 
