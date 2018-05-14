@@ -9,8 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Buidling Options</title>
-    <LINK rel=StyleSheet href="regionselectCSS.css" type="text/css">
     <link rel="icon" href="WWFlogo.png">
+
+	<LINK rel=StyleSheet href="StyleSheet1.css" type="text/css"> 
 </head>
 <style>
     h4 {
@@ -19,40 +20,73 @@
 </style>
 <body>
     <header class="header-search">
-        <div class="header-limiter">
-            <h1><a href="#">WWF<span>Resource Optimization</span></a></h1>
-            <nav>
-                <a href="langselect.html">Language Select</a>
-                <a href="#" class="selected">Region Select</a>
-                <a href="HTMLPage1.html">Material Input</a>
-                <a href="HTMLPage2.html">Building Output</a>
-                <a href="#">Help</a>
-            </nav>
-            <select id="langselect">
-                <option value="english">English</option>
-                <option value="nepali">Nepali</option>
-            </select>
-            <form method="get" action="#">
-                <input type="search" placeholder="Search!" name="search">
-            </form>
-        </div>
-    </header>
+
+	<div class="header-limiter">
+
+	<img class="logoImg" src="logo.png" />
+
+
+        <nav>
+            <a href="regionselect.html" class="selected">Change Region</a>
+            <a href="HTMLPage1.html">Materials Input</a>
+            <a href="HTMLPage2.html">Materials Output</a>
+            <a href="#">Help</a>
+        </nav>
+
+
+		<form id="searchthis" action="/search" style="display:inline;" method="get">
+		<input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search for materials..."/>
+		<input id="namanyay-search-btn" value="Go" type="submit"/>
+		</form>
+
+
+
+	</div>
+
+</header>
+
+
     <h1>Region Select:</h1>
     <img class="nepalpic" src="nepalmap.jpg" style="width: 500px;" />
     <h2 style="text-align: center;">Pick Your Region:</h2>
     <div class="row">
         <div class="column">
             <a href="HTMLPage1.html">
-            <img src="grey.png" alt="Grey" style="width:200px; height:200px">
+            <img src="grey.png" alt="Grey" style="width:15%; height: 200px; float: left; margin-left: 13.75%;">
             </a>
         </div>
         <div class="column">
-            <img src="orange.png" alt="Orange" style="width:200px; height:200px">
+			<a href="HTMLPage1.html">
+            <img src="orange.png" alt="Orange" style="width:15%; height: 200px; float: left; margin-left: 13.75%;">
         </div>
         <div class="column">
-            <img src="blue.png" alt="Blue" style="width:200px; height:200px">
+			<a href="HTMLPage1.html">
+            <img src="blue.png" alt="Blue" style="width:15%; height: 200px; float: left; margin-left: 13.75%;">
         </div>
     </div>
+
+	<footer class="header-search footer-search">
+
+	<div class="header-limiter footer-limiter">
+
+<div class="container">
+		<a href="" class="button rightfooterbutton"><span>></span>About Us</a>
+</div>
+
+<div class="container">
+	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
+</div>
+
+		<div class="select-style">
+		<select>
+		<option value="english">English</option>
+		<option value="nepali">Nepali</option>
+		</select>
+		</div>
+
+	</div>
+
+</footer>
 
 
 
