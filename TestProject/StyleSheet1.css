@@ -45,6 +45,7 @@
 body {
 		font: normal 16px Cookie, Arial, Helvetica, sans-serif;
 		background-color: white;
+		overflow: auto;
 	}
 
 	h1 {
@@ -405,15 +406,15 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ccfffff
 
 .logoImg{
 	width: 110px;
-	position: fixed;
-	top: 0px;
-	left: 145px;
+	float: left;
+	margin-top: 20px;
+	margin-left: -10%;
 	border-left: 10px solid white;
 }
 
 .footer-search {
 	position: fixed;
-	top: 850px;
+	top: 89%;
 }
 
 #namanyay-search-btn {
@@ -488,3 +489,22 @@ height: 30px;
 	margin-top: 0px;
 	margin-left: -10%;
 }
+
+.nepalpic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 100%;
+    padding: 5px;
+    margin-left: 10%;
+	border: 1px solid black;
+	width: 100%;
+}
+

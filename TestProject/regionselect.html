@@ -19,7 +19,7 @@
     }
 </style>
 <body>
-    <header class="header-search">
+<header class="header-search">
 
 	<div class="header-limiter">
 
@@ -49,23 +49,23 @@
     <h1>Region Select:</h1>
     <img class="nepalpic" src="nepalmap.jpg" style="width: 500px;" />
     <h2 style="text-align: center;">Pick Your Region:</h2>
-    <div class="row">
-        <div class="column">
+    <div>
+        <div>
             <a href="HTMLPage1.html">
-            <img src="grey.png" alt="Grey" style="width:15%; height: 200px; float: left; margin-left: 13.75%;">
+            <img src="grey.png" alt="Grey" style="width:15%; height: 200px; float: left; margin-left: 13.75%; margin-bottom: 7%;">
             </a>
         </div>
-        <div class="column">
+        <div>
 			<a href="HTMLPage1.html">
-            <img src="orange.png" alt="Orange" style="width:15%; height: 200px; float: left; margin-left: 13.75%;">
+            <img src="orange.png" alt="Orange" style="width:15%; height: 200px; float: left; margin-left: 13.75%; margin-bottom: 7%;">
         </div>
-        <div class="column">
+        <div>
 			<a href="HTMLPage1.html">
-            <img src="blue.png" alt="Blue" style="width:15%; height: 200px; float: left; margin-left: 13.75%;">
+            <img src="blue.png" alt="Blue" style="width:15%; height: 200px; float: left; margin-left: 13.75%; margin-bottom: 7%;">
         </div>
     </div>
 
-	<footer class="header-search footer-search">
+<footer class="header-search footer-search">
 
 	<div class="header-limiter footer-limiter">
 
@@ -88,44 +88,5 @@
 
 </footer>
 
-
-
-
-    <script>function openTab(tabName, elmnt) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.backgroundColor = "";
-            }
-
-            document.getElementById(tabName).style.display = "block";
-            elmnt.style.backgroundColor = '#f1f1f1';
-            elmnt.style.color = 'black';
-
-
-}
-
-//Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-
-$(document).ready(function() {
-
-            $('.header-search form').on('click', function(e) {
-
-                // If the form (which is turned into the search button) was
-                // clicked directly, toggle the visibility of the search box.
-
-                if (e.target == this) {
-                    $(this).find('input').toggle();
-                }
-
-            });
-});</script>
 </body>
 </html>
