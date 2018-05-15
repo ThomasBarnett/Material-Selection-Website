@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Buidling Options</title>
-    <LINK rel=StyleSheet href="langselectCSS.css" type="text/css">
+    <LINK rel=StyleSheet href="regionselectCSS.css" type="text/css">
     <link rel="icon" href="WWFlogo.png">
 </head>
 <style>
@@ -17,15 +17,13 @@
         font-weight: normal;
     }
 </style>
-
 <body>
-
     <header class="header-search">
         <div class="header-limiter">
             <h1><a href="#">WWF<span>Resource Optimization</span></a></h1>
             <nav>
-                <a href="#" class="selected">Language Select</a>
-                <a href="regionselect.html">Region Select</a>
+                <a href="langselect.html">Language Select</a>
+                <a href="#" class="selected">Region Select</a>
                 <a href="HTMLPage1.html">Material Input</a>
                 <a href="HTMLPage2.html">Building Output</a>
                 <a href="#">Help</a>
@@ -39,26 +37,26 @@
             </form>
         </div>
     </header>
-
-    <h1>Please Select Your Language:</h1>
+    <h1>Region Select:</h1>
+    <img class="nepalpic" src="nepalmap.jpg" style="width: 500px;" />
+    <h2 style="text-align: center;">Pick Your Region:</h2>
     <div class="row">
         <div class="column">
-            <a href="regionselect.html">
-            <img src="USAUK.png" alt="English" style="width:200px; height:200px">
+            <a href="HTMLPage1.html">
+                <img src="grey.png" alt="Grey" style="width:200px; height:200px">
             </a>
         </div>
         <div class="column">
-            <a href="regionselect.html">
-                <img src="NepalFlag.png" alt="Nepali" style="width:200px; height:200px">
-                </a>
-</div>
+            <a href="HTMLPage1.html">
+                <img src="orange.png" alt="Orange" style="width:200px; height:200px">
+            </a>
+        </div>
+        <div class="column">
+            <a href="HTMLPage1.html">
+                <img src="blue.png" alt="Blue" style="width:200px; height:200px">
+            </a>
+        </div>
     </div>
-    <p1>The purpose of this site is to use the Building Materials Environmental Guide (BMEG) and an optimization algortithm developed at Northwestern University
-    to propose cost-efficient and environmentally-friendly housing options for places recovering from natural disasters. This website will guide you to 
-    input available materials and then suggest possible housing options.</p1>
-
-
-
 
 
     <script>function openTab(tabName, elmnt) {
@@ -97,6 +95,5 @@ $(document).ready(function() {
 
             });
 });</script>
-
 </body>
 </html>
