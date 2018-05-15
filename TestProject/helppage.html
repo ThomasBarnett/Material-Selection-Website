@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<!--sets the width of the page to follow the screen-width of the device (which will vary depending on the device), part sets the initial zoom level when the page is first loaded by the browser. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buidling Options</title>
+    <LINK rel=StyleSheet href="regionselectCSS.css" type="text/css">
+    <link rel="icon" href="WWFlogo.png">
+</head>
+<style>
+    h4 {
+        font-weight: normal;
+    }
+</style>
+<body>
+    <header class="header-search">
+        <div class="header-limiter">
+            <h1><a href="#">WWF<span>Resource Optimization</span></a></h1>
+            <nav>
+                <a href="langselect.html">Language Select</a>
+                <a href="regionselect.html">Region Select</a>
+                <a href="HTMLPage1.html">Material Input</a>
+                <a href="HTMLPage2.html">Building Output</a>
+                <a href="helppage.html" class="selected">Help</a>
+            </nav>
+            <select id="langselect">
+                <option value="english">English</option>
+                <option value="nepali">Nepali</option>
+            </select>
+            <form method="get" action="#">
+                <input type="search" placeholder="Search!" name="search">
+            </form>
+        </div>
+    </header>
+    <h1>Additional Resources</h1>
+    <div class="row">
+        <div class="column">
+            <h3><a href="#">CES EduPack</a></h3>
+        </div>
+        <div class="column">
+            <h3>
+                <a href="http://envirodm.org/cms/wp-content/uploads/2017/05/building_material_selection_and_use___an_environmental_guide.pdf">
+                    BMEG pdf
+                </a>
+                </h3>
+        </div>
+        <div class="column">
+            <h3><a href="https://www.worldwildlife.org/?utm_campaign=301-redirects&utm_source=wwf.org&utm_medium=referral&utm_content=wwf.org">
+                WWF Website</h3>
+            </a>
+        </div>
+    </div>
+
+
+    <script>function openTab(tabName, elmnt) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            elmnt.style.backgroundColor = '#f1f1f1';
+            elmnt.style.color = 'black';
+
+
+}
+
+//Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+$(document).ready(function() {
+
+            $('.header-search form').on('click', function(e) {
+
+                // If the form (which is turned into the search button) was
+                // clicked directly, toggle the visibility of the search box.
+
+                if (e.target == this) {
+                    $(this).find('input').toggle();
+                }
+
+            });
+});</script>
+</body>
+</html>
