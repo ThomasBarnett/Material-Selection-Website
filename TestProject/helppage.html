@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Buidling Options</title>
-	<LINK rel=StyleSheet href="StyleSheet1.css" type="text/css"> 
+    <LINK rel=StyleSheet href="regionselectCSS.css" type="text/css">
     <link rel="icon" href="WWFlogo.png">
 </head>
 <style>
@@ -17,76 +17,44 @@
         font-weight: normal;
     }
 </style>
-
 <body>
-
     <header class="header-search">
-
-	<div class="header-limiter">
-
-	<img class="logoImg" src="logo.png" />
-
-
-        <nav>
-            <a href="regionselect.html">Change Region</a>
-            <a href="HTMLPage1.html">Materials Input</a>
-            <a href="HTMLPage2.html">Materials Output</a>
-            <a href="helppage.html">Help</a>
-        </nav>
-
-
-		<form id="searchthis" action="/search" style="display:inline;" method="get">
-		<input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search for materials..."/>
-		<input id="namanyay-search-btn" value="Go" type="submit"/>
-		</form>
-
-
-
-	</div>
-
-</header>
-
-    <h1>Please Select Your Language:</h1>
+        <div class="header-limiter">
+            <h1><a href="#">WWF<span>Resource Optimization</span></a></h1>
+            <nav>
+                <a href="langselect.html">Language Select</a>
+                <a href="regionselect.html">Region Select</a>
+                <a href="HTMLPage1.html">Material Input</a>
+                <a href="HTMLPage2.html">Building Output</a>
+                <a href="helppage.html" class="selected">Help</a>
+            </nav>
+            <select id="langselect">
+                <option value="english">English</option>
+                <option value="nepali">Nepali</option>
+            </select>
+            <form method="get" action="#">
+                <input type="search" placeholder="Search!" name="search">
+            </form>
+        </div>
+    </header>
+    <h1>Additional Resources</h1>
     <div class="row">
         <div class="column">
-            <a href="regionselect.html">
-            <img src="USAUK.png" alt="English" style="width:200px; height:200px; float: left; margin-left: 45%; margin-top: 80px;">
-            </a>
+            <h3><a href="#">CES EduPack</a></h3>
         </div>
         <div class="column">
-            <a href="regionselect.html">
-			     <img src="NepalFlag.png" alt="Nepali" style="width:200px; height:200px; float: right; margin-right: 45%; margin-top: 80px;">
+            <h3>
+                <a href="http://envirodm.org/cms/wp-content/uploads/2017/05/building_material_selection_and_use___an_environmental_guide.pdf">
+                    BMEG pdf
+                </a>
+                </h3>
+        </div>
+        <div class="column">
+            <h3><a href="https://www.worldwildlife.org/?utm_campaign=301-redirects&utm_source=wwf.org&utm_medium=referral&utm_content=wwf.org">
+                WWF Website</h3>
             </a>
-		</div>
         </div>
     </div>
-    <p1 style="position: absolute; top: 550px; left: 5%; right: 5%;">The purpose of this site is to use the Building Materials Environmental Guide (BMEG) and an optimization algortithm developed at Northwestern University
-    to propose cost-efficient and environmentally-friendly housing options for places recovering from natural disasters. This website will guide you to 
-    input available materials and then suggest possible housing options.</p1>
-
-
-	<footer class="header-search footer-search">
-
-	<div class="header-limiter footer-limiter">
-
-<div class="container">
-		<a href="" class="button rightfooterbutton"><span>></span>About Us</a>
-</div>
-
-<div class="container">
-	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
-</div>
-
-		<div class="select-style">
-		<select>
-		<option value="english">English</option>
-		<option value="nepali">Nepali</option>
-		</select>
-		</div>
-
-	</div>
-
-</footer>
 
 
     <script>function openTab(tabName, elmnt) {
@@ -125,6 +93,5 @@ $(document).ready(function() {
 
             });
 });</script>
-
 </body>
 </html>

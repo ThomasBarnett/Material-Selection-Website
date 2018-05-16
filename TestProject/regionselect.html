@@ -9,8 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Buidling Options</title>
-    <LINK rel=StyleSheet href="regionselectCSS.css" type="text/css">
     <link rel="icon" href="WWFlogo.png">
+
+	<LINK rel=StyleSheet href="StyleSheet1.css" type="text/css"> 
 </head>
 <style>
     h4 {
@@ -18,80 +19,75 @@
     }
 </style>
 <body>
-    <header class="header-search">
-        <div class="header-limiter">
-            <h1><a href="#">WWF<span>Resource Optimization</span></a></h1>
-            <nav>
-                <a href="langselect.html">Language Select</a>
-                <a href="#" class="selected">Region Select</a>
-                <a href="HTMLPage1.html">Material Input</a>
-                <a href="HTMLPage2.html">Building Output</a>
-                <a href="#">Help</a>
-            </nav>
-            <select id="langselect">
-                <option value="english">English</option>
-                <option value="nepali">Nepali</option>
-            </select>
-            <form method="get" action="#">
-                <input type="search" placeholder="Search!" name="search">
-            </form>
-        </div>
-    </header>
+<header class="header-search">
+
+	<div class="header-limiter">
+
+	<img class="logoImg" src="logo.png" />
+
+
+        <nav>
+            <a href="regionselect.html" class="selected">Change Region</a>
+            <a href="HTMLPage1.html">Materials Input</a>
+            <a href="HTMLPage2.html">Materials Output</a>
+            <a href="helppage.html">Help</a>
+        </nav>
+
+
+		<form id="searchthis" action="/search" style="display:inline;" method="get">
+		<input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search for materials..."/>
+		<input id="namanyay-search-btn" value="Go" type="submit"/>
+		</form>
+
+
+
+	</div>
+
+</header>
+
+
     <h1>Region Select:</h1>
     <img class="nepalpic" src="nepalmap.jpg" style="width: 500px;" />
     <h2 style="text-align: center;">Pick Your Region:</h2>
-    <div class="row">
-        <div class="column">
+    <div>
+        <div>
             <a href="HTMLPage1.html">
-            <img src="grey.png" alt="Grey" style="width:200px; height:200px">
+            <img src="grey.png" alt="Grey" style="width:15%; height: 200px; float: left; margin-left: 13.75%; margin-bottom: 7%;">
             </a>
         </div>
-        <div class="column">
-            <img src="orange.png" alt="Orange" style="width:200px; height:200px">
+        <div>
+
+			<a href="HTMLPage1.html">
+            <img src="orange.png" alt="Orange" style="width:15%; height: 200px; float: left; margin-left: 13.75%; margin-bottom: 7%;">
         </div>
-        <div class="column">
-            <img src="blue.png" alt="Blue" style="width:200px; height:200px">
+        <div>
+			<a href="HTMLPage1.html">
+            <img src="blue.png" alt="Blue" style="width:15%; height: 200px; float: left; margin-left: 13.75%; margin-bottom: 7%;">
         </div>
     </div>
 
+<footer class="header-search footer-search">
 
+	<div class="header-limiter footer-limiter">
 
+<div class="container">
+		<a href="" class="button rightfooterbutton"><span>></span>About Us</a>
+</div>
 
-    <script>function openTab(tabName, elmnt) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
+<div class="container">
+	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
+</div>
 
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.backgroundColor = "";
-            }
+		<div class="select-style">
+		<select>
+		<option value="english">English</option>
+		<option value="nepali">Nepali</option>
+		</select>
+		</div>
 
-            document.getElementById(tabName).style.display = "block";
-            elmnt.style.backgroundColor = '#f1f1f1';
-            elmnt.style.color = 'black';
+	</div>
 
+</footer>
 
-}
-
-//Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-
-$(document).ready(function() {
-
-            $('.header-search form').on('click', function(e) {
-
-                // If the form (which is turned into the search button) was
-                // clicked directly, toggle the visibility of the search box.
-
-                if (e.target == this) {
-                    $(this).find('input').toggle();
-                }
-
-            });
-});</script>
 </body>
 </html>
