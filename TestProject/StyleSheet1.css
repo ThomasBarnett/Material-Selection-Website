@@ -507,3 +507,14 @@ height: 30px;
 	width: 100%;
 }
 
+#PrevInfoTable {
+	width:100%; 
+}
+
+#PrevInfoTable td {
+	width: 20%;
+}
+
+#PrevInfoTable .firstcol {
+	width: 40%;
+}
