@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Buidling Options</title>
-    <LINK rel=StyleSheet href="regionselectCSS.css" type="text/css">
+    <LINK rel=StyleSheet href="StyleSheet1.css" type="text/css">
     <link rel="icon" href="WWFlogo.png">
 </head>
 <style>
@@ -19,42 +19,74 @@
 </style>
 <body>
     <header class="header-search">
-        <div class="header-limiter">
-            <h1><a href="#">WWF<span>Resource Optimization</span></a></h1>
-            <nav>
-                <a href="langselect.html">Language Select</a>
-                <a href="regionselect.html">Region Select</a>
-                <a href="HTMLPage1.html">Material Input</a>
-                <a href="HTMLPage2.html">Building Output</a>
-                <a href="helppage.html" class="selected">Help</a>
-            </nav>
-            <select id="langselect">
-                <option value="english">English</option>
-                <option value="nepali">Nepali</option>
-            </select>
-            <form method="get" action="#">
-                <input type="search" placeholder="Search!" name="search">
-            </form>
-        </div>
-    </header>
-    <h1>Additional Resources</h1>
-    <div class="row">
-        <div class="column">
+
+	<div class="header-limiter">
+
+	<img class="logoImg" src="logo.png" />
+
+
+        <nav>
+            <a href="regionselect.html">Change Region</a>
+            <a href="HTMLPage1.html">Materials Input</a>
+            <a href="HTMLPage2.html">Materials Output</a>
+            <a href="helppage.html" class="selected">Help</a>
+        </nav>
+
+
+		<form id="searchthis" action="/search" style="display:inline;" method="get">
+		<input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search for materials..."/>
+		<input id="namanyay-search-btn" value="Go" type="submit"/>
+		</form>
+
+
+
+	</div>
+
+</header>
+    <h1>Help/Additional Resources</h1>
+    <div style="display: flex;">
+        <div style="flex: 33.33%; padding: 5px; margin-left: 0%;">
             <h3><a href="#">CES EduPack</a></h3>
         </div>
-        <div class="column">
+        <div style="flex: 33.33%; padding: 5px; margin-left: 10%;">
             <h3>
                 <a href="http://envirodm.org/cms/wp-content/uploads/2017/05/building_material_selection_and_use___an_environmental_guide.pdf">
                     BMEG pdf
                 </a>
                 </h3>
         </div>
-        <div class="column">
+        <div style="flex: 33.33%; padding: 5px; margin-left: 10%;">
             <h3><a href="https://www.worldwildlife.org/?utm_campaign=301-redirects&utm_source=wwf.org&utm_medium=referral&utm_content=wwf.org">
                 WWF Website</h3>
             </a>
         </div>
     </div>
+
+
+
+
+<footer class="header-search footer-search">
+
+	<div class="header-limiter footer-limiter">
+
+<div class="container">
+		<a href="" class="button rightfooterbutton"><span>></span>About Us</a>
+</div>
+
+<div class="container">
+	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
+</div>
+
+		<div class="select-style">
+		<select>
+		<option value="english">English</option>
+		<option value="nepali">Nepali</option>
+		</select>
+		</div>
+
+	</div>
+
+</footer>
 
 
     <script>function openTab(tabName, elmnt) {

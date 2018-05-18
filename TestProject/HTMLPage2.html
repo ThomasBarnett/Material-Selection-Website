@@ -29,30 +29,29 @@
 
     <header class="header-search">
 
-        <div class="header-limiter">
+	<div class="header-limiter">
 
-            <h1><a href="#">WWF<span>Resource Optimization</span></a></h1>
+	<img class="logoImg" src="logo.png" />
 
-            <nav>
-                <a href="langselect.html">Language Select</a>
-                <a href="regionselect.html">Region Select</a>
-                <a href="HTMLPage1.html">Material Input</a>
-                <a href="#" class="selected">Buidling Output</a>
-                <a href="helppage.html">Help</a>
-            </nav>
 
-            <select id="langselect">
-                <option value="english">English</option>
-                <option value="nepali">Nepali</option>
-            </select>
+        <nav>
+            <a href="regionselect.html">Change Region</a>
+            <a href="HTMLPage1.html">Materials Input</a>
+            <a href="HTMLPage2.html" class="selected">Materials Output</a>
+            <a href="helppage.html">Help</a>
+        </nav>
 
-            <form method="get" action="#">
-                <input type="search" placeholder="Search!" name="search">
-            </form>
 
-        </div>
+		<form id="searchthis" action="/search" style="display:inline;" method="get">
+		<input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search for materials..."/>
+		<input id="namanyay-search-btn" value="Go" type="submit"/>
+		</form>
 
-    </header>
+
+
+	</div>
+
+</header>
 
 
 
@@ -62,31 +61,26 @@
 
         <div class="InputTabs">
 
-            <button class="tablink" onclick="openTab('Envi', this)" id="defaultOpen">Lowest Environmental Impact</button>
+            <button class="tablink lefttablink" onclick="openTab('Envi', this)" id="defaultOpen">Lowest Environmental Impact</button>
             <button class="tablink" onclick="openTab('Cost_Eff', this)">Lowest Cost</button>
-            <button class="tablink" onclick="openTab('Compromise', this)">Cost and Environment Compromise</button>
+            <button class="tablink righttablink" onclick="openTab('Compromise', this)">Cost and Environment Compromise</button>
 
 
             <div id="Envi" class="tabcontent">
                 <h3>Here is the housing option with the lowest environmental impact:</h3>
                 <h4> <strong>House Type:</strong>  2 Bedroom House</h4>
-                <h4><strong> Cost:</strong> $315,000 </h4>
-                <h4><strong> Stored Energy:</strong> 65,434 kJ </h4>
-                <h4><strong>Make Roof From:</strong> Wood: 500 pounds</h4>
-                <h4><strong>Make Walls From:</strong> Brick: 1000 pounds, Wood: 300 pounds (frame)</h4>
+                <h4><strong> Cost:</strong> $35,000 </h4>
+                <h4><strong> Stored Energy:</strong> 5,434 kJ </h4>
+                <h4><strong>Make Roof From:</strong> Plywood: 500 pounds</h4>
+                <h4><strong>Make Walls From:</strong> Brick: 1000 pounds, 2 x 4: 300 pounds (frame)</h4>
                 <h4><strong>Make Foundation From:</strong> Cement: 100 pounds</h4>
                 <h4><strong> Materials and Amounts: </strong> </h4>
-                <div id="List" class="matlist">
-                    <ul>
-                        <li>Wood: 3,000 pounds</li>
-                        <li>Cement: 250 pounds</li>
-                        <li>Brick: 1,500 pounds</li>
-                    </ul>
-                </div>
                 <h4><strong>Weeks to Build:</strong> 6 weeks</h4>
                 <h4><strong>Workers Needed:</strong> 12</h4>
                 <h4><strong>Climate:</strong> Dry</h4>
-                <a href="#">Additional Resources</a>
+                <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
+				<a class="button smallbutton clearbutton"><span>+</span>Additional Resources</a>
+				</div>
                 <h6>*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
 
             </div>
@@ -94,20 +88,18 @@
             <div id="Cost_Eff" class="tabcontent">
                 <h3>Here is the housing option with the lowest cost: </h3>
                 <h4> <strong>House Type:</strong>  2 Bedroom House</h4>
-                <h4><strong> Cost:</strong> $250,000 </h4>
-                <h4><strong> Stored Energy:</strong> 74,434 kJ </h4>
+                <h4><strong> Cost:</strong> $25,000 </h4>
+                <h4><strong> Stored Energy:</strong> 7,434 kJ </h4>
                 <h4><strong> Materials and Amounts: </strong> </h4>
-                <div id="List" class="matlist">
-                    <ul>
-                        <li>Wood: 3,000 pounds</li>
-                        <li>Cement: 250 pounds</li>
-                        <li>Brick: 1,500 pounds</li>
-                    </ul>
-                </div>
+                <h4><strong>Make Roof From:</strong> Plywood: 500 pounds</h4>
+                <h4><strong>Make Walls From:</strong> Brick: 1000 pounds, 2 x 4: 300 pounds (frame)</h4>
+                <h4><strong>Make Foundation From:</strong> Cement: 100 pounds </h4>
                 <h4><strong>Weeks to Build:</strong> 6 weeks</h4>
                 <h4><strong>Workers Needed:</strong> 12</h4>
                 <h4><strong>Climate:</strong> Dry</h4>
-                <a href="#">Additional Resources</a>
+                 <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
+				<a class="button smallbutton clearbutton"><span>+</span>Additional Resources</a>
+				</div>
                 <h6>*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
 
             </div>
@@ -118,23 +110,44 @@
                 <h4><strong> Cost:</strong> $295,000 </h4>
                 <h4><strong> Stored Energy:</strong> 70,465 kJ </h4>
                 <h4><strong> Materials and Amounts: </strong> </h4>
-                <div id="List" class="matlist">
-                    <ul>
-                        <li>Wood: 3,000 pounds</li>
-                        <li>Cement: 250 pounds</li>
-                        <li>Brick: 1,500 pounds</li>
-                    </ul>
-                </div>
+                <h4><strong>Make Roof From:</strong> Plywood: 500 pounds</h4>
+                <h4><strong>Make Walls From:</strong> Brick: 1000 pounds, 2 x 4: 300 pounds (frame)</h4>
+                <h4><strong>Make Foundation From:</strong> Cement: 100 pounds</h4>
                 <h4><strong>Weeks to Build:</strong> 6 weeks</h4>
                 <h4><strong>Workers Needed:</strong> 12</h4>
                 <h4><strong>Climate:</strong> Dry</h4>
-                <a href="#">Additional Resources</a>
+                 <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
+				<a class="button smallbutton clearbutton"><span>+</span>Additional Resources</a>
+				</div>
                 <h6>*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
 
             </div>
 
         </div>
     </div>
+
+	<footer class="header-search footer-search">
+
+	<div class="header-limiter footer-limiter">
+
+<div class="container">
+		<a href="" class="button rightfooterbutton"><span>></span>About Us</a>
+</div>
+
+<div class="container">
+	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
+</div>
+
+		<div class="select-style">
+		<select>
+		<option value="english">English</option>
+		<option value="nepali">Nepali</option>
+		</select>
+		</div>
+
+	</div>
+
+</footer>
 
     <script>function openTab(tabName, elmnt) {
             var i, tabcontent, tablinks;
@@ -149,7 +162,7 @@
             }
 
             document.getElementById(tabName).style.display = "block";
-            elmnt.style.backgroundColor = '#f1f1f1';
+            elmnt.style.backgroundColor = '#55A2B0';
             elmnt.style.color = 'black';
 
 
