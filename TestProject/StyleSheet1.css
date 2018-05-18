@@ -508,7 +508,9 @@ height: 30px;
 }
 
 #PrevInfoTable {
-	width:100%; 
+	width:90%; 
+	text-align: left;
+	margin-left: 10%;
 }
 
 #PrevInfoTable td {
