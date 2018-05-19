@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<!--sets the width of the page to follow the screen-width of the device (which will vary depending on the device), part sets the initial zoom level when the page is first loaded by the browser. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="WWFlogo.png">
+
+    <title>Materials Selection</title>
+
+	<LINK rel=StyleSheet href="TextFile1.css" type="text/css"> 
+
+</head>
+<body>
+
+<header class="header-search">
+
+	<div class="header-limiter">
+
+	<img class="logoImg" src="logo.png"/>
+
+        <nav>
+            <a href="regionselect.html">Change Region</a>
+            <a href="HTMLPage1.html" class="selected">Materials Input</a>
+            <a href="HTMLPage2.html">Materials Output</a>
+            <a href="helppage.html">Help</a>
+        </nav>
+
+
+		<form id="searchthis" action="/search" style="display:inline;" method="get">
+		<input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search for materials..."/>
+		<input id="namanyay-search-btn" value="Go" type="submit"/>
+		</form>
+
+
+
+	</div>
+
+</header>
+
+<h1>Resource Optimization Input</h1>
+
+<div class="section group">
+	<div class="col span_2_of_3">
+	<button class="tablink lefttab" onclick="openTab('AvailableMat', this)" id="defaultOpen">Available Materials</button>
+	<button class="tablink" onclick="openTab('Location', this)">Location</button>
+	<button class="tablink" onclick="openTab('Budget', this)">Budget</button>
+	<button class="tablink righttab" class="righttab" onclick="openTab('AdditionalInfo', this)">Additional Input</button> 
+
+	<div id="AvailableMat" class="tabcontent" style="min-height: 400px">
+	  <h3 style="margin-top: 30px;">Enter available materials here:</h3>
+	  <p>This includes materials you own, materials you have access to, and materials you are able to purchase. Only fields marked with an * are required, but the more information you provide, the more accurate your results will be.
+
+	  <div class="MatInputRow" id="MatInputRow1">
+		<div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow2', 'addbutton1', 'addspan1', 'Mat1', 'Mat1Disp', 'Amount1', 'Amt1Disp', 'Cost1', 'Cost1Disp', 'Dist1', 'Dist1Disp')" value='AddMat'>
+		<a class="button smallbutton addbutton" id="addbutton1"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan1">Add</p></a>
+		</div>
+	  <strong>Material*: </strong><input type="text" name="Material" value="" id="Mat1" class="materialInput">
+	  Amount (kg): <input type="text" name="Amount" value="" id="Amount1" class="materialInput numInput"> 
+	  Cost: <input type="text" name="Cost" value="" id="Cost1" class="materialInput numInput">
+	  Distance: <input type="text" name="Distance" value="" id="Dist1" class="materialInput numInput distanceInput">
+	  </div>
+	</div>
+
+	</div>
+
+	<div class="col span_1_of_3">
+	<h3>Previously Entered Info</h3>
+	<p id="placeholderText">You have not entered any information yet.</p>
+	<p id="PrevInfo"></p> 
+
+	<table id="PrevInfoTable">
+	  <tr>
+		<td class="firstcol" id="Mat1Disp"></td>
+		<td id="Amt1Disp"></td> 
+		<td id="Cost1Disp"></td>
+		<td id="Dist1Disp"></td>
+	  </tr>
+	  <tr>
+		<td class="firstcol" id="Mat2Disp"></td>
+		<td id="Amt2Disp"></td> 
+		<td id="Cost2Disp"></td>
+		<td id="Dist2Disp"></td>
+	  </tr>
+	  <tr>
+		<td class="firstcol" id="Mat3Disp"></td>
+		<td id="Amt3Disp"></td> 
+		<td id="Cost3Disp"></td>
+		<td id="Dist3Disp"></td>
+	  </tr>
+	   <tr>
+		<td class="firstcol" id="Mat4Disp"></td>
+		<td id="Amt4Disp"></td> 
+		<td id="Cost4Disp"></td>
+		<td id="Dist4Disp"></td>
+	  </tr>
+	   <tr>
+		<td class="firstcol" id="Mat5Disp"></td>
+		<td id="Amt5Disp"></td> 
+		<td id="Cost5Disp"></td>
+		<td id="Dist5Disp"></td>
+	  </tr>
+	</table> 
+
+	<div class="smallcontainer clearcontainer" onclick='clearAll()' value='Clear All'>
+	<a class="button smallbutton clearbutton"><span>✓</span>Clear All</a>
+	</div>
+	</div>
+</div>
+
+<div class="container">
+<a href="HTMLPage2.html" class="button"><span>✓</span>Recommend Materials</a>
+</div>
+
+
+<footer class="footer-search">
+
+	<div class="footer-limiter">
+
+
+<div class="container">
+	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
+</div>
+
+		<div class="select-style">
+		<select>
+		<option value="english">English</option>
+		<option value="nepali">Nepali</option>
+		</select>
+		</div>
+
+	</div>
+
+</footer>
+
+</body>
+</html>
