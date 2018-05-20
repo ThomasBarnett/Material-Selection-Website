@@ -32,9 +32,9 @@
 
 
         <nav>
+			<a href="langselect.html">Change Language</a>
             <a href="regionselect.html">Change Region</a>
             <a href="HTMLPage1.html" class="selected">Materials Input</a>
-            <a href="HTMLPage2.html">Materials Output</a>
             <a href="helppage.html">Help</a>
         </nav>
 
@@ -59,63 +59,67 @@
 <div class="InputTabs" style="min-height: 500px">
 
 <button class="tablink lefttab" onclick="openTab('AvailableMat', this)" id="defaultOpen">Available Materials</button>
-<button class="tablink" onclick="openTab('Location', this)">Location</button>
-<button class="tablink" onclick="openTab('Budget', this)">Budget</button>
-<button class="tablink righttab" class="righttab" onclick="openTab('AdditionalInfo', this)">Additional Input</button> 
+<button class="tablink" onclick="openTab('Location', this)" id="LocTabLink">Climate</button>
+<button class="tablink" onclick="openTab('Budget', this)" id="BudgetTabLink">Constraints</button>
+<button class="tablink righttab" class="righttab" onclick="openTab('AdditionalInfo', this)" id="MiscTabLink">Additional Input</button> 
 
 <div id="AvailableMat" class="tabcontent" style="min-height: 400px">
   <h3 style="margin-top: 30px;">Enter available materials here:</h3>
-  <p>This includes materials you own, materials you have access to, and materials you are able to purchase. Only fields marked with an * are required, but the more information you provide, the more accurate your results will be.
+  <p><strong>This includes materials you own, materials you have access to, and materials you are able to purchase. Only fields marked with an <span style="color: red">*</span> are required, but the more information you provide, the more accurate your results will be.</strong></p>
 
   <div class="MatInputRow" id="MatInputRow1">
     <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow2', 'addbutton1', 'addspan1', 'Mat1', 'Mat1Disp', 'Amount1', 'Amt1Disp', 'Cost1', 'Cost1Disp', 'Dist1', 'Dist1Disp')" value='AddMat'>
 	<a class="button smallbutton addbutton" id="addbutton1"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan1">Add</p></a>
 	</div>
-  <strong>Material*: </strong><input type="text" name="Material" value="" id="Mat1" class="materialInput">
-  Amount (kg): <input type="text" name="Amount" value="" id="Amount1" class="materialInput numInput"> 
-  Cost: <input type="text" name="Cost" value="" id="Cost1" class="materialInput numInput">
-  Distance: <input type="text" name="Distance" value="" id="Dist1" class="materialInput numInput distanceInput">
+  <strong>Material<span style="color: red">*</span>: </strong><input type="text" name="Material" value="" id="Mat1" class="materialInput">
+  Amount (kg) if known: <input type="text" name="Amount" value="" id="Amount1" class="materialInput numInput"> 
+  Cost ($/m<sup>3</sup>) if known: <input type="text" name="Cost" value="" id="Cost1" class="materialInput numInput">
+  Distance (km) if known: <input type="text" name="Distance" value="" id="Dist1" class="materialInput numInput distanceInput">
   </div>
 
     <div class="MatInputRow" id="MatInputRow2" style="display: none;">
     <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow3', 'addbutton2', 'addspan2', 'Mat2', 'Mat2Disp', 'Amount2', 'Amt2Disp', 'Cost2', 'Cost2Disp', 'Dist2', 'Dist2Disp')" value='AddMat'>
 	<a class="button smallbutton addbutton" id="addbutton2"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan2">Add</p></a>
 	</div>
-  <strong>Material*: </strong> <input type="text" name="Material" value="" id="Mat2" class="materialInput">
-  Amount (kg): <input type="text" name="Amount" value="" id="Amount2" class="materialInput numInput"> 
-  Cost: <input type="text" name="Cost" value="" id="Cost2" class="materialInput numInput">
-  Distance: <input type="text" name="Distance" value="" id="Dist2" class="materialInput numInput distanceInput">
+  <strong>Material<span style="color: red">*</span>: </strong> <input type="text" name="Material" value="" id="Mat2" class="materialInput">
+  Amount (kg) if known: <input type="text" name="Amount" value="" id="Amount2" class="materialInput numInput"> 
+  Cost ($/m<sup>3</sup>) if known: <input type="text" name="Cost" value="" id="Cost2" class="materialInput numInput">
+  Distance (km) if known: <input type="text" name="Distance" value="" id="Dist2" class="materialInput numInput distanceInput">
   </div>
 
     <div class="MatInputRow" id="MatInputRow3" style="display: none;">
     <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow4', 'addbutton3', 'addspan3', 'Mat3', 'Mat3Disp', 'Amount3', 'Amt3Disp', 'Cost3', 'Cost3Disp', 'Dist3', 'Dist3Disp')" value='AddMat'>
 	<a class="button smallbutton addbutton" id="addbutton3"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan3">Add</p></a>
 	</div>
-  <strong>Material*: </strong> <input type="text" name="Material" value="" id="Mat3" class="materialInput">
-  Amount (kg): <input type="text" name="Amount" value="" id="Amount3" class="materialInput numInput"> 
-  Cost: <input type="text" name="Cost" value="" id="Cost3" class="materialInput numInput">
-  Distance: <input type="text" name="Distance" value="" id="Dist3" class="materialInput numInput distanceInput">
+  <strong>Material<span style="color: red">*</span>: </strong> <input type="text" name="Material" value="" id="Mat3" class="materialInput">
+  Amount (kg) if known: <input type="text" name="Amount" value="" id="Amount3" class="materialInput numInput"> 
+  Cost ($/m<sup>3</sup>) if known: <input type="text" name="Cost" value="" id="Cost3" class="materialInput numInput">
+  Distance (km) if known: <input type="text" name="Distance" value="" id="Dist3" class="materialInput numInput distanceInput">
   </div>
 
     <div class="MatInputRow" id="MatInputRow4" style="display: none;">
     <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow5', 'addbutton4', 'addspan4', 'Mat4', 'Mat4Disp', 'Amount4', 'Amt4Disp', 'Cost4', 'Cost4Disp', 'Dist4', 'Dist4Disp')" value='AddMat'>
 	<a class="button smallbutton addbutton" id="addbutton4"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan4">Add</p></a>
 	</div>
-  <strong>Material*: </strong> <input type="text" name="Material" value="" id="Mat4" class="materialInput">
-  Amount (kg): <input type="text" name="Amount" value="" id="Amount4" class="materialInput numInput"> 
-  Cost: <input type="text" name="Cost" value="" id="Cost4" class="materialInput numInput">
-  Distance: <input type="text" name="Distance" value="" id="Dist4" class="materialInput numInput distanceInput">
+  <strong>Material<span style="color: red">*</span>: </strong> <input type="text" name="Material" value="" id="Mat4" class="materialInput">
+  Amount (kg) if known: <input type="text" name="Amount" value="" id="Amount4" class="materialInput numInput"> 
+  Cost ($/m<sup>3</sup>) if known: <input type="text" name="Cost" value="" id="Cost4" class="materialInput numInput">
+  Distance (km) if known: <input type="text" name="Distance" value="" id="Dist4" class="materialInput numInput distanceInput">
   </div>
 
     <div class="MatInputRow" id="MatInputRow5" style="display: none;">
     <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow6', 'addbutton5', 'addspan5', 'Mat5', 'Mat5Disp', 'Amount5', 'Amt5Disp', 'Cost5', 'Cost5Disp', 'Dist5', 'Dist5Disp')" value='AddMat'>
 	<a class="button smallbutton addbutton" id="addbutton5"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan5">Add</p></p></a>
 	</div>
-  <strong>Material*: </strong> <input type="text" name="Material" value="" id="Mat5" class="materialInput">
-  Amount (kg): <input type="text" name="Amount" value="" id="Amount5" class="materialInput numInput"> 
-  Cost: <input type="text" name="Cost" value="" id="Cost5" class="materialInput numInput">
-  Distance: <input type="text" name="Distance" value="" id="Dist5" class="materialInput numInput distanceInput">
+  <strong>Material<span style="color: red">*</span>: </strong> <input type="text" name="Material" value="" id="Mat5" class="materialInput">
+  Amount (kg) if known: <input type="text" name="Amount" value="" id="Amount5" class="materialInput numInput"> 
+  Cost ($/m<sup>3</sup>) if known: <input type="text" name="Cost" value="" id="Cost5" class="materialInput numInput">
+  Distance if known: <input type="text" name="Distance" value="" id="Dist5" class="materialInput numInput distanceInput">
   </div>
+
+  <div class="smallcontainer" onclick="openTab('Location', document.getElementById('LocTabLink'))" value='OpenLocation' style="position: relative; top: 55%; left: 47.5%;">
+	<a class="button smallbutton" id="openLocation"><span style="width: 35px; font-size: 18px">></span>NEXT</a>
+	</div>
 
     
 </div>
@@ -137,10 +141,12 @@
 
 <div class="InputDisplay" style="min-height: 500px">
 	<h3>Previously Entered Info</h3>
-	<p id="placeholderText">You have not entered any information yet.</p>
-	<p id="PrevInfo"></p> 
-
 	<table id="PrevInfoTable">
+	  <tr>
+		<th>Material</th>
+		<th>Amount</th>
+		<th>Cost</th>
+		<th>Distance</th>
 	  <tr>
 		<td class="firstcol" id="Mat1Disp"></td>
 		<td id="Amt1Disp"></td> 
@@ -172,6 +178,7 @@
 		<td id="Dist5Disp"></td>
 	  </tr>
 	</table> 
+	<p id="placeholderText">You have not entered any information yet.</p>
 
 	<div class="smallcontainer clearcontainer" onclick='clearAll()' value='Clear All'>
 	<a class="button smallbutton clearbutton"><span>✓</span>Clear All</a>
@@ -254,7 +261,6 @@ function displayNextRow(RowName, ButtonName, SpanName, matInfo, matDispField, am
 
 function clearAll() {
 	document.getElementById('placeholderText').innerHTML = "You have not entered any information yet";
-	document.getElementById('PrevInfo').innerHTML = "";
 
 	 document.getElementById('Mat1').value = "";
 	 document.getElementById('Mat2').value = "";
@@ -262,11 +268,51 @@ function clearAll() {
 	 document.getElementById('Mat4').value = "";
 	 document.getElementById('Mat5').value = "";
 
+	 document.getElementById('Amount1').value = "";
+	 document.getElementById('Amount2').value = "";
+	 document.getElementById('Amount3').value = "";
+	 document.getElementById('Amount4').value = "";
+	 document.getElementById('Amount5').value = "";
+
+	 document.getElementById('Cost1').value = "";
+	 document.getElementById('Cost2').value = "";
+	 document.getElementById('Cost3').value = "";
+	 document.getElementById('Cost4').value = "";
+	 document.getElementById('Cost5').value = "";
+
+	 document.getElementById('Dist1').value = "";
+	 document.getElementById('Dist2').value = "";
+	 document.getElementById('Dist3').value = "";
+	 document.getElementById('Dist4').value = "";
+	 document.getElementById('Dist5').value = "";
+
 	 document.getElementById('addspan1').innerHTML = "Add";
 	 document.getElementById('addspan2').innerHTML = "Add";
 	 document.getElementById('addspan3').innerHTML = "Add";
 	 document.getElementById('addspan4').innerHTML = "Add";
 	 document.getElementById('addspan5').innerHTML = "Add";
+
+	 document.getElementById('Mat2Disp').innerHTML = "";
+	 document.getElementById('Amt2Disp').innerHTML = "";
+	 document.getElementById('Cost2Disp').innerHTML = "";
+	 document.getElementById('Dist2Disp').innerHTML = "";
+
+	 document.getElementById('Mat3Disp').innerHTML = "";
+	 document.getElementById('Amt3Disp').innerHTML = "";
+	 document.getElementById('Cost3Disp').innerHTML = "";
+	 document.getElementById('Dist3Disp').innerHTML = "";
+
+	 document.getElementById('Mat4Disp').innerHTML = "";
+	 document.getElementById('Amt4Disp').innerHTML = "";
+	 document.getElementById('Cost4Disp').innerHTML = "";
+	 document.getElementById('Dist4Disp').innerHTML = "";
+
+	 document.getElementById('Mat5Disp').innerHTML = "";
+	 document.getElementById('Amt5Disp').innerHTML = "";
+	 document.getElementById('Cost5Disp').innerHTML = "";
+	 document.getElementById('Dist5Disp').innerHTML = "";
+
+
 }
 
 function openTab(tabName,elmnt) {
