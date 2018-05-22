@@ -134,6 +134,11 @@
 <div class="container">
 	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
 </div>
+<div class="container" id="demo">
+</div>
+<div class="container" >
+    Version 0.1
+</div>
 
 		<div class="select-style">
 		<select>
@@ -159,28 +164,10 @@ var avaliableSuperstructures = [];
 var avaliableFoundation = [];
 var possibleStructs = [];
 
+window.onload = function() {
+        var d = new Date();
+        document.getElementById("demo").innerHTML = "Current Date: " + d.toDateString();
 
-
-function displayNextRow(RowName, ButtonName, SpanName, matInfo, matDispField, amtInfo, amtDispField, costInfo, costDispField, distInfo, distDispField) {
-
-
-        document.getElementById('placeholderText').innerHTML = "";
-        matValue = document.getElementById(matInfo).value;
-        amtValue = document.getElementById(amtInfo).value;
-        costValue = document.getElementById(costInfo).value;
-        distValue = document.getElementById(distInfo).value;
-
-        document.getElementById(matDispField).innerHTML = matValue;
-        document.getElementById(amtDispField).innerHTML = amtValue;
-        document.getElementById(costDispField).innerHTML = costValue;
-        document.getElementById(distDispField).innerHTML = distValue;
-
-        document.getElementById(SpanName).innerHTML = "Edit";
-        document.getElementById(RowName).style.display = 'block';
-
-
-        inputMat = document.getElementById(newInfo).value;
-        userMaterials.push(inputMat);
 
 }
 
@@ -202,7 +189,7 @@ function addField() {
         cell2.innerHTML = "<input type='text'/>";
         cell3.innerHTML = "Amount (kg):";
         cell4.innerHTML = "<input type = 'text'/>";
-        cell5.innerHTML = "Cost of Material ($/m<sup>3</sup>):";
+        cell5.innerHTML = "Material Cost($/m<sup>3</sup>):";
         cell6.innerHTML = "<input type = 'text'/>";
         cell7.innerHTML = "Distance (km) from material:";
         cell8.innerHTML = "<input type = 'text'/>";
@@ -219,58 +206,12 @@ function addField() {
 
 
 function clearAll() {
-        document.getElementById('placeholderText').innerHTML = "You have not entered any information yet";
-
-        document.getElementById('Mat1').value = "";
-        document.getElementById('Mat2').value = "";
-        document.getElementById('Mat3').value = "";
-        document.getElementById('Mat4').value = "";
-        document.getElementById('Mat5').value = "";
-
-        document.getElementById('Amount1').value = "";
-        document.getElementById('Amount2').value = "";
-        document.getElementById('Amount3').value = "";
-        document.getElementById('Amount4').value = "";
-        document.getElementById('Amount5').value = "";
-
-        document.getElementById('Cost1').value = "";
-        document.getElementById('Cost2').value = "";
-        document.getElementById('Cost3').value = "";
-        document.getElementById('Cost4').value = "";
-        document.getElementById('Cost5').value = "";
-
-        document.getElementById('Dist1').value = "";
-        document.getElementById('Dist2').value = "";
-        document.getElementById('Dist3').value = "";
-        document.getElementById('Dist4').value = "";
-        document.getElementById('Dist5').value = "";
-
-        document.getElementById('addspan1').innerHTML = "Add";
-        document.getElementById('addspan2').innerHTML = "Add";
-        document.getElementById('addspan3').innerHTML = "Add";
-        document.getElementById('addspan4').innerHTML = "Add";
-        document.getElementById('addspan5').innerHTML = "Add";
-
-        document.getElementById('Mat2Disp').innerHTML = "";
-        document.getElementById('Amt2Disp').innerHTML = "";
-        document.getElementById('Cost2Disp').innerHTML = "";
-        document.getElementById('Dist2Disp').innerHTML = "";
-
-        document.getElementById('Mat3Disp').innerHTML = "";
-        document.getElementById('Amt3Disp').innerHTML = "";
-        document.getElementById('Cost3Disp').innerHTML = "";
-        document.getElementById('Dist3Disp').innerHTML = "";
-
-        document.getElementById('Mat4Disp').innerHTML = "";
-        document.getElementById('Amt4Disp').innerHTML = "";
-        document.getElementById('Cost4Disp').innerHTML = "";
-        document.getElementById('Dist4Disp').innerHTML = "";
-
-        document.getElementById('Mat5Disp').innerHTML = "";
-        document.getElementById('Amt5Disp').innerHTML = "";
-        document.getElementById('Cost5Disp').innerHTML = "";
-        document.getElementById('Dist5Disp').innerHTML = "";
-
+        var tableHeaderRowCount = 1;
+        var table = document.getElementById("PrevInfoTable");
+        var rowCount = table.rows.length;
+        for (var i = tableHeaderRowCount; i < rowCount; i++) {
+            table.deleteRow(tableHeaderRowCount);
+        }
 
 }
 
