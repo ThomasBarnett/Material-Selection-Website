@@ -66,56 +66,23 @@
 <div id="AvailableMat" class="tabcontent" style="min-height: 400px">
   <h3 style="margin-top: 30px;">Enter available materials here:</h3>
   <p><strong>This includes materials you own, materials you have access to, and materials you are able to purchase. Only fields marked with an <span style="color: red">*</span> are required, but the more information you provide, the more accurate your results will be.</strong></p>
-
+<table id="tbl">
+    <tr>
+        <td><strong>Material<span style="color: red">*</span>: </strong></td>
+        <td><input type="text" name="Name" /></td>
+        <td>Amount (kg):</td>
+        <td><input type="text" name="Amount" /></td>
+        <td>Cost of Material ($/m<sup>3</sup>):</td>
+        <td><input type="text" name="Cost" /></td>
+        <td>Distance (km) from material</td>
+        <td><input type="text" name="Distance" /></td>
+        <td><input type="button" value="Add Row" onclick="addField(this);"/></td>
+    </tr>
+</table>
   <div class="MatInputRow" id="MatInputRow1">
     <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow2', 'addbutton1', 'addspan1', 'Mat1', 'Mat1Disp', 'Amount1', 'Amt1Disp', 'Cost1', 'Cost1Disp', 'Dist1', 'Dist1Disp')" value='AddMat'>
 	<a class="button smallbutton addbutton" id="addbutton1"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan1">Add</p></a>
 	</div>
-  <strong>Material<span style="color: red">*</span>: </strong><input type="text" name="Material" value="" id="Mat1" class="materialInput">
-  Amount (kg) if known: <input type="text" name="Amount" value="" id="Amount1" class="materialInput numInput"> 
-  Cost ($/m<sup>3</sup>) if known: <input type="text" name="Cost" value="" id="Cost1" class="materialInput numInput">
-  Distance (km) if known: <input type="text" name="Distance" value="" id="Dist1" class="materialInput numInput distanceInput">
-  </div>
-
-    <div class="MatInputRow" id="MatInputRow2" style="display: none;">
-    <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow3', 'addbutton2', 'addspan2', 'Mat2', 'Mat2Disp', 'Amount2', 'Amt2Disp', 'Cost2', 'Cost2Disp', 'Dist2', 'Dist2Disp')" value='AddMat'>
-	<a class="button smallbutton addbutton" id="addbutton2"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan2">Add</p></a>
-	</div>
-  <strong>Material<span style="color: red">*</span>: </strong> <input type="text" name="Material" value="" id="Mat2" class="materialInput">
-  Amount (kg) if known: <input type="text" name="Amount" value="" id="Amount2" class="materialInput numInput"> 
-  Cost ($/m<sup>3</sup>) if known: <input type="text" name="Cost" value="" id="Cost2" class="materialInput numInput">
-  Distance (km) if known: <input type="text" name="Distance" value="" id="Dist2" class="materialInput numInput distanceInput">
-  </div>
-
-    <div class="MatInputRow" id="MatInputRow3" style="display: none;">
-    <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow4', 'addbutton3', 'addspan3', 'Mat3', 'Mat3Disp', 'Amount3', 'Amt3Disp', 'Cost3', 'Cost3Disp', 'Dist3', 'Dist3Disp')" value='AddMat'>
-	<a class="button smallbutton addbutton" id="addbutton3"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan3">Add</p></a>
-	</div>
-  <strong>Material<span style="color: red">*</span>: </strong> <input type="text" name="Material" value="" id="Mat3" class="materialInput">
-  Amount (kg) if known: <input type="text" name="Amount" value="" id="Amount3" class="materialInput numInput"> 
-  Cost ($/m<sup>3</sup>) if known: <input type="text" name="Cost" value="" id="Cost3" class="materialInput numInput">
-  Distance (km) if known: <input type="text" name="Distance" value="" id="Dist3" class="materialInput numInput distanceInput">
-  </div>
-
-    <div class="MatInputRow" id="MatInputRow4" style="display: none;">
-    <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow5', 'addbutton4', 'addspan4', 'Mat4', 'Mat4Disp', 'Amount4', 'Amt4Disp', 'Cost4', 'Cost4Disp', 'Dist4', 'Dist4Disp')" value='AddMat'>
-	<a class="button smallbutton addbutton" id="addbutton4"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan4">Add</p></a>
-	</div>
-  <strong>Material<span style="color: red">*</span>: </strong> <input type="text" name="Material" value="" id="Mat4" class="materialInput">
-  Amount (kg) if known: <input type="text" name="Amount" value="" id="Amount4" class="materialInput numInput"> 
-  Cost ($/m<sup>3</sup>) if known: <input type="text" name="Cost" value="" id="Cost4" class="materialInput numInput">
-  Distance (km) if known: <input type="text" name="Distance" value="" id="Dist4" class="materialInput numInput distanceInput">
-  </div>
-
-    <div class="MatInputRow" id="MatInputRow5" style="display: none;">
-    <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow6', 'addbutton5', 'addspan5', 'Mat5', 'Mat5Disp', 'Amount5', 'Amt5Disp', 'Cost5', 'Cost5Disp', 'Dist5', 'Dist5Disp')" value='AddMat'>
-	<a class="button smallbutton addbutton" id="addbutton5"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan5">Add</p></p></a>
-	</div>
-  <strong>Material<span style="color: red">*</span>: </strong> <input type="text" name="Material" value="" id="Mat5" class="materialInput">
-  Amount (kg) if known: <input type="text" name="Amount" value="" id="Amount5" class="materialInput numInput"> 
-  Cost ($/m<sup>3</sup>) if known: <input type="text" name="Cost" value="" id="Cost5" class="materialInput numInput">
-  Distance if known: <input type="text" name="Distance" value="" id="Dist5" class="materialInput numInput distanceInput">
-  </div>
 
   <div class="smallcontainer" onclick="openTab('Location', document.getElementById('LocTabLink'))" value='OpenLocation' style="position: relative; top: 55%; left: 47.5%;">
 	<a class="button smallbutton" id="openLocation"><span style="width: 35px; font-size: 18px">></span>NEXT</a>
@@ -219,122 +186,124 @@
 
 </footer>
 
-<script>
+<script>//Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 
-    //Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-    
-        var materials = [];
-        var roofs = [];
-        var superstructures = [];
-        var foundations = [];
-        var userMaterials = [];
-        var avaliableRoofs = [];
-        var avaliableSuperstructures = [];
-        var avaliableFoundation = [];
-        var possibleStructs = [];
-       
+var materials = [];
+var roofs = [];
+var superstructures = [];
+var foundations = [];
+var userMaterials = [];
+var avaliableRoofs = [];
+var avaliableSuperstructures = [];
+var avaliableFoundation = [];
+var possibleStructs = [];
+
 
 function displayNextRow(RowName, ButtonName, SpanName, matInfo, matDispField, amtInfo, amtDispField, costInfo, costDispField, distInfo, distDispField) {
 
 
-	document.getElementById('placeholderText').innerHTML = "";
-	matValue = document.getElementById(matInfo).value;
-	amtValue = document.getElementById(amtInfo).value;
-	costValue = document.getElementById(costInfo).value;
-	distValue = document.getElementById(distInfo).value;
+        document.getElementById('placeholderText').innerHTML = "";
+        matValue = document.getElementById(matInfo).value;
+        amtValue = document.getElementById(amtInfo).value;
+        costValue = document.getElementById(costInfo).value;
+        distValue = document.getElementById(distInfo).value;
 
-	document.getElementById(matDispField).innerHTML = matValue;
-	document.getElementById(amtDispField).innerHTML = amtValue;
-	document.getElementById(costDispField).innerHTML = costValue;
-	document.getElementById(distDispField).innerHTML = distValue;
+        document.getElementById(matDispField).innerHTML = matValue;
+        document.getElementById(amtDispField).innerHTML = amtValue;
+        document.getElementById(costDispField).innerHTML = costValue;
+        document.getElementById(distDispField).innerHTML = distValue;
 
-	document.getElementById(SpanName).innerHTML = "Edit";
-	document.getElementById(RowName).style.display = 'block';
+        document.getElementById(SpanName).innerHTML = "Edit";
+        document.getElementById(RowName).style.display = 'block';
 
-    
-    inputMat = document.getElementById(newInfo).value;
-    userMaterials.push(inputMat);
-    
+
+        inputMat = document.getElementById(newInfo).value;
+        userMaterials.push(inputMat);
+
+}
+function addField(n) {
+        var tr = n.parentNode.parentNode.cloneNode(true);
+        document.getElementById('tbl').appendChild(tr);
 }
 
 
 function clearAll() {
-	document.getElementById('placeholderText').innerHTML = "You have not entered any information yet";
+        document.getElementById('placeholderText').innerHTML = "You have not entered any information yet";
 
-	 document.getElementById('Mat1').value = "";
-	 document.getElementById('Mat2').value = "";
-	 document.getElementById('Mat3').value = "";
-	 document.getElementById('Mat4').value = "";
-	 document.getElementById('Mat5').value = "";
+        document.getElementById('Mat1').value = "";
+        document.getElementById('Mat2').value = "";
+        document.getElementById('Mat3').value = "";
+        document.getElementById('Mat4').value = "";
+        document.getElementById('Mat5').value = "";
 
-	 document.getElementById('Amount1').value = "";
-	 document.getElementById('Amount2').value = "";
-	 document.getElementById('Amount3').value = "";
-	 document.getElementById('Amount4').value = "";
-	 document.getElementById('Amount5').value = "";
+        document.getElementById('Amount1').value = "";
+        document.getElementById('Amount2').value = "";
+        document.getElementById('Amount3').value = "";
+        document.getElementById('Amount4').value = "";
+        document.getElementById('Amount5').value = "";
 
-	 document.getElementById('Cost1').value = "";
-	 document.getElementById('Cost2').value = "";
-	 document.getElementById('Cost3').value = "";
-	 document.getElementById('Cost4').value = "";
-	 document.getElementById('Cost5').value = "";
+        document.getElementById('Cost1').value = "";
+        document.getElementById('Cost2').value = "";
+        document.getElementById('Cost3').value = "";
+        document.getElementById('Cost4').value = "";
+        document.getElementById('Cost5').value = "";
 
-	 document.getElementById('Dist1').value = "";
-	 document.getElementById('Dist2').value = "";
-	 document.getElementById('Dist3').value = "";
-	 document.getElementById('Dist4').value = "";
-	 document.getElementById('Dist5').value = "";
+        document.getElementById('Dist1').value = "";
+        document.getElementById('Dist2').value = "";
+        document.getElementById('Dist3').value = "";
+        document.getElementById('Dist4').value = "";
+        document.getElementById('Dist5').value = "";
 
-	 document.getElementById('addspan1').innerHTML = "Add";
-	 document.getElementById('addspan2').innerHTML = "Add";
-	 document.getElementById('addspan3').innerHTML = "Add";
-	 document.getElementById('addspan4').innerHTML = "Add";
-	 document.getElementById('addspan5').innerHTML = "Add";
+        document.getElementById('addspan1').innerHTML = "Add";
+        document.getElementById('addspan2').innerHTML = "Add";
+        document.getElementById('addspan3').innerHTML = "Add";
+        document.getElementById('addspan4').innerHTML = "Add";
+        document.getElementById('addspan5').innerHTML = "Add";
 
-	 document.getElementById('Mat2Disp').innerHTML = "";
-	 document.getElementById('Amt2Disp').innerHTML = "";
-	 document.getElementById('Cost2Disp').innerHTML = "";
-	 document.getElementById('Dist2Disp').innerHTML = "";
+        document.getElementById('Mat2Disp').innerHTML = "";
+        document.getElementById('Amt2Disp').innerHTML = "";
+        document.getElementById('Cost2Disp').innerHTML = "";
+        document.getElementById('Dist2Disp').innerHTML = "";
 
-	 document.getElementById('Mat3Disp').innerHTML = "";
-	 document.getElementById('Amt3Disp').innerHTML = "";
-	 document.getElementById('Cost3Disp').innerHTML = "";
-	 document.getElementById('Dist3Disp').innerHTML = "";
+        document.getElementById('Mat3Disp').innerHTML = "";
+        document.getElementById('Amt3Disp').innerHTML = "";
+        document.getElementById('Cost3Disp').innerHTML = "";
+        document.getElementById('Dist3Disp').innerHTML = "";
 
-	 document.getElementById('Mat4Disp').innerHTML = "";
-	 document.getElementById('Amt4Disp').innerHTML = "";
-	 document.getElementById('Cost4Disp').innerHTML = "";
-	 document.getElementById('Dist4Disp').innerHTML = "";
+        document.getElementById('Mat4Disp').innerHTML = "";
+        document.getElementById('Amt4Disp').innerHTML = "";
+        document.getElementById('Cost4Disp').innerHTML = "";
+        document.getElementById('Dist4Disp').innerHTML = "";
 
-	 document.getElementById('Mat5Disp').innerHTML = "";
-	 document.getElementById('Amt5Disp').innerHTML = "";
-	 document.getElementById('Cost5Disp').innerHTML = "";
-	 document.getElementById('Dist5Disp').innerHTML = "";
+        document.getElementById('Mat5Disp').innerHTML = "";
+        document.getElementById('Amt5Disp').innerHTML = "";
+        document.getElementById('Cost5Disp').innerHTML = "";
+        document.getElementById('Dist5Disp').innerHTML = "";
 
 
 }
 
-function openTab(tabName,elmnt) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
+function openTab(tabName, elmnt) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
 
-	    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.backgroundColor = "";
-    }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
 
-    document.getElementById(tabName).style.display = "block";
-	elmnt.style.backgroundColor = '#55A2B0';
-	elmnt.style.color = 'black';
+        document.getElementById(tabName).style.display = "block";
+        elmnt.style.backgroundColor = '#55A2B0';
+        elmnt.style.color = 'black';
 
 
-    }
+}
 
-    function hardCodeMaterials() {
+function hardCodeMaterials() {
         roofs.push(Block("F1"), 3546.3, ["wood", "CGI sheet"]);
         roofs.push(Block("F2"), 2236.72, ["wood", "slate"]);
         roofs.push(Block("F3"), 4327, ["bamboo", "CGI sheet"]);
@@ -344,23 +313,23 @@ function openTab(tabName,elmnt) {
 
         roofs.push(Block("F14"), 3456.89, ["brick", "concrete", "reinforcing bar", "mortar"]);
         roofs.push(Block("F15"), 1988.74, ["stone", "concrete", "reinforcing bar", "mortar"]);
-    }
+}
 
-    function Block(name, energyCost, constraints) {
+function Block(name, energyCost, constraints) {
         this.name = name;
         this.energyCost = energyCost;
         this.constraints = constraints;
-    }
+}
 
-    function buildUserMaterials(name) {
-        
+function buildUserMaterials(name) {
+
         var material = new Object();
         material.name = name;
 
         userMaterials.push(material);
-    }
+}
 
-    function buildBlocks() {
+function buildBlocks() {
         for (i = 0; i < roofs.length; i++) {
             if (constraintsMet(roofs[i].constraints)) {
                 avaliableRoofs.push(roofs[i]);
@@ -378,9 +347,9 @@ function openTab(tabName,elmnt) {
                 avaliableFoundation.push(roofs[i]);
             }
         }
-    }
+}
 
-    function constraintsMet(constraints) {
+function constraintsMet(constraints) {
 
         for (i = 0; i < constraints.length; i++) {
             if (!materialEntered(constraints[i].name)) {
@@ -389,9 +358,9 @@ function openTab(tabName,elmnt) {
         }
 
         return true;
-    }
+}
 
-    function materialEntered(input) {
+function materialEntered(input) {
 
         for (i = 0; i < userMaterials; i++) {
             if (userMaterials[i].name == input) {
@@ -400,9 +369,9 @@ function openTab(tabName,elmnt) {
         }
 
         return false;
-    }
+}
 
-    function buildStruct(roof, superstructure,foundations) {
+function buildStruct(roof, superstructure, foundations) {
 
         var struct = new Object();
         struct.roof = roof;
@@ -410,22 +379,22 @@ function openTab(tabName,elmnt) {
         struct.foundation = foundations;
 
         possibleStructs.push(struct);
-    }
-    
-    function energyCalc(index) {
+}
+
+function energyCalc(index) {
         possibleStructs[index].energyCost = possibleStructs[index].roof.energyCost + possibleStructs[index].foundation.energyCost + possibleStructs[index].superstructure.energyCost;
-    }
-    
-    function babyAlgo() {
+}
+
+function babyAlgo() {
 
         buildBlocks;
 
         var curIndex = 0;
         var energyIndex = 0;
-        
+
         for (i = 0; i < avaliableFoundation.length - 1; i++) {
             for (j = 0; j < avaliableSuperstructures.length - 1; j++) {
-                for (k = 0; k < avaliableRoofs.length - 1; k++) { 
+                for (k = 0; k < avaliableRoofs.length - 1; k++) {
                     buildStruct(avaliableRoofs[k], avaliableSuperstructures[j], avaliableFoundation[i]);
                     energyCalc(curIndex);
                     if (possibleStructs[curIndex].energyCost < possibleStructs[energyIndex].energyCost) {
@@ -443,11 +412,7 @@ function openTab(tabName,elmnt) {
             document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
         }
 
-    }
-    
-    
-
-</script>
+}</script>
 
 
 </body>
