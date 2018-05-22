@@ -65,7 +65,7 @@
 
 <div id="AvailableMat" class="tabcontent" style="min-height: 400px">
   <h3 style="margin-top: 30px;">Enter available materials here:</h3>
-  <p><strong>This includes materials you own, materials you have access to, and materials you are able to purchase. Only fields marked with an <span style="color: red">*</span> are required, but the more information you provide, the more accurate your results will be.</strong></p>
+  <p><strong>This includes materials you own, materials you have access to, and materials you are able to purchase. Only fields marked with an <strong?* are required, but the more information you provide, the more accurate your results will be.</strong></p>
 <table id="tbl">
     <tr>
         <td><strong>Material*: </strong></td>
@@ -96,20 +96,19 @@
 
 </div>
 
-<div class="InputDisplay" style="min-height: 500px; float: right">
+<div class="InputDisplay" style="min-height: 500px; min-width: 400px; float: right;">
 	<h3>Previously Entered Info</h3>
 	<table id="PrevInfoTable">
 	  <tr>
-		<th>Material</th>
-		<th>Amount</th>
-		<th>Cost</th>
-		<th>Distance</th>
+		<td>Material</td>
+		<td>Amount</td>
+		<td>Cost</td>
+		<td>Distance</td>
           </tr>
 	</table> 
-	<p id="placeholderText">You have not entered any information yet.</p>
 
-	<div class="smallcontainer clearcontainer" onclick='clearAll()' value='Clear'>
-	<a class="button smallbutton clearbutton"><span>✓</span>Clear All</a>
+	<div class="smallcontainer clearcontainer clickclear" onclick='clearAll()' value='Clear All'>
+	<a class="button smallbutton clearbutton"><span>✓</span>Clear</a>
 	</div>
 </div>
 </div>
@@ -208,6 +207,14 @@ function addField() {
         cell7.innerHTML = "Distance (km) from material:";
         cell8.innerHTML = "<input type = 'text'/>";
         cell9.innerHTML = "<input type='button' class ='addbutton button' value='Add Row' onclick='addField(); '/>"
+
+        var rec_table = document.getElementById("PrevInfoTable");
+        var rec_tablelength = rec_table.rows.length;
+        var rec_row = rec_table.insertRow(rec_tablelength)
+        for (i = 0; i < 4; i++) {
+            var newCell = rec_row.insertCell(i);
+            newCell.innerHTML = document.getElementById("tbl").rows[(tablelength - 1)].cells[(1 + (2 * i))].children[0].value;
+        }
 }
 
 
