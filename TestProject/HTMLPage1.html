@@ -68,27 +68,17 @@
   <p><strong>This includes materials you own, materials you have access to, and materials you are able to purchase. Only fields marked with an <span style="color: red">*</span> are required, but the more information you provide, the more accurate your results will be.</strong></p>
 <table id="tbl">
     <tr>
-        <td><strong>Material<span style="color: red">*</span>: </strong></td>
-        <td><input type="text" name="Name" /></td>
+        <td><strong>Material*: </strong></td>
+        <td><input type="text" name="Name" ></td>
         <td>Amount (kg):</td>
         <td><input type="text" name="Amount" /></td>
         <td>Cost of Material ($/m<sup>3</sup>):</td>
         <td><input type="text" name="Cost" /></td>
-        <td>Distance (km) from material</td>
+        <td>Distance (km) from material:</td>
         <td><input type="text" name="Distance" /></td>
-        <td><input type="button" value="Add Row" onclick="addField(this);"/></td>
+        <td><input type="button" class ="addbutton button" value="Add Row" onclick="addField();"/></td>
     </tr>
 </table>
-  <div class="MatInputRow" id="MatInputRow1">
-    <div class="smallcontainer addcontainer" onclick="displayNextRow('MatInputRow2', 'addbutton1', 'addspan1', 'Mat1', 'Mat1Disp', 'Amount1', 'Amt1Disp', 'Cost1', 'Cost1Disp', 'Dist1', 'Dist1Disp')" value='AddMat'>
-	<a class="button smallbutton addbutton" id="addbutton1"><span style="width: 35px; font-size: 18px">+</span><p class="addspan" id="addspan1">Add</p></a>
-	</div>
-
-  <div class="smallcontainer" onclick="openTab('Location', document.getElementById('LocTabLink'))" value='OpenLocation' style="position: relative; top: 55%; left: 47.5%;">
-	<a class="button smallbutton" id="openLocation"><span style="width: 35px; font-size: 18px">></span>NEXT</a>
-	</div>
-
-    
 </div>
 
 <div id="Location" class="tabcontent" style="min-height: 400px">
@@ -106,7 +96,7 @@
 
 </div>
 
-<div class="InputDisplay" style="min-height: 500px">
+<div class="InputDisplay" style="min-height: 500px; float: right">
 	<h3>Previously Entered Info</h3>
 	<table id="PrevInfoTable">
 	  <tr>
@@ -114,40 +104,11 @@
 		<th>Amount</th>
 		<th>Cost</th>
 		<th>Distance</th>
-	  <tr>
-		<td class="firstcol" id="Mat1Disp"></td>
-		<td id="Amt1Disp"></td> 
-		<td id="Cost1Disp"></td>
-		<td id="Dist1Disp"></td>
-	  </tr>
-	  <tr>
-		<td class="firstcol" id="Mat2Disp"></td>
-		<td id="Amt2Disp"></td> 
-		<td id="Cost2Disp"></td>
-		<td id="Dist2Disp"></td>
-	  </tr>
-	  <tr>
-		<td class="firstcol" id="Mat3Disp"></td>
-		<td id="Amt3Disp"></td> 
-		<td id="Cost3Disp"></td>
-		<td id="Dist3Disp"></td>
-	  </tr>
-	   <tr>
-		<td class="firstcol" id="Mat4Disp"></td>
-		<td id="Amt4Disp"></td> 
-		<td id="Cost4Disp"></td>
-		<td id="Dist4Disp"></td>
-	  </tr>
-	   <tr>
-		<td class="firstcol" id="Mat5Disp"></td>
-		<td id="Amt5Disp"></td> 
-		<td id="Cost5Disp"></td>
-		<td id="Dist5Disp"></td>
-	  </tr>
+          </tr>
 	</table> 
 	<p id="placeholderText">You have not entered any information yet.</p>
 
-	<div class="smallcontainer clearcontainer" onclick='clearAll()' value='Clear All'>
+	<div class="smallcontainer clearcontainer" onclick='clearAll()' value='Clear'>
 	<a class="button smallbutton clearbutton"><span>✓</span>Clear All</a>
 	</div>
 </div>
@@ -200,6 +161,7 @@ var avaliableFoundation = [];
 var possibleStructs = [];
 
 
+
 function displayNextRow(RowName, ButtonName, SpanName, matInfo, matDispField, amtInfo, amtDispField, costInfo, costDispField, distInfo, distDispField) {
 
 
@@ -222,9 +184,30 @@ function displayNextRow(RowName, ButtonName, SpanName, matInfo, matDispField, am
         userMaterials.push(inputMat);
 
 }
-function addField(n) {
-        var tr = n.parentNode.parentNode.cloneNode(true);
-        document.getElementById('tbl').appendChild(tr);
+
+function addField() {
+        var table = document.getElementById("tbl");
+        var tablelength = table.rows.length;
+        var row = table.insertRow(tablelength);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+        var cell9 = row.insertCell(8);
+
+        cell1.innerHTML = "<strong>Material*:</strong>";
+        cell2.innerHTML = "<input type='text'/>";
+        cell3.innerHTML = "Amount (kg):";
+        cell4.innerHTML = "<input type = 'text'/>";
+        cell5.innerHTML = "Cost of Material ($/m<sup>3</sup>):";
+        cell6.innerHTML = "<input type = 'text'/>";
+        cell7.innerHTML = "Distance (km) from material:";
+        cell8.innerHTML = "<input type = 'text'/>";
+        cell9.innerHTML = "<input type='button' class ='addbutton button' value='Add Row' onclick='addField(); '/>"
 }
 
 
