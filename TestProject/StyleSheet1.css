@@ -191,6 +191,8 @@ body {
 
 	.InputOverall {
 		height: 500px;
+        float: right;
+        display: inline-block;
 	}
 
 	.InputTabs {
@@ -198,24 +200,22 @@ body {
 		float: left;
 		margin-left: 0%;
 		border-radius: 5px;
-		height: 600px;
 		margin-bottom: -90px;
 		border-top: 2px solid #55A2B0;
+        display: inline-block;
 
 
 	}
 
-	.InputDisplay {
-		width: 25%;
-		background-color: white;
-		float: right;
-		margin-right: 0%;
-		height: 500px;
-		border-radius: 5px;
-		text-align: center;
-		overflow: auto;
-		border: 2px solid #55A2B0;
-	}
+.InputDisplay {
+    background-color: white;
+    height: 500px;
+    border-radius: 5px;
+    text-align: center;
+    overflow: auto;
+    border: 2px solid #55A2B0;
+    display: inline-block;
+}
 
 
 	/* Set default styles for tab content */
@@ -263,7 +263,7 @@ body {
 	.container { width: 500px; text-align: center; margin: auto; margin-top: 20px;}
 	.smallcontainer { width: 8%; text-align: center; font-size: 12px; margin: auto; margin-top: -10px;}
 	.clearcontainer {width: 40%;}
-	.addcontainer {float: right; margin-left: 0px;}
+	.addcontainer {float: right; margin-left: 0px; width: 100%;}
 	.copyright { margin-top: 50px; font-size: 12px; text-transform: uppercase; }
 	.copyright a { text-decoration: none; padding: 5px;background: #c0392b; color: #FFFFFF; }
 	.copyright a:hover { background: transparent; color: #c0392b; }
@@ -518,5 +518,16 @@ height: 30px;
 	text-align: center;
 }
 
+.table{
+    float: right;
+    position: absolute;
+}
+.clickclear{
+    margin-top: 5%;
+}
+
+.addbuttonrow {
+    width: 9%;
+}
 
 
