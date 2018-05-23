@@ -68,7 +68,7 @@
   <p><strong>This includes materials you own, materials you have access to, and materials you are able to purchase. Only fields marked with an <strong?* are required, but the more information you provide, the more accurate your results will be.</strong></p>
 <table id="tbl">
     <tr>
-        <td><strong>Material*: </strong></td>
+        <td><strong>Material<span style="color: red;">*</span>: </strong></td>
         <td><input type="text" name="Name" ></td>
         <td>Amount (kg):</td>
         <td><input type="text" name="Amount" /></td>
@@ -190,7 +190,7 @@ function addField() {
         var cell8 = row.insertCell(7);
         var cell9 = row.insertCell(8);
 
-        cell1.innerHTML = "<strong>Material*:</strong>";
+        cell1.innerHTML = "<strong>Material<span style='color: red;'>*</span>: </strong>";
         cell2.innerHTML = "<input type='text'/>";
         cell3.innerHTML = "Amount (kg):";
         cell4.innerHTML = "<input type = 'text'/>";
