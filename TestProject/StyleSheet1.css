@@ -191,6 +191,8 @@ body {
 
 	.InputOverall {
 		height: 500px;
+        float: right;
+        display: inline-block;
 	}
 
 	.InputTabs {
@@ -198,24 +200,22 @@ body {
 		float: left;
 		margin-left: 0%;
 		border-radius: 5px;
-		height: 600px;
 		margin-bottom: -90px;
 		border-top: 2px solid #55A2B0;
+        display: inline-block;
 
 
 	}
 
-	.InputDisplay {
-		width: 25%;
-		background-color: white;
-		float: right;
-		margin-right: 0%;
-		height: 500px;
-		border-radius: 5px;
-		text-align: center;
-		overflow: auto;
-		border: 2px solid #55A2B0;
-	}
+.InputDisplay {
+    background-color: white;
+    height: 500px;
+    border-radius: 5px;
+    text-align: center;
+    overflow: auto;
+    border: 2px solid #55A2B0;
+    display: inline-block;
+}
 
 
 	/* Set default styles for tab content */
@@ -518,5 +518,12 @@ height: 30px;
 	text-align: center;
 }
 
+.table{
+    float: right;
+    position: absolute;
+}
+.clickclear{
+    margin-top: 5%;
+}
 
 
