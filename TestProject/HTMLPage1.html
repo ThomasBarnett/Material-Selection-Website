@@ -151,47 +151,7 @@
 
 </footer>
 
-<<<<<<< HEAD
-<script>
 
-    //Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-    
-        var materials = [];
-        var roofs = [];
-        var superstructures = [];
-        var foundations = [];
-        var userMaterials = [];
-        var avaliableRoofs = [];
-        var avaliableSuperstructures = [];
-        var avaliableFoundation = [];
-        var possibleStructs = [];
-       
-
-function displayNextRow(RowName, ButtonName, SpanName, matInfo, matDispField, amtInfo, amtDispField, costInfo, costDispField, distInfo, distDispField) {
-
-    
-	document.getElementById('placeholderText').innerHTML = "";
-	matValue = document.getElementById(matInfo).value;
-	amtValue = document.getElementById(amtInfo).value;
-	costValue = document.getElementById(costInfo).value;
-    distValue = document.getElementById(distInfo).value;
-
-	document.getElementById(matDispField).innerHTML = matValue;
-	document.getElementById(amtDispField).innerHTML = amtValue;
-	document.getElementById(costDispField).innerHTML = costValue;
-	document.getElementById(distDispField).innerHTML = distValue;
-
-	document.getElementById(SpanName).innerHTML = "Edit";
-    document.getElementById(RowName).style.display = 'block';
-
-
-    
-    inputMat = document.getElementById(matInfo).value;
-    buildUserMaterials(inputMat);
-    
-    
-=======
 <script>//Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
@@ -242,8 +202,12 @@ function addField() {
         for (i = 0; i < 4; i++) {
             var newCell = rec_row.insertCell(i);
             newCell.innerHTML = document.getElementById("tbl").rows[(tablelength - 1)].cells[(1 + (2 * i))].children[0].value;
+
+    inputMat = document.getElementById(matInfo).value;
+    buildUserMaterials(inputMat);
+
         }
->>>>>>> 93ebae03367d0ec481bbccf898ecbe1f53a85a74
+
 }
 
 
@@ -276,7 +240,7 @@ function openTab(tabName, elmnt) {
 
 }
 
-<<<<<<< HEAD
+
     function hardCodeMaterials() {
         var const1 = ['wood', 'CGI sheet'];
  
@@ -298,36 +262,20 @@ function openTab(tabName, elmnt) {
         foundations.push(Block("gum", 10, ["gum"]));
         
     }
-=======
-function hardCodeMaterials() {
-        roofs.push(Block("F1"), 3546.3, ["wood", "CGI sheet"]);
-        roofs.push(Block("F2"), 2236.72, ["wood", "slate"]);
-        roofs.push(Block("F3"), 4327, ["bamboo", "CGI sheet"]);
->>>>>>> 93ebae03367d0ec481bbccf898ecbe1f53a85a74
 
     function Block(nameIn, energyCostIn, constraintsIn) {
         var blck = new Object();
 
-<<<<<<< HEAD
         blck.name = nameIn;
         blck.energyCost = energyCostIn;
         blck.constraints = constraintsIn;
 
         return blck;
     }
-=======
-        roofs.push(Block("F14"), 3456.89, ["brick", "concrete", "reinforcing bar", "mortar"]);
-        roofs.push(Block("F15"), 1988.74, ["stone", "concrete", "reinforcing bar", "mortar"]);
-}
 
-function Block(name, energyCost, constraints) {
-        this.name = name;
-        this.energyCost = energyCost;
-        this.constraints = constraints;
-}
 
 function buildUserMaterials(name) {
->>>>>>> 93ebae03367d0ec481bbccf898ecbe1f53a85a74
+
 
         var material = new Object();
         material.name = name;
@@ -335,12 +283,9 @@ function buildUserMaterials(name) {
         userMaterials.push(material);
 }
 
-<<<<<<< HEAD
-    function buildBlocks(){
-        
-=======
+
 function buildBlocks() {
->>>>>>> 93ebae03367d0ec481bbccf898ecbe1f53a85a74
+
         for (i = 0; i < roofs.length; i++) {
             if (constraintsMet(roofs[i].constraints) == true) {
                 avaliableRoofs.push(roofs[i]);
@@ -362,12 +307,12 @@ function buildBlocks() {
             }
             
         }
-<<<<<<< HEAD
+
         
     }
-=======
-}
->>>>>>> 93ebae03367d0ec481bbccf898ecbe1f53a85a74
+
+
+
 
 function constraintsMet(constraints) {
 
@@ -380,18 +325,12 @@ function constraintsMet(constraints) {
         return true;
 }
 
-<<<<<<< HEAD
-    function materialEntered(input) {
-        
-        for (k = 0; k < userMaterials.length; k++) {
-            
-            if (userMaterials[k].name == input) {
-=======
+
+    
 function materialEntered(input) {
 
         for (i = 0; i < userMaterials; i++) {
             if (userMaterials[i].name == input) {
->>>>>>> 93ebae03367d0ec481bbccf898ecbe1f53a85a74
                 return true;
             }
         }
@@ -410,7 +349,6 @@ function buildStruct(roof, superstructure, foundations) {
 
 function energyCalc(index) {
         possibleStructs[index].energyCost = possibleStructs[index].roof.energyCost + possibleStructs[index].foundation.energyCost + possibleStructs[index].superstructure.energyCost;
-<<<<<<< HEAD
     }
     
     function babyAlgo() {
@@ -424,20 +362,6 @@ function energyCalc(index) {
         for (i = 0; i < avaliableFoundation.length; i++) {
             for (j = 0; j < avaliableSuperstructures.length; j++) {
                 for (k = 0; k < avaliableRoofs.length; k++) { 
-=======
-}
-
-function babyAlgo() {
-
-        buildBlocks;
-
-        var curIndex = 0;
-        var energyIndex = 0;
-
-        for (i = 0; i < avaliableFoundation.length - 1; i++) {
-            for (j = 0; j < avaliableSuperstructures.length - 1; j++) {
-                for (k = 0; k < avaliableRoofs.length - 1; k++) {
->>>>>>> 93ebae03367d0ec481bbccf898ecbe1f53a85a74
                     buildStruct(avaliableRoofs[k], avaliableSuperstructures[j], avaliableFoundation[i]);
                     energyCalc(curIndex);
                     if (possibleStructs[curIndex].energyCost < possibleStructs[energyIndex].energyCost) {
@@ -456,7 +380,6 @@ function babyAlgo() {
             document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
         }
 
-<<<<<<< HEAD
         //useful display when debugging algorithm
         /*
         document.write(" ");
@@ -472,9 +395,7 @@ function babyAlgo() {
     
 
 </script>
-=======
-}</script>
->>>>>>> 93ebae03367d0ec481bbccf898ecbe1f53a85a74
+
 
 
 </body>
