@@ -138,10 +138,11 @@
 <div class="container">
 	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
 </div>
-<div class="container" id="demo">
+<div class="container">
+    <p>Date of Last Update: May 25th, 2018</p>
 </div>
 <div class="container" >
-    Version 0.1
+    <p>Version 0.1</p>
 </div>
 
 		<div class="select-style">
@@ -168,13 +169,6 @@ var avaliableRoofs = [];
 var avaliableSuperstructures = [];
 var avaliableFoundation = [];
 var possibleStructs = [];
-
-window.onload = function() {
-        var d = new Date();
-        document.getElementById("demo").innerHTML = "Current Date: " + d.toDateString();
-
-
-}
 
 function addField() {
         var table = document.getElementById("tbl");
