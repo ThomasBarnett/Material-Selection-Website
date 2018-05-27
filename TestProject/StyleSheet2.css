@@ -498,4 +498,38 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ccfffff
 
 h6 {
 	margin-bottom: -20px;
+	margin-top: 20px;
+	font-size: 1em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+.OutputTable{
+	width: 90%;
+	margin-left: 5%;
+	font-size: 1.1em;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-bottom: 1.5%;
+}
+
+.OutputTable td{
+	text-align: left;
+}
+
+.OutputTable th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: .5em;
+}
+
+.bigheader{
+	font-size: 1.3em;
+	background-color: rgba(2,77,90, 0.3)
+}
+
+.mediumheader{
+	font-size: 1.2em;
 }
