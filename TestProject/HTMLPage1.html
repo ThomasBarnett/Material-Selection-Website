@@ -357,6 +357,9 @@ function buildBlocks() {
     function energyCalc(index) {
         possibleStructs[index].energyCost = possibleStructs[index].roof.energyCost + possibleStructs[index].foundations.energyCost + possibleStructs[index].superstructure.energyCost;
     }
+    function costCalc(index) {
+        possibleStructs[index].cost = possibleStructs[index].roof.cost + possibleStructs[index].foundations.cost + possibleStructs[index].superstructure.cost;
+    }
 
     function grabInput() {
 
@@ -379,8 +382,9 @@ function buildBlocks() {
 
         var curIndex = 0;
         var energyIndex = 0;
+        var costIndex = 0;
         
-        document.write(avaliableFoundation.length);
+        
         for (i = 0; i < avaliableFoundation.length; i++) {
             for (j = 0; j < avaliableSuperstructures.length; j++) {
                 for (k = 0; k < avaliableRoofs.length; k++) { 
@@ -389,6 +393,10 @@ function buildBlocks() {
                     if (possibleStructs[curIndex].energyCost < possibleStructs[energyIndex].energyCost) {
                         energyIndex = curIndex;
                     }
+                    costCalc(curIndex);
+                    if (possibleStructs[curIndex].cost < possibleStructs[energyIndex].cost) {
+                        costIndex = curIndex;
+                    }
                     curIndex++;
                 }
             }
@@ -396,21 +404,27 @@ function buildBlocks() {
 
         
         if (typeof (Storage) !== "undefined") {
-            // Store
-            localStorage.setItem("energy solution", possibleStructs[energyIndex]);
+            localStorage.setItem("energy solution roof", possibleStructs[energyIndex].roof.name);
+            localStorage.setItem("energy solution foundation", possibleStructs[energyIndex].foundations.name);
+            localStorage.setItem("energy solution roof", possibleStructs[energyIndex].superstructure.name);
+            localStorage.setItem("cost solution roof", possibleStructs[costIndex].roof.name);
+            localStorage.setItem("cost solution foundation", possibleStructs[costIndex].foundations.name);
+            localStorage.setItem("cost solution roof", possibleStructs[costIndex].superstructure.name);
+            
         } else {
-            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+
         }
 
         //useful display when debugging algorithm
-        
         document.write(" ");
         document.write(energyIndex);
         document.write(" Roof:");
         document.write(possibleStructs[energyIndex].roof.name);
         document.write(" Foundation:");
         document.write(possibleStructs[energyIndex].foundations.name);
-        
+        document.write(" Superstructure:");
+        document.write(possibleStructs[energyIndex].superstructure.name);
+
         
         
     }
