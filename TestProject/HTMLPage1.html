@@ -202,11 +202,14 @@ function addField() {
 
         var rec_table = document.getElementById("PrevInfoTable");
         var rec_tablelength = rec_table.rows.length;
-        var rec_row = rec_table.insertRow(rec_tablelength)
+    var rec_row = rec_table.insertRow(rec_tablelength);
+
+    
+
         for (i = 0; i < 4; i++) {
             var newCell = rec_row.insertCell(i);
             newCell.innerHTML = document.getElementById("tbl").rows[(tablelength - 1)].cells[(1 + (2 * i))].children[0].value;
-
+            
         }
 
 }
@@ -243,8 +246,6 @@ function openTab(tabName, elmnt) {
 
 
     function hardCodeMaterials() {
-        var const1 = ['wood', 'CGI sheet'];
- 
         roofs.push(Block('F1', 3546.3, ['wood', 'CGI sheet']));
         roofs.push(Block("F2", 2236.72, ["wood", "slate"]));
         roofs.push(Block("F3", 4327, ["bamboo", "CGI sheet"]));
@@ -277,7 +278,6 @@ function openTab(tabName, elmnt) {
 
 function buildUserMaterials(name) {
 
-
         var material = new Object();
         material.name = name;
 
@@ -288,6 +288,7 @@ function buildUserMaterials(name) {
 function buildBlocks() {
 
         for (i = 0; i < roofs.length; i++) {
+            
             if (constraintsMet(roofs[i].constraints) == true) {
                 avaliableRoofs.push(roofs[i]);
             }
@@ -308,6 +309,7 @@ function buildBlocks() {
             }
             
         }
+        
 
         
     }
@@ -315,8 +317,9 @@ function buildBlocks() {
 
 
 
-function constraintsMet(constraints) {
+    function constraintsMet(constraints) {
 
+        
         for (j = 0; j < constraints.length; j++) {
             if (materialEntered(constraints[j]) == false) {
                 return false;
@@ -324,55 +327,55 @@ function constraintsMet(constraints) {
         }
         
         return true;
-}
-
-    function grabMaterial() {
-        var table = document.getElementById('PrevInfoTable');
-        var length = table.rows.length;
-        
-        for (i = 1; i < length; i++) {
-            var inputMat = table.rows[i].cells[0].children[0].value;
-            document.write(inputMat);
-
-            buildUserMaterials(inputMat);
-        }
     }
-
     
-function materialEntered(input) {
+    function materialEntered(input) {
 
-        for (i = 0; i < userMaterials; i++) {
-            if (userMaterials[i].name == input) {
+        for (k = 0; k < userMaterials.length; k++) {
+            if (userMaterials[k].name == input) {
                 return true;
             }
         }
 
         return false;
-}
+    }
 
-function buildStruct(roof, superstructure, foundations) {
+    function buildStruct(roof, superstructure, foundations) {
 
         var struct = new Object();
         struct.roof = roof;
         struct.superstructure = superstructure;
-        struct.foundation = foundations;
+        struct.foundations = foundations;
         possibleStructs.push(struct);
-}
-
-function energyCalc(index) {
-        possibleStructs[index].energyCost = possibleStructs[index].roof.energyCost + possibleStructs[index].foundation.energyCost + possibleStructs[index].superstructure.energyCost;
     }
-    
-    function babyAlgo() {
-        grabMaterial();
-        hardCodeMaterials();
 
-        buildBlocks();
+    function energyCalc(index) {
+        possibleStructs[index].energyCost = possibleStructs[index].roof.energyCost + possibleStructs[index].foundations.energyCost + possibleStructs[index].superstructure.energyCost;
+    }
+
+    function grabInput() {
+
+        var table = document.getElementById("PrevInfoTable");
+        var tablelength = table.rows.length;
+
         
+        for (i = 1; i < tablelength; i++) {
+            var temp = document.getElementById("PrevInfoTable").rows[i].cells[0].innerText;
+            buildUserMaterials(temp);
+        }
+        
+    }
+
+    function babyAlgo() {
+        hardCodeMaterials();
+        grabInput();
+        
+        buildBlocks();
 
         var curIndex = 0;
         var energyIndex = 0;
         
+        document.write(avaliableFoundation.length);
         for (i = 0; i < avaliableFoundation.length; i++) {
             for (j = 0; j < avaliableSuperstructures.length; j++) {
                 for (k = 0; k < avaliableRoofs.length; k++) { 
@@ -401,7 +404,8 @@ function energyCalc(index) {
         document.write(" Roof:");
         document.write(possibleStructs[energyIndex].roof.name);
         document.write(" Foundation:");
-        document.write(possibleStructs[energyIndex].foundation.name);
+        document.write(possibleStructs[energyIndex].foundations.name);
+        
         
         
     }
