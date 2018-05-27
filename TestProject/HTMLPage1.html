@@ -69,7 +69,14 @@
 <table id="tbl">
     <tr>
         <td><strong>Material<span style="color: red;">*</span>: </strong></td>
-        <td><input type="text" name="Name" ></td>
+        <td><div class="dropdown">
+			<input onclick="showOptions()" type="button" value="Select Material" class="dropbtn" id="MatTableName"></input>
+			<div id="myDropdown" class="dropdown-content">
+			<table id="MatOptionTable">
+			</table>
+			</div>
+			</div> 
+		</td>
         <td>Amount (kg):</td>
         <td><input type="text" name="Amount" /></td>
         <td>Cost of Material ($/m<sup>3</sup>):</td>
@@ -116,6 +123,8 @@
 	</div>
 </div>
 </div>
+
+
 
 <div class="container">
 <a href="HTMLPage2.html" class="button"><span>✓</span>Recommend Materials</a>
@@ -168,12 +177,50 @@ var avaliableRoofs = [];
 var avaliableSuperstructures = [];
 var avaliableFoundation = [];
 var possibleStructs = [];
+var possibleMaterials = ["Aluminium Sheet", "Aerated Concrete", "Bamboo", "Bamboo Mat",
+"Brick", "Cement", "Cement Mortar", "Ceramic Tile", "CGI Sheet", "Concrete", 
+"Concrete Blocks", "CSEB", "Mortar","Plywood","Reinforcing Bar", "Stone", "Wood"];
+var firstTime = true;
 
 window.onload = function() {
-        var d = new Date();
-        document.getElementById("demo").innerHTML = "Current Date: " + d.toDateString();
+		var x = document.lastModified;
+        document.getElementById("demo").innerHTML = "Last Modified: " + x;
+}
 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function showOptions() {
+	var table = document.getElementById("MatOptionTable");
+	if (firstTime){
+		for(i = 0; i < possibleMaterials.length; i++){
+			var row = table.insertRow(i);
+			var cell = row.insertCell(0);
+			var index = table.rows.length;
+			cell.innerHTML = "<div onclick='ChangeValue("+ index + ")' id = '" + possibleMaterials[i] + "'>" + possibleMaterials[i] + "</div>";
+		}
+		firstTime=false;
+	}
+    document.getElementById("myDropdown").classList.toggle("show");
+}
 
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+} 
+
+function ChangeValue(x){
+	var MatName = document.getElementById("MatTableName");
+	MatName.value = possibleMaterials[x-1];
 }
 
 function addField() {
@@ -190,8 +237,9 @@ function addField() {
         var cell8 = row.insertCell(7);
         var cell9 = row.insertCell(8);
 
+
         cell1.innerHTML = "<strong>Material<span style='color: red;'>*</span>: </strong>";
-        cell2.innerHTML = "<input type='text'/>";
+        cell2.innerHTML = "<div class='dropdown'> <input onclick='showOptions()' type='button' value='Select Material' class='dropbtn' id='MatTableName'></input> <div id='myDropdown' class='dropdown-content'> <table id='MatOptionTable'> </table> </div> </div> ";
         cell3.innerHTML = "Amount (kg):";
         cell4.innerHTML = "<input type = 'text'/>";
         cell5.innerHTML = "Material Cost($/m<sup>3</sup>):";
@@ -202,8 +250,10 @@ function addField() {
 
         var rec_table = document.getElementById("PrevInfoTable");
         var rec_tablelength = rec_table.rows.length;
-        var rec_row = rec_table.insertRow(rec_tablelength)
-        for (i = 0; i < 4; i++) {
+        var rec_row = rec_table.insertRow(rec_tablelength);
+		var NewCell = rec_row.insertCell(0);
+		NewCell.innerHTML = document.getElementById("MatTableName").value;
+        for (i = 1; i < 4; i++) {
             var newCell = rec_row.insertCell(i);
             newCell.innerHTML = document.getElementById("tbl").rows[(tablelength - 1)].cells[(1 + (2 * i))].children[0].value;
 
