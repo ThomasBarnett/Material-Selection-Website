@@ -197,11 +197,14 @@ function addField() {
 
         var rec_table = document.getElementById("PrevInfoTable");
         var rec_tablelength = rec_table.rows.length;
-        var rec_row = rec_table.insertRow(rec_tablelength)
+    var rec_row = rec_table.insertRow(rec_tablelength);
+
+    
+
         for (i = 0; i < 4; i++) {
             var newCell = rec_row.insertCell(i);
             newCell.innerHTML = document.getElementById("tbl").rows[(tablelength - 1)].cells[(1 + (2 * i))].children[0].value;
-
+            
         }
 
 }
@@ -238,31 +241,42 @@ function openTab(tabName, elmnt) {
 
 
     function hardCodeMaterials() {
-        var const1 = ['wood', 'CGI sheet'];
- 
-        roofs.push(Block('F1', 3546.3, ['wood', 'CGI sheet']));
-        roofs.push(Block("F2", 2236.72, ["wood", "slate"]));
-        roofs.push(Block("F3", 4327, ["bamboo", "CGI sheet"]));
+        roofs.push(Block('F1', 3546.3, 128.25, ['Wood', 'CGI Sheet']));
+        roofs.push(Block("F2", 2236.72, 29.24, ["Wood", "Slate"]));
+        roofs.push(Block("F3", 4327, 114.68, ["Bamboo", "CGI Sheet"]));
+        roofs.push(Block("F4", 2491.74, 56.84, ["Aluminium Sheet", "Wood"]));
+        roofs.push(Block("F5", 3272.44, 43.27, ["Aluminium Sheet", "Bamboo"]));
+        roofs.push(Block("F6", 1686.48, 50, ["Plywood", "Ceramic Tile", "Wood"]));
+        roofs.push(Block("F7", 2120.18, 41.19, ["Bamboo Mat", "Ceramic Tile", "Wood"]));
 
-        superstructures.push(Block("F8", 2570.9, ["brick", "concrete", "reinforcing bar", "mortar"]));
-        superstructures.push(Block("F9", 1394.55, ["stone", "concrete", "reinforcing bar", "mortar"]));
 
-        foundations.push(Block("F14", 3456.89, ["brick", "concrete", "reinforcing bar", "mortar"]));
-        foundations.push(Block("F15", 1988.74, ["stone", "concrete", "reinforcing bar", "mortar"]));
+        superstructures.push(Block("F8", 2570.9, 373.43, ["Brick", "Concrete", "Reinforcing Bar", "Mortar"]));
+        superstructures.push(Block("F9", 1394.55, 317.47, ["Stone", "Concrete", "Reinforcing Bar", "Mortar"]));
+        superstructures.push(Block("F10", 6303.99, 99.13, ["Bamboo", "Cement Mortar", "Reinforcing Bar", "Concrete"]));
+        superstructures.push(Block("F11", 2283.01, 80.7, ["CSEB", "Concrete", "Reinforcing Bar", "Mortar"]));
+        superstructures.push(Block("F12", 13977.2, 179.21, ["Concrete Blocks", "Concrete", "Reinforcing Bar", "Mortar"]));
+        superstructures.push(Block("F13", 2103.32, 350.9, ["Brick", "Aerated Concrete", "Reinforcing Bar", "Mortar"]));
 
-        roofs.push(Block("butter", 1000, ["butter"]));
-        superstructures.push(Block("butter", 100, ["butter"]));
-        foundations.push(Block("butter", 20, ["butter"]));
-        roofs.push(Block("gum", 2000, ["gum"]));
-        superstructures.push(Block("gum", 200, ["gum"]));
-        foundations.push(Block("gum", 10, ["gum"]));
+
+        foundations.push(Block("F14", 3456.89, 557.34, ["Brick", "Concrete", "Reinforcing Bar", "Mortar"]));
+        foundations.push(Block("F15", 1988.74, 476.85, ["Stone", "Concrete", "Reinforcing Bar", "mortar"]));
+        foundations.push(Block("F16", 1988.74, 492.03, ["Brick", "Aerated Concrete", "Reinforcing Bar", "Mortar"]));
+
+
+        roofs.push(Block("butter", 1000, 1, ["butter"]));
+        superstructures.push(Block("butter", 100,1, ["butter"]));
+        foundations.push(Block("butter", 20,1, ["butter"]));
+        roofs.push(Block("gum", 2000,1, ["gum"]));
+        superstructures.push(Block("gum", 200,1, ["gum"]));
+        foundations.push(Block("gum",1, 10, ["gum"]));
         
     }
 
-    function Block(nameIn, energyCostIn, constraintsIn) {
+    function Block(nameIn, costIn, energyCostIn, constraintsIn) {
         var blck = new Object();
 
         blck.name = nameIn;
+        blck.cost = costIn;
         blck.energyCost = energyCostIn;
         blck.constraints = constraintsIn;
 
@@ -271,7 +285,6 @@ function openTab(tabName, elmnt) {
 
 
 function buildUserMaterials(name) {
-
 
         var material = new Object();
         material.name = name;
@@ -283,6 +296,7 @@ function buildUserMaterials(name) {
 function buildBlocks() {
 
         for (i = 0; i < roofs.length; i++) {
+            
             if (constraintsMet(roofs[i].constraints) == true) {
                 avaliableRoofs.push(roofs[i]);
             }
@@ -303,15 +317,15 @@ function buildBlocks() {
             }
             
         }
+        
 
         
     }
 
 
+    function constraintsMet(constraints) {
 
-
-function constraintsMet(constraints) {
-
+        
         for (j = 0; j < constraints.length; j++) {
             if (materialEntered(constraints[j]) == false) {
                 return false;
@@ -319,54 +333,58 @@ function constraintsMet(constraints) {
         }
         
         return true;
-}
-
-    function grabMaterial() {
-        var table = document.getElementById('PrevInfoTable');
-        var length = table.rows.length;
-        
-        for (i = 1; i < length; i++) {
-            var inputMat = table.rows[i].cells[0].children[0].value;
-            document.write(inputMat);
-
-            buildUserMaterials(inputMat);
-        }
     }
-
     
-function materialEntered(input) {
+    function materialEntered(input) {
 
-        for (i = 0; i < userMaterials; i++) {
-            if (userMaterials[i].name == input) {
+        for (k = 0; k < userMaterials.length; k++) {
+            if (userMaterials[k].name == input) {
                 return true;
             }
         }
 
         return false;
-}
+    }
 
-function buildStruct(roof, superstructure, foundations) {
+    function buildStruct(roof, superstructure, foundations) {
 
         var struct = new Object();
         struct.roof = roof;
         struct.superstructure = superstructure;
-        struct.foundation = foundations;
+        struct.foundations = foundations;
         possibleStructs.push(struct);
-}
-
-function energyCalc(index) {
-        possibleStructs[index].energyCost = possibleStructs[index].roof.energyCost + possibleStructs[index].foundation.energyCost + possibleStructs[index].superstructure.energyCost;
     }
-    
-    function babyAlgo() {
-        grabMaterial();
-        hardCodeMaterials();
 
-        buildBlocks();
+    function energyCalc(index) {
+        possibleStructs[index].energyCost = possibleStructs[index].roof.energyCost + possibleStructs[index].foundations.energyCost + possibleStructs[index].superstructure.energyCost;
+    }
+    function costCalc(index) {
+        possibleStructs[index].cost = possibleStructs[index].roof.cost + possibleStructs[index].foundations.cost + possibleStructs[index].superstructure.cost;
+    }
+
+    function grabInput() {
+
+        var table = document.getElementById("PrevInfoTable");
+        var tablelength = table.rows.length;
+
         
+        for (i = 1; i < tablelength; i++) {
+            var temp = document.getElementById("PrevInfoTable").rows[i].cells[0].innerText;
+            buildUserMaterials(temp);
+        }
+        
+    }
+
+    function babyAlgo() {
+        hardCodeMaterials();
+        grabInput();
+        
+        buildBlocks();
 
         var curIndex = 0;
         var energyIndex = 0;
+        var costIndex = 0;
+        
         
         for (i = 0; i < avaliableFoundation.length; i++) {
             for (j = 0; j < avaliableSuperstructures.length; j++) {
@@ -376,6 +394,10 @@ function energyCalc(index) {
                     if (possibleStructs[curIndex].energyCost < possibleStructs[energyIndex].energyCost) {
                         energyIndex = curIndex;
                     }
+                    costCalc(curIndex);
+                    if (possibleStructs[curIndex].cost < possibleStructs[energyIndex].cost) {
+                        costIndex = curIndex;
+                    }
                     curIndex++;
                 }
             }
@@ -383,20 +405,27 @@ function energyCalc(index) {
 
         
         if (typeof (Storage) !== "undefined") {
-            // Store
-            localStorage.setItem("energy solution", possibleStructs[energyIndex]);
+            localStorage.setItem("energy solution roof", possibleStructs[energyIndex].roof.name);
+            localStorage.setItem("energy solution foundation", possibleStructs[energyIndex].foundations.name);
+            localStorage.setItem("energy solution roof", possibleStructs[energyIndex].superstructure.name);
+            localStorage.setItem("cost solution roof", possibleStructs[costIndex].roof.name);
+            localStorage.setItem("cost solution foundation", possibleStructs[costIndex].foundations.name);
+            localStorage.setItem("cost solution roof", possibleStructs[costIndex].superstructure.name);
+            
         } else {
-            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+
         }
 
         //useful display when debugging algorithm
-        
         document.write(" ");
         document.write(energyIndex);
         document.write(" Roof:");
         document.write(possibleStructs[energyIndex].roof.name);
         document.write(" Foundation:");
-        document.write(possibleStructs[energyIndex].foundation.name);
+        document.write(possibleStructs[energyIndex].foundations.name);
+        document.write(" Superstructure:");
+        document.write(possibleStructs[energyIndex].superstructure.name);
+
         
         
     }
