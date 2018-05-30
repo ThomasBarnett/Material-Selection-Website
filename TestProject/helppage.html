@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Additional Resources</title>
-    <LINK rel=StyleSheet href="StyleSheet1.css" type="text/css">
+    <LINK rel=StyleSheet href="TextFile1.css" type="text/css">
     <link rel="icon" href="images/WWFlogo.png">
 </head>
 <style>
@@ -26,9 +26,9 @@
 
 
         <nav>
+			<a href="langselect.html">Change Language</a>
             <a href="regionselect.html">Change Region</a>
-            <a href="HTMLPage1.html">Materials Input</a>
-            <a href="HTMLPage2.html">Materials Output</a>
+            <a href="responsiveInput.html">Materials Input</a>
             <a href="helppage.html" class="selected">Help</a>
         </nav>
 
@@ -46,17 +46,17 @@
     <h1>Help/Additional Resources</h1>
     <div style="display: flex;">
         <div style="flex: 33.33%; padding: 5px; margin-left: 0%;">
-            <h3><a href="#">CES EduPack</a></h3>
+            <h3><a target="_blank" href="#">CES EduPack</a></h3>
         </div>
         <div style="flex: 33.33%; padding: 5px; margin-left: 10%;">
             <h3>
-                <a href="http://envirodm.org/cms/wp-content/uploads/2017/05/building_material_selection_and_use___an_environmental_guide.pdf">
+                <a target="_blank" href="http://envirodm.org/cms/wp-content/uploads/2017/05/building_material_selection_and_use___an_environmental_guide.pdf">
                     BMEG pdf
                 </a>
                 </h3>
         </div>
         <div style="flex: 33.33%; padding: 5px; margin-left: 10%;">
-            <h3><a href="https://www.worldwildlife.org/?utm_campaign=301-redirects&utm_source=wwf.org&utm_medium=referral&utm_content=wwf.org">
+            <h3><a target="_blank" href="https://www.worldwildlife.org/?utm_campaign=301-redirects&utm_source=wwf.org&utm_medium=referral&utm_content=wwf.org">
                 WWF Website</h3>
             </a>
         </div>
@@ -65,67 +65,34 @@
 
 
 
-<footer class="header-search footer-search">
+<footer class="footer-search">
 
-    <div class="header-limiter footer-limiter">
+	<div class="footer-limiter">
+
+
+<div class="footer-container">
+	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
+</div>
+
         <div class="container">
-            <a href="" class="button rightfooterbutton"><span>></span>About Us</a>
-        </div>
-        <div class="container">
-            <a href="" type="submit" onclick="window.open('file.doc')" class="button leftfooterbutton"><span>></span>Download</a>
-        </div>
-        <div class="container" style="margin-top: 0%;">
-            <p>Date of Last Update: May 25th, 2018</p>
-        </div>
-        <div class="container" style="margin-bottom:10%;">
+    <p>Date of Last Update: May 25th, 2018</p>
             <p>Version 0.1</p>
-        </div>
-        <div class="select-style">
-            <select>
-                <option value="english">English</option>
-                <option value="nepali">Nepali</option>
-            </select>
-        </div>
-    </div>
+</div>
+
+
+      
+
+		<div class="select-style">
+		<select>
+		<option value="english">English</option>
+		<option value="nepali">Nepali</option>
+		</select>
+		</div>
+
+	</div>
 
 </footer>
 
 
-    <script>function openTab(tabName, elmnt) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.backgroundColor = "";
-            }
-
-            document.getElementById(tabName).style.display = "block";
-            elmnt.style.backgroundColor = '#f1f1f1';
-            elmnt.style.color = 'black';
-
-
-}
-
-//Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-
-$(document).ready(function() {
-
-            $('.header-search form').on('click', function(e) {
-
-                // If the form (which is turned into the search button) was
-                // clicked directly, toggle the visibility of the search box.
-
-                if (e.target == this) {
-                    $(this).find('input').toggle();
-                }
-
-            });
-});</script>
 </body>
 </html>

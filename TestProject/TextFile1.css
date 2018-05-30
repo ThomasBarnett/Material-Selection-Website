@@ -42,6 +42,14 @@ body {
 	margin-bottom: 1em;
 	height: 95%;
 }
+
+.output_span_3_of_3 {
+	width: 100%;
+	border: 2px solid #55A2B0;
+	border-radius: 5px;
+	margin-bottom: 1em;
+	min-height: 95%;
+}
 .span_1_of_3 {
 	width: 32.5%;
 	border: 2px solid #55A2B0;
@@ -49,6 +57,14 @@ body {
 	height: 95%;
 	margin-bottom: 1em;
 	overflow: auto;
+}
+
+.span_2_of_2 {
+	width: 100%;
+}
+
+.span_1_of_2{
+	width: 49%;
 }
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
@@ -60,7 +76,7 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
-	.span_2_of_2, .span_1_of_2 { width: 100%; }
+	.span_2_of_3, .span_1_of_3, .span_1_of_2, .span_2_of_2 { width: 100%; }
 }
 
 h1 {
@@ -117,7 +133,7 @@ h3{
 	font:18px Arial, Helvetica, sans-serif;
 	line-height: 4vh;
 	float: left;
-	margin: 0 0 0 10vw;
+	margin: 0 0 0 5vw;
 	padding: 0;
 	margin-top: 0vh;
 }
@@ -134,6 +150,8 @@ h3{
         padding-left: 2vw;
         padding-right: 2vw;
     }
+
+
 
 .header-search .header-limiter nav a:hover {
 	opacity: 1;
@@ -170,7 +188,7 @@ h3{
 	}
 
 	.header-search .header-limiter nav a {
-		font-size: 13px;
+		font-size: calc(12px + .5vw);
 	}
 
 	.header-search .header-limiter form {
@@ -189,6 +207,7 @@ h3{
         height: 16vh;
 		min-width: 100px;
 		border-left: 10px solid white;
+
 	}
 
 .footer-search{
@@ -336,9 +355,10 @@ h3{
 	width: 3vw;
 	left: 4%;
 	bottom: 1%;
-	min-width: 75px;
+	min-width: 80px;
     font-size: calc(8px + 0.45vw);
-    padding-left: 4.5vw;
+    padding-left: 4.2vw;
+	padding-right: 2vw;
 }
 
 
@@ -378,6 +398,7 @@ border-right: 1px solid  rgba(0,0,0,0.15);
 
 .leftfooterbutton span {
     height: 100%;
+	width: 30%;
 }
 
 .smallbutton span {
@@ -387,6 +408,7 @@ border-right: 1px solid  rgba(0,0,0,0.15);
 }
 
 .addbutton span {
+	width: 40%;
 	max-width: 40%;
     line-height: 4vh;
 }
@@ -415,6 +437,10 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ccfffff
     text-align: center;
 }
 
+#PrevInfoTable td, th {
+	border: none;
+}
+
 
 .tablink {
 		background-color: white;
@@ -428,6 +454,10 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ccfffff
 		height: 60px;
 		border-bottom: 2px solid #55A2B0;
 		border-left: 2px solid #55A2B0;
+	}
+
+	.output_span_3_of_3  .tablink {
+		width: 33.33%;
 	}
 
 	/* Change background color of buttons on hover */
@@ -449,6 +479,10 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ccfffff
         margin-right: 0.5vw;
     }
 
+	#tbl td, th {
+		border: none;
+	}
+
   
 
     #tableWrapper{
@@ -460,3 +494,32 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ccfffff
         width: 5vw;
         margin: 0;
     }
+
+	.OutputTable{
+	width: 90%;
+	margin-left: 5%;
+	font-size: 1.1em;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-bottom: 1.5%;
+	height: 50%;
+}
+
+.OutputTable td{
+	text-align: left;
+}
+
+.OutputTable th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: .5em;
+}
+
+.bigheader{
+	font-size: 1.3em;
+	background-color: rgba(2,77,90, 0.3)
+}
+
+.mediumheader{
+	font-size: 1.2em;
+}

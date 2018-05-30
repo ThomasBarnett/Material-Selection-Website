@@ -13,7 +13,7 @@
 
     <title>Buidling Options</title>
 
-    <link rel=StyleSheet href="StyleSheet2.css" type="text/css">
+	<link rel=StyleSheet href="TextFile1.css" type="text/css">
     <link rel="icon" href="images/WWFlogo.png">
 </head>
 <style>
@@ -56,11 +56,11 @@
 
 
 
-    <h1>Resource Optimization Ouput</h1>
+    <h1 style="margin-bottom: 1vh;">Resource Optimization Ouput</h1>
 
-    <div class="InputOverall">
+    <div class="section group">
 
-        <div class="InputTabs">
+        <div class="col output_span_3_of_3" style="min-height: 140%; margin-bottom: 150px;">
 
             <button class="tablink lefttablink" onclick="openTab('Envi', this)" id="defaultOpen">Lowest Environmental Impact</button>
             <button class="tablink" onclick="openTab('Cost_Eff', this)">Lowest Cost</button>
@@ -68,7 +68,7 @@
 
 
             <div id="Envi" class="tabcontent">
-			<h3>Here is the housing option with the lowest environmental impact:</h3>
+			<h3 style="margin-top: 3vh">Here is the housing option with the lowest environmental impact:</h3>
 				<table class="OutputTable">
 				<tr>
 				<th colspan="6" class="bigheader">Overview</th>
@@ -142,14 +142,14 @@
 
 
                 <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
-				<a class="button smallbutton clearbutton"><span>+</span>Additional Resources</a>
+				<a target="_blank" href="helppage.html" class="button smallbutton clearbutton"><span style="width: 17%">+</span>Additional Resources</a>
 				</div>
-                <h6>*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
+                <h6 style="margin-bottom: 2vh;">*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
 
             </div>
 
             <div id="Cost_Eff" class="tabcontent">
-                <h3>Here is the housing option with the lowest cost: </h3>
+                <h3 style="margin-top: 3vh">Here is the housing option with the lowest cost: </h3>
                 				<table class="OutputTable">
 				<tr>
 				<th colspan="6" class="bigheader">Overview</th>
@@ -220,14 +220,14 @@
 
 				</table>
                  <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
-				<a class="button smallbutton clearbutton"><span>+</span>Additional Resources</a>
+				<a target="_blank" href="helppage.html" class="button smallbutton clearbutton"><span style="width: 17%">+</span>Additional Resources</a>
 				</div>
-                <h6>*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
+                <h6 style="margin-bottom: 2vh;">*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
 
             </div>
 
             <div id="Compromise" class="tabcontent">
-                <h3>Here is the housing option that is a compromise of cost and environmental impact:</h3>
+                <h3 style="margin-top: 3vh">Here is the housing option that is a compromise of cost and environmental impact:</h3>
                 <table class="OutputTable">
 				<tr>
 				<th colspan="6" class="bigheader">Overview</th>
@@ -298,37 +298,40 @@
 
 				</table>
                  <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
-				<a class="button smallbutton clearbutton"><span>+</span>Additional Resources</a>
+				<a target="_blank" href="helppage.html" class="button smallbutton clearbutton"><span style="width: 17%">+</span>Additional Resources</a>
 				</div>
-                <h6>*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
+                <h6 style="margin-bottom: 2vh;">*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
 
             </div>
 
         </div>
     </div>
 
-	<footer class="header-search footer-search">
+<footer class="footer-search">
 
-        <div class="header-limiter footer-limiter">
-            <div class="container">
-                <a href="" class="button rightfooterbutton"><span>></span>About Us</a>
-            </div>
-            <div class="container">
-                <a href="" class="button leftfooterbutton"><span>></span>Download</a>
-            </div>
-            <div class="container">
-                <p>Date of Last Update: May 25th, 2018</p>
-            </div>
-            <div class="container">
-                <p>Version 0.1</p>
-            </div>
-            <div class="select-style">
-                <select>
-                    <option value="english">English</option>
-                    <option value="nepali">Nepali</option>
-                </select>
-            </div>
-        </div>
+	<div class="footer-limiter">
+
+
+<div class="footer-container">
+	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
+</div>
+
+        <div class="container">
+    <p>Date of Last Update: May 25th, 2018</p>
+            <p>Version 0.1</p>
+</div>
+
+
+      
+
+		<div class="select-style">
+		<select>
+		<option value="english">English</option>
+		<option value="nepali">Nepali</option>
+		</select>
+		</div>
+
+	</div>
 
 </footer>
 
