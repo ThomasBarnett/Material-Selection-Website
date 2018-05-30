@@ -48,6 +48,7 @@ body {
 	border-radius: 5px;
 	height: 95%;
 	margin-bottom: 1em;
+	overflow: auto;
 }
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
