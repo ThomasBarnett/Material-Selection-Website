@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Language Selection</title>
-	<LINK rel=StyleSheet href="StyleSheet1.css" type="text/css"> 
+	<LINK rel=StyleSheet href="TextFile1.css" type="text/css"> 
     <link rel="icon" href="images/WWFlogo.png">
 </head>
 <style>
@@ -28,9 +28,8 @@
 
 
         <nav>
-            <a href="langselect.html" class="selected">Change Language</a>
+            <a href="langselect.html" class="selected first-nav">Change Language</a>
 			<a href="regionselect.html">Change Region</a>
-            <a href="responsiveInput.html">Materials Input</a>
             <a href="helppage.html">Help</a>
         </nav>
 
@@ -46,88 +45,66 @@
 
 </header>
 
+<div class="section group" style="height: 28vh;">
+	<div class="span_2_of_2">
     <h1>Please Select Your Language:</h1>
 	<h1 style="margin-top: 10px;">कृपया आफ्नो भाषा चयन गर्नुहोस्:</h1>
-    <div class="row">
-        <div class="column">
+	</div>
+</div>
+
+<div class="section group" style="height: 32vh; border: 1px solid white;">
+	<div class="col span_1_of_2" style="border:1px solid white">
             <a href="regionselect.html">
-            <img src="images/USAUK.png" alt="English" style="width:200px; height:200px; float: left; margin-left: 45%; margin-top: 30px;">
+            <img src="images/USAUK.png" alt="English" style="width:200px; height:200px; display: block; margin: auto;">
             </a>
-			<h3 style="float: left; margin-left: 56%; margin-top: 30px;">English</h3>
-        </div>
-        <div class="column">
-            <a href="regionselect.html">
-			     <img src="images/NepalFlag.png" alt="Nepali" style="width:200px; height:200px; float: right; margin-right: 45%; margin-top: 30px;">
-            </a>
-			<h3 style="float: left; margin-left: 34%; margin-top: 30px;">नेपाली</h3>
-		</div>
-        </div>
+			<h3 style="text-align: center;">English</h3>
     </div>
-    <p1 style="position: absolute; top: 70%; left: 5%; right: 5%; font-size: 18px;">The purpose of this site is to use the Building Materials Environmental Guide (BMEG) and an optimization algortithm developed at Northwestern University
+    <div class="col span_1_of_2" style="border:1px solid white">
+            <a href="regionselect.html">
+			     <img src="images/NepalFlag.png" alt="Nepali" style="width:200px; height:200px; display: block; margin: auto;">
+            </a>
+			<h3 style="text-align: center;">नेपाली</h3>
+	</div>
+</div>
+
+<div class="section group" style="height: 20vh; padding-left: 1vw; padding-right: 1vw; padding-bottom: 12vh; border: 1px solid white;">
+    <p1 style="font-size: calc(10px + 1vw);">The purpose of this site is to use the Building Materials Environmental Guide (BMEG) and an optimization algortithm developed at Northwestern University
     to propose cost-efficient and environmentally-friendly housing options for places recovering from natural disasters. This website will guide you to 
     input available materials and then suggest possible housing options.</p1>
-	<p1 style="position: absolute; top: 77.5%; left: 5%; right: 5%; font-size: 18px;">यस साइट को उद्देश्य भवन सामाग्री पर्यावरण गाइड (बीएमईजी) को उपयोग र एक उत्तरपूर्वीकरण अल्गोरिथ्म को उत्तरपश्चिम विश्वविद्यालय मा विकसित गरिएको छ।
+	<br>
+	<p1 style="font-size: calc(10px + 1vw);">यस साइट को उद्देश्य भवन सामाग्री पर्यावरण गाइड (बीएमईजी) को उपयोग र एक उत्तरपूर्वीकरण अल्गोरिथ्म को उत्तरपश्चिम विश्वविद्यालय मा विकसित गरिएको छ।
      प्राकृतिक आपदाहरूबाट प्राप्त गर्ने ठाउँहरूका लागि लागत-कुशल र पर्यावरण-अनुकूल आवास विकल्प प्रस्ताव गर्न। यो वेबसाइटले तपाईंलाई मार्गदर्शन गर्नेछ
      आगत उपलब्ध सामग्रीहरू र त्यसपछि सम्भव आवास आवास विकल्पहरू सुझाव दिनुहोस्।</p1>
+</div>
 
 
-	<footer class="header-search footer-search">
+<footer class="footer-search">
 
-        <div class="header-limiter footer-limiter">
-            <div class="container">
-                <a href="" class="button rightfooterbutton"><span>></span>About Us</a>
-            </div>
-            <div class="container">
-                <a href="" class="button leftfooterbutton"><span>></span>Download</a>
-            </div>
-            <div class="container">
-                <p>Date of Last Update: May 25th, 2018</p>
-            </div>
-            <div class="container">
-                <p>Version 0.1</p>
-            </div>
+	<div class="footer-limiter">
 
-        </div>
+
+<div class="footer-container">
+	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
+</div>
+
+        <div class="container">
+    <p>Date of Last Update: May 25th, 2018</p>
+            <p>Version 0.1</p>
+</div>
+
+
+      
+
+		<div class="select-style">
+		<select>
+		<option value="english">English</option>
+		<option value="nepali">Nepali</option>
+		</select>
+		</div>
+
+	</div>
 
 </footer>
-
-
-    <script>function openTab(tabName, elmnt) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.backgroundColor = "";
-            }
-
-            document.getElementById(tabName).style.display = "block";
-            elmnt.style.backgroundColor = '#f1f1f1';
-            elmnt.style.color = 'black';
-
-
-}
-
-//Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-
-$(document).ready(function() {
-
-            $('.header-search form').on('click', function(e) {
-
-                // If the form (which is turned into the search button) was
-                // clicked directly, toggle the visibility of the search box.
-
-                if (e.target == this) {
-                    $(this).find('input').toggle();
-                }
-
-            });
-});</script>
 
 </body>
 </html>
