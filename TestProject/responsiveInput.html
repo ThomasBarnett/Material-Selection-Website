@@ -32,8 +32,8 @@
             <a href="helppage.html">Help</a>
         </nav>
 
-
-		<form id="searchthis" action="/search" style="display:inline;" method="get">
+       <!--NonFunctionalSearchBAR-->
+		<form id="searchthis" style="display:inline;" method="get">
 		<input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search for materials..."/>
 		<input id="namanyay-search-btn" value="Go" type="submit"/>
 		</form>
@@ -114,7 +114,7 @@
 
 
 <div class="footer-container">
-	<a href="" class="button leftfooterbutton"><span>></span>Download</a>
+	<a href="images/gnu.png" target="_blank" class="button leftfooterbutton"><span>></span>Download</a>
 </div>
 
         <div class="container">
@@ -143,7 +143,8 @@
 
 <script>//Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
-
+var newRow = [];
+newRow(0) = 1;
 var materials = [];
 var roofs = [];
 var superstructures = [];
@@ -157,37 +158,40 @@ var possibleStructs = [];
 function addField() {
         var table = document.getElementById("tbl");
         var tablelength = table.rows.length;
-        var row = table.insertRow(tablelength);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-        var cell6 = row.insertCell(5);
-        var cell7 = row.insertCell(6);
-        var cell8 = row.insertCell(7);
-        var cell9 = row.insertCell(8);
+        if (table.rows[tablelength - 1].cells[1].children[0].value != "") {
+            table.rows[tablelength - 1].cells[8].children[0].innerHTML = "<div class='smallcontainer addcontainer' onclick = 'addField()' value = 'Add Field'> <a class='button smallbutton addbutton'><span>+</span>Edit</a></div>";
+            var row = table.insertRow(tablelength);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            var cell8 = row.insertCell(7);
+            var cell9 = row.insertCell(8);
 
-        cell1.innerHTML = "<strong>Material<span style='color: red;'>*</span>: </strong>";
-        cell2.innerHTML = "<input type='text'/>";
-        cell3.innerHTML = "Amount (kg):";
-        cell4.innerHTML = "<input type = 'text'/>";
-        cell5.innerHTML = "Material Cost($/m<sup>3</sup>):";
-        cell6.innerHTML = "<input type = 'text'/>";
-        cell7.innerHTML = "Distance (km) from material:";
-        cell8.innerHTML = "<input type = 'text'/>";
-        cell9.innerHTML = "<div class='smallcontainer addcontainer' onclick = 'addField()' value = 'Add Field'> <a class='button smallbutton addbutton'><span>+</span>Add</a></div>"
+            cell1.innerHTML = "<strong>Material<span style='color: red;'>*</span>: </strong>";
+            cell2.innerHTML = "<input type='text'/>";
+            cell3.innerHTML = "Amount (kg):";
+            cell4.innerHTML = "<input type = 'text'/>";
+            cell5.innerHTML = "Material Cost($/m<sup>3</sup>):";
+            cell6.innerHTML = "<input type = 'text'/>";
+            cell7.innerHTML = "Distance (km) from material:";
+            cell8.innerHTML = "<input type = 'text'/>";
+            cell9.innerHTML = "<div class='smallcontainer addcontainer' onclick = 'addField()' value = 'Add Field'> <a class='button smallbutton addbutton'><span>+</span>Add</a></div>";
 
-        var rec_table = document.getElementById("PrevInfoTable");
-        var rec_tablelength = rec_table.rows.length;
-        var rec_row = rec_table.insertRow(rec_tablelength);
+            var rec_table = document.getElementById("PrevInfoTable");
+            var rec_tablelength = rec_table.rows.length;
+            var rec_row = rec_table.insertRow(rec_tablelength);
 
 
 
-        for (i = 0; i < 4; i++) {
-            var newCell = rec_row.insertCell(i);
-            newCell.innerHTML = document.getElementById("tbl").rows[(tablelength - 1)].cells[(1 + (2 * i))].children[0].value;
+            for (i = 0; i < 4; i++) {
+                var newCell = rec_row.insertCell(i);
+                newCell.innerHTML = document.getElementById("tbl").rows[(tablelength - 1)].cells[(1 + (2 * i))].children[0].value;
 
+            }
         }
 
 }
