@@ -13,135 +13,114 @@
     <link rel="icon" href="WWFlogo.png">
 
     <title>Materials Selection</title>
-
+    <!--Style Sheet is linked here-->
 	<LINK rel=StyleSheet href="TextFile1.css" type="text/css"> 
 
 </head>
 <body>
+    <!--The header is outlined here-->
+    <header class="header-search">
+        <div class="header-limiter">
+            <img class="logoImg" src="images/logo.png" />
+            <!--Tabs-->
+            <nav>
+                <a href="langselect.html">Change Language</a>
+                <a href="regionselect.html">Change Region</a>
+                <a href="responsiveInput.html" class="selected">Materials Input</a>
+                <a href="helppage.html">Help</a>
+            </nav>
+            <!--NonFunctionalSearchBAR-->
+            <form id="searchthis" style="display:inline;" method="get">
+                <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search for materials..." />
+                <input id="namanyay-search-btn" value="Go" type="submit" />
+            </form>
 
-<header class="header-search">
-
-	<div class="header-limiter">
-
-	<img class="logoImg" src="images/logo.png"/>
-
-        <nav>
-            <a href="langselect.html">Change Language</a>
-            <a href="regionselect.html">Change Region</a>
-            <a href="responsiveInput.html" class="selected">Materials Input</a>
-            <a href="helppage.html">Help</a>
-        </nav>
-
-       <!--NonFunctionalSearchBAR-->
-		<form id="searchthis" style="display:inline;" method="get">
-		<input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search for materials..."/>
-		<input id="namanyay-search-btn" value="Go" type="submit"/>
-		</form>
-
-
-
-	</div>
-
-</header>
-
-<h1>Resource Optimization Input</h1>
-
-<div class="section group">
-	<div class="col span_2_of_3">
-	<button class="tablink lefttab" onclick="openTab('AvailableMat', this)" id="defaultOpen">Available Materials</button>
-	<button class="tablink" onclick="openTab('Location', this)">Climate</button>
-	<button class="tablink" onclick="openTab('Budget', this)">Constraints</button>
-	<button class="tablink righttab" class="righttab" onclick="openTab('AdditionalInfo', this)">Additional Input</button> 
-
-	<div id="AvailableMat" class="tabcontent" style="min-height: 400px">
-	  <h3 style="margin-top: 5vh; margin-bottom: 0;">Enter available materials here:</h3>
-          <p><strong>This includes materials you own, materials you have access to, and materials you are able to purchase. Only fields marked with an <span style="color: red">*</span> are required, but the more information you provide, the more accurate your results will be.</strong></p>
-    <div id="tableWrapper">
-	  <table id="tbl">
-        <tr>
-        <td><strong>Material<span style="color: red;">*</span>: </strong></td>
-        <td><input type="text" name="Name" ></td>
-        <td>Amount (kg):</td>
-        <td><input type="text" name="Amount" /></td>
-        <td>Cost of Material ($/m<sup>3</sup>):</td>
-        <td><input type="text" name="Cost" /></td>
-        <td>Distance (km) from material:</td>
-        <td><input type="text" name="Distance" /></td>
-        <td class="addbuttonrow">
-            <div class="smallcontainer addcontainer" onclick='addField()' value='Add Field'>
-                <a class="button smallbutton addbutton"><span>+</span>Add</a>
+        </div>
+    </header>
+    <h1>Resource Optimization Input</h1>
+    <div class="section group">
+        <div class="col span_2_of_3">
+            <!--The Big Tabs. The function openTab opens the tab when clicked. defaultOpen is used when the window opens-->
+            <button class="tablink lefttab" onclick="openTab('AvailableMat', this)" id="defaultOpen">Available Materials</button>
+            <button class="tablink" onclick="openTab('Location', this)">Climate</button>
+            <button class="tablink" onclick="openTab('Budget', this)">Constraints</button>
+            <button class="tablink righttab" class="righttab" onclick="openTab('AdditionalInfo', this)">Additional Input</button>
+            <!--This is where the input table begins-->
+            <div id="AvailableMat" class="tabcontent" style="min-height: 400px">
+                <h3 style="margin-top: 5vh; margin-bottom: 0;">Enter available materials here:</h3>
+                <p><strong>This includes materials you own, materials you have access to, and materials you are able to purchase. Only fields marked with an <span style="color: red">*</span> are required, but the more information you provide, the more accurate your results will be.</strong></p>
+                <!--Input Table First Row-->
+                <div id="tableWrapper">
+                    <table id="tbl">
+                        <tr>
+                            <td><strong>Material<span style="color: red;">*</span>: </strong></td>
+                            <td><input type="text" name="Name"></td>
+                            <td>Amount (kg):</td>
+                            <td><input type="text" name="Amount" /></td>
+                            <td>Cost of Material ($/m<sup>3</sup>):</td>
+                            <td><input type="text" name="Cost" /></td>
+                            <td>Distance (km) from material:</td>
+                            <td><input type="text" name="Distance" /></td>
+                            <td class="addbuttonrow">
+                                <div class="smallcontainer addcontainer" onclick='addField()' value='Add Field'>
+                                    <a class="button smallbutton addbutton"><span>+</span>Add</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        </td>
-    </tr>
-	  </table>
+            <div id="Location" class="tabcontent" style="min-height: 400px"></div>
+            <div id="Budget" class="tabcontent" style="min-height: 400px"></div>
+            <div id="AdditionalInfo" class="tabcontent" style="min-height: 400px"></div>
+
+        </div>
+        <!--Table of Previously Entered Information-->
+        <div class="col span_1_of_3">
+            <h3>Previously Entered Info</h3>
+            <table id="PrevInfoTable">
+                <tr>
+                    <td>Material</td>
+                    <td>Amount</td>
+                    <td>Cost</td>
+                    <td>Distance</td>
+                </tr>
+            </table>
+            <div class="smallcontainer clearcontainer" onclick='clearAll()' value='Clear All'>
+                <a class="button smallbutton clearbutton"><span>✓</span>Clear All</a>
+            </div>
+        </div>
     </div>
-	</div>
-
-    <div id="Location" class="tabcontent" style="min-height: 400px"></div>
-    <div id="Budget" class="tabcontent" style="min-height: 400px"></div>
-    <div id="AdditionalInfo" class="tabcontent" style="min-height: 400px"></div>
-  
-
-	</div>
-
-<div class="col span_1_of_3">
-    <h3>Previously Entered Info</h3>
-    <table id="PrevInfoTable">
-        <tr>
-            <td>Material</td>
-            <td>Amount</td>
-            <td>Cost</td>
-            <td>Distance</td>
-        </tr>
-    </table>
-
-    <div class="smallcontainer clearcontainer" onclick='clearAll()' value='Clear All'>
-        <a class="button smallbutton clearbutton"><span>✓</span>Clear All</a>
+    <div class="section group buttonsection">
+        <div class="container" onclick='babyAlgo()'>
+            <a href="HTMLPage2.html" class="button"><span>✓</span>Recommend</a>
+        </div>
     </div>
-</div>
-</div>
+    <!--Footer, including download button, date of last website update (manual entry), and language toggle-->
+    <footer class="footer-search">
+        <div class="footer-limiter">
 
-<div class="section group buttonsection">
-     <div class="container" onclick='babyAlgo()'>
-         <a href="HTMLPage2.html" class="button"><span>✓</span>Recommend</a>
-     </div>
- </div>
-
-
-<footer class="footer-search">
-
-	<div class="footer-limiter">
+            <div class="footer-container">
+                <a href="images/gnu.png" target="_blank" class="button leftfooterbutton"><span>></span>Download</a>
+            </div>
+            <div class="container">
+                <p>Date of Last Update: May 25th, 2018</p>
+                <p>Version 0.1</p>
+            </div>
 
 
-<div class="footer-container">
-	<a href="images/gnu.png" target="_blank" class="button leftfooterbutton"><span>></span>Download</a>
-</div>
-
-        <div class="container">
-    <p>Date of Last Update: May 25th, 2018</p>
-            <p>Version 0.1</p>
-</div>
-
-
-      
-
-		<div class="select-style">
-		<select>
-		<option value="english">English</option>
-		<option value="nepali">Nepali</option>
-		</select>
-		</div>
-
-	</div>
-
-</footer>
+            <div class="select-style">
+                <select>
+                    <option value="english">English</option>
+                    <option value="nepali">Nepali</option>
+                </select>
+            </div>
+        </div>
+    </footer>
 
 
 
-
-
-
-<script>//Get the element with id="defaultOpen" and click on it
+    <script>//Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 var newRow = [];
 newRow(0) = 1;
@@ -156,154 +135,157 @@ var avaliableFoundation = [];
 var possibleStructs = [];
 
 function addField() {
-        var table = document.getElementById("tbl");
-        var tablelength = table.rows.length;
-        if (table.rows[tablelength - 1].cells[1].children[0].value != "") {
-            table.rows[tablelength - 1].cells[8].children[0].innerHTML = "<div class='smallcontainer addcontainer' onclick = 'addField()' value = 'Add Field'> <a class='button smallbutton addbutton'><span>+</span>Edit</a></div>";
-            var row = table.insertRow(tablelength);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);
-            var cell6 = row.insertCell(5);
-            var cell7 = row.insertCell(6);
-            var cell8 = row.insertCell(7);
-            var cell9 = row.insertCell(8);
+            //When the add button is clicked, a new row is added by creating a new row and then populating the cells
+            var table = document.getElementById("tbl");
+            var tablelength = table.rows.length;
+            if (table.rows[tablelength - 1].cells[1].children[0].value != "") {
+                table.rows[tablelength - 1].cells[8].children[0].innerHTML = "<div class='smallcontainer addcontainer' onclick = 'addField()' value = 'Add Field'> <a class='button smallbutton addbutton'><span>+</span>Commit</a></div>";
+                var row = table.insertRow(tablelength);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                var cell6 = row.insertCell(5);
+                var cell7 = row.insertCell(6);
+                var cell8 = row.insertCell(7);
+                var cell9 = row.insertCell(8);
 
-            cell1.innerHTML = "<strong>Material<span style='color: red;'>*</span>: </strong>";
-            cell2.innerHTML = "<input type='text'/>";
-            cell3.innerHTML = "Amount (kg):";
-            cell4.innerHTML = "<input type = 'text'/>";
-            cell5.innerHTML = "Material Cost($/m<sup>3</sup>):";
-            cell6.innerHTML = "<input type = 'text'/>";
-            cell7.innerHTML = "Distance (km) from material:";
-            cell8.innerHTML = "<input type = 'text'/>";
-            cell9.innerHTML = "<div class='smallcontainer addcontainer' onclick = 'addField()' value = 'Add Field'> <a class='button smallbutton addbutton'><span>+</span>Add</a></div>";
+                cell1.innerHTML = "<strong>Material<span style='color: red;'>*</span>: </strong>";
+                cell2.innerHTML = "<input type='text'/>";
+                cell3.innerHTML = "Amount (kg):";
+                cell4.innerHTML = "<input type = 'text'/>";
+                cell5.innerHTML = "Material Cost($/m<sup>3</sup>):";
+                cell6.innerHTML = "<input type = 'text'/>";
+                cell7.innerHTML = "Distance (km) from material:";
+                cell8.innerHTML = "<input type = 'text'/>";
+                cell9.innerHTML = "<div class='smallcontainer addcontainer' onclick = 'addField()' value = 'Add Field'> <a class='button smallbutton addbutton'><span>+</span>Add</a></div>";
 
-            var rec_table = document.getElementById("PrevInfoTable");
-            var rec_tablelength = rec_table.rows.length;
-            var rec_row = rec_table.insertRow(rec_tablelength);
+                var rec_table = document.getElementById("PrevInfoTable");
+                var rec_tablelength = rec_table.rows.length;
+                var rec_row = rec_table.insertRow(rec_tablelength);
 
 
 
-            for (i = 0; i < 4; i++) {
-                var newCell = rec_row.insertCell(i);
-                newCell.innerHTML = document.getElementById("tbl").rows[(tablelength - 1)].cells[(1 + (2 * i))].children[0].value;
+                for (i = 0; i < 4; i++) {
+                    var newCell = rec_row.insertCell(i);
+                    newCell.innerHTML = document.getElementById("tbl").rows[(tablelength - 1)].cells[(1 + (2 * i))].children[0].value;
 
+                }
             }
-        }
 
 }
 
 
 function clearAll() {
-        var tableHeaderRowCount = 1;
-        var table = document.getElementById("PrevInfoTable");
-        var rowCount = table.rows.length;
-        for (var i = tableHeaderRowCount; i < rowCount; i++) {
-            table.deleteRow(tableHeaderRowCount);
-        }
+            //clears the previously entered information table row by row
+            var tableHeaderRowCount = 1;
+            var table = document.getElementById("PrevInfoTable");
+            var rowCount = table.rows.length;
+            for (var i = tableHeaderRowCount; i < rowCount; i++) {
+                table.deleteRow(tableHeaderRowCount);
+            }
 
 }
 
 function openTab(tabName, elmnt) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
+            //opens a tab when clicked
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
 
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "";
-        }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
 
-        document.getElementById(tabName).style.display = "block";
-        elmnt.style.backgroundColor = '#55A2B0';
-        elmnt.style.color = 'black';
+            document.getElementById(tabName).style.display = "block";
+            elmnt.style.backgroundColor = '#55A2B0';
+            elmnt.style.color = 'black';
 
 
 }
 
 
 function hardCodeMaterials() {
-        roofs.push(Block('F1', 3546.3, 128.25, ['Wood', 'CGI Sheet']));
-        roofs.push(Block("F2", 2236.72, 29.24, ["Wood", "Slate"]));
-        roofs.push(Block("F3", 4327, 114.68, ["Bamboo", "CGI Sheet"]));
-        roofs.push(Block("F4", 2491.74, 56.84, ["Aluminium Sheet", "Wood"]));
-        roofs.push(Block("F5", 3272.44, 43.27, ["Aluminium Sheet", "Bamboo"]));
-        roofs.push(Block("F6", 1686.48, 50, ["Plywood", "Ceramic Tile", "Wood"]));
-        roofs.push(Block("F7", 2120.18, 41.19, ["Bamboo Mat", "Ceramic Tile", "Wood"]));
+            roofs.push(Block('F1', 3546.3, 128.25, ['Wood', 'CGI Sheet']));
+            roofs.push(Block("F2", 2236.72, 29.24, ["Wood", "Slate"]));
+            roofs.push(Block("F3", 4327, 114.68, ["Bamboo", "CGI Sheet"]));
+            roofs.push(Block("F4", 2491.74, 56.84, ["Aluminium Sheet", "Wood"]));
+            roofs.push(Block("F5", 3272.44, 43.27, ["Aluminium Sheet", "Bamboo"]));
+            roofs.push(Block("F6", 1686.48, 50, ["Plywood", "Ceramic Tile", "Wood"]));
+            roofs.push(Block("F7", 2120.18, 41.19, ["Bamboo Mat", "Ceramic Tile", "Wood"]));
 
 
-        superstructures.push(Block("F8", 2570.9, 373.43, ["Brick", "Concrete", "Reinforcing Bar", "Mortar"]));
-        superstructures.push(Block("F9", 1394.55, 317.47, ["Stone", "Concrete", "Reinforcing Bar", "Mortar"]));
-        superstructures.push(Block("F10", 6303.99, 99.13, ["Bamboo", "Cement Mortar", "Reinforcing Bar", "Concrete"]));
-        superstructures.push(Block("F11", 2283.01, 80.7, ["CSEB", "Concrete", "Reinforcing Bar", "Mortar"]));
-        superstructures.push(Block("F12", 13977.2, 179.21, ["Concrete Blocks", "Concrete", "Reinforcing Bar", "Mortar"]));
-        superstructures.push(Block("F13", 2103.32, 350.9, ["Brick", "Aerated Concrete", "Reinforcing Bar", "Mortar"]));
+            superstructures.push(Block("F8", 2570.9, 373.43, ["Brick", "Concrete", "Reinforcing Bar", "Mortar"]));
+            superstructures.push(Block("F9", 1394.55, 317.47, ["Stone", "Concrete", "Reinforcing Bar", "Mortar"]));
+            superstructures.push(Block("F10", 6303.99, 99.13, ["Bamboo", "Cement Mortar", "Reinforcing Bar", "Concrete"]));
+            superstructures.push(Block("F11", 2283.01, 80.7, ["CSEB", "Concrete", "Reinforcing Bar", "Mortar"]));
+            superstructures.push(Block("F12", 13977.2, 179.21, ["Concrete Blocks", "Concrete", "Reinforcing Bar", "Mortar"]));
+            superstructures.push(Block("F13", 2103.32, 350.9, ["Brick", "Aerated Concrete", "Reinforcing Bar", "Mortar"]));
 
 
-        foundations.push(Block("F14", 3456.89, 557.34, ["Brick", "Concrete", "Reinforcing Bar", "Mortar"]));
-        foundations.push(Block("F15", 1988.74, 476.85, ["Stone", "Concrete", "Reinforcing Bar", "mortar"]));
-        foundations.push(Block("F16", 1988.74, 492.03, ["Brick", "Aerated Concrete", "Reinforcing Bar", "Mortar"]));
+            foundations.push(Block("F14", 3456.89, 557.34, ["Brick", "Concrete", "Reinforcing Bar", "Mortar"]));
+            foundations.push(Block("F15", 1988.74, 476.85, ["Stone", "Concrete", "Reinforcing Bar", "mortar"]));
+            foundations.push(Block("F16", 1988.74, 492.03, ["Brick", "Aerated Concrete", "Reinforcing Bar", "Mortar"]));
 
 
-        roofs.push(Block("butter", 1000, 1, ["butter"]));
-        superstructures.push(Block("butter", 100, 1, ["butter"]));
-        foundations.push(Block("butter", 20, 1, ["butter"]));
-        roofs.push(Block("gum", 2000, 1, ["gum"]));
-        superstructures.push(Block("gum", 200, 1, ["gum"]));
-        foundations.push(Block("gum", 1, 10, ["gum"]));
+            roofs.push(Block("butter", 1000, 1, ["butter"]));
+            superstructures.push(Block("butter", 100, 1, ["butter"]));
+            foundations.push(Block("butter", 20, 1, ["butter"]));
+            roofs.push(Block("gum", 2000, 1, ["gum"]));
+            superstructures.push(Block("gum", 200, 1, ["gum"]));
+            foundations.push(Block("gum", 1, 10, ["gum"]));
 
 }
 
 function Block(nameIn, costIn, energyCostIn, constraintsIn) {
-        var blck = new Object();
+            var blck = new Object();
 
-        blck.name = nameIn;
-        blck.cost = costIn;
-        blck.energyCost = energyCostIn;
-        blck.constraints = constraintsIn;
+            blck.name = nameIn;
+            blck.cost = costIn;
+            blck.energyCost = energyCostIn;
+            blck.constraints = constraintsIn;
 
-        return blck;
+            return blck;
 }
 
 
 function buildUserMaterials(name) {
 
-        var material = new Object();
-        material.name = name;
+            var material = new Object();
+            material.name = name;
 
-        userMaterials.push(material);
+            userMaterials.push(material);
 }
 
 
 function buildBlocks() {
 
-        for (i = 0; i < roofs.length; i++) {
+            for (i = 0; i < roofs.length; i++) {
 
-            if (constraintsMet(roofs[i].constraints) == true) {
-                avaliableRoofs.push(roofs[i]);
+                if (constraintsMet(roofs[i].constraints) == true) {
+                    avaliableRoofs.push(roofs[i]);
+                }
+
             }
 
-        }
-
-        for (i = 0; i < superstructures.length; i++) {
-            if (constraintsMet(superstructures[i].constraints) == true) {
-                avaliableSuperstructures.push(superstructures[i]);
-            }
-        }
-
-
-        for (i = 0; i < foundations.length; i++) {
-
-            if (constraintsMet(foundations[i].constraints) == true) {
-                avaliableFoundation.push(foundations[i]);
+            for (i = 0; i < superstructures.length; i++) {
+                if (constraintsMet(superstructures[i].constraints) == true) {
+                    avaliableSuperstructures.push(superstructures[i]);
+                }
             }
 
-        }
+
+            for (i = 0; i < foundations.length; i++) {
+
+                if (constraintsMet(foundations[i].constraints) == true) {
+                    avaliableFoundation.push(foundations[i]);
+                }
+
+            }
 
 
 
@@ -313,109 +295,108 @@ function buildBlocks() {
 function constraintsMet(constraints) {
 
 
-        for (j = 0; j < constraints.length; j++) {
-            if (materialEntered(constraints[j]) == false) {
-                return false;
+            for (j = 0; j < constraints.length; j++) {
+                if (materialEntered(constraints[j]) == false) {
+                    return false;
+                }
             }
-        }
 
-        return true;
+            return true;
 }
 
 function materialEntered(input) {
 
-        for (k = 0; k < userMaterials.length; k++) {
-            if (userMaterials[k].name == input) {
-                return true;
+            for (k = 0; k < userMaterials.length; k++) {
+                if (userMaterials[k].name == input) {
+                    return true;
+                }
             }
-        }
 
-        return false;
+            return false;
 }
 
 function buildStruct(roof, superstructure, foundations) {
 
-        var struct = new Object();
-        struct.roof = roof;
-        struct.superstructure = superstructure;
-        struct.foundations = foundations;
-        possibleStructs.push(struct);
+            var struct = new Object();
+            struct.roof = roof;
+            struct.superstructure = superstructure;
+            struct.foundations = foundations;
+            possibleStructs.push(struct);
 }
 
 function energyCalc(index) {
-        possibleStructs[index].energyCost = possibleStructs[index].roof.energyCost + possibleStructs[index].foundations.energyCost + possibleStructs[index].superstructure.energyCost;
+            possibleStructs[index].energyCost = possibleStructs[index].roof.energyCost + possibleStructs[index].foundations.energyCost + possibleStructs[index].superstructure.energyCost;
 }
 function costCalc(index) {
-        possibleStructs[index].cost = possibleStructs[index].roof.cost + possibleStructs[index].foundations.cost + possibleStructs[index].superstructure.cost;
+            possibleStructs[index].cost = possibleStructs[index].roof.cost + possibleStructs[index].foundations.cost + possibleStructs[index].superstructure.cost;
 }
 
 function grabInput() {
 
-        var table = document.getElementById("PrevInfoTable");
-        var tablelength = table.rows.length;
+            var table = document.getElementById("PrevInfoTable");
+            var tablelength = table.rows.length;
 
 
-        for (i = 1; i < tablelength; i++) {
-            var temp = document.getElementById("PrevInfoTable").rows[i].cells[0].innerText;
-            buildUserMaterials(temp);
-        }
+            for (i = 1; i < tablelength; i++) {
+                var temp = document.getElementById("PrevInfoTable").rows[i].cells[0].innerText;
+                buildUserMaterials(temp);
+            }
 
 }
 
 function babyAlgo() {
-        hardCodeMaterials();
-        grabInput();
+            hardCodeMaterials();
+            grabInput();
 
-        buildBlocks();
+            buildBlocks();
 
-        var curIndex = 0;
-        var energyIndex = 0;
-        var costIndex = 0;
+            var curIndex = 0;
+            var energyIndex = 0;
+            var costIndex = 0;
 
 
-        for (i = 0; i < avaliableFoundation.length; i++) {
-            for (j = 0; j < avaliableSuperstructures.length; j++) {
-                for (k = 0; k < avaliableRoofs.length; k++) {
-                    buildStruct(avaliableRoofs[k], avaliableSuperstructures[j], avaliableFoundation[i]);
-                    energyCalc(curIndex);
-                    if (possibleStructs[curIndex].energyCost < possibleStructs[energyIndex].energyCost) {
-                        energyIndex = curIndex;
+            for (i = 0; i < avaliableFoundation.length; i++) {
+                for (j = 0; j < avaliableSuperstructures.length; j++) {
+                    for (k = 0; k < avaliableRoofs.length; k++) {
+                        buildStruct(avaliableRoofs[k], avaliableSuperstructures[j], avaliableFoundation[i]);
+                        energyCalc(curIndex);
+                        if (possibleStructs[curIndex].energyCost < possibleStructs[energyIndex].energyCost) {
+                            energyIndex = curIndex;
+                        }
+                        costCalc(curIndex);
+                        if (possibleStructs[curIndex].cost < possibleStructs[energyIndex].cost) {
+                            costIndex = curIndex;
+                        }
+                        curIndex++;
                     }
-                    costCalc(curIndex);
-                    if (possibleStructs[curIndex].cost < possibleStructs[energyIndex].cost) {
-                        costIndex = curIndex;
-                    }
-                    curIndex++;
                 }
             }
-        }
 
 
-        if (typeof (Storage) !== "undefined") {
-            localStorage.setItem("energy solution roof", possibleStructs[energyIndex].roof.name);
-            localStorage.setItem("energy solution foundation", possibleStructs[energyIndex].foundations.name);
-            localStorage.setItem("energy solution roof", possibleStructs[energyIndex].superstructure.name);
-            localStorage.setItem("cost solution roof", possibleStructs[costIndex].roof.name);
-            localStorage.setItem("cost solution foundation", possibleStructs[costIndex].foundations.name);
-            localStorage.setItem("cost solution roof", possibleStructs[costIndex].superstructure.name);
+            if (typeof (Storage) !== "undefined") {
+                localStorage.setItem("energy solution roof", possibleStructs[energyIndex].roof.name);
+                localStorage.setItem("energy solution foundation", possibleStructs[energyIndex].foundations.name);
+                localStorage.setItem("energy solution roof", possibleStructs[energyIndex].superstructure.name);
+                localStorage.setItem("cost solution roof", possibleStructs[costIndex].roof.name);
+                localStorage.setItem("cost solution foundation", possibleStructs[costIndex].foundations.name);
+                localStorage.setItem("cost solution roof", possibleStructs[costIndex].superstructure.name);
 
-        } else {
+            } else {
 
-        }
+            }
 
-        //useful display when debugging algorithm
-        document.write(" ");
-        document.write(energyIndex);
-        document.write(" Roof:");
-        document.write(possibleStructs[energyIndex].roof.name);
-        document.write(" Foundation:");
-        document.write(possibleStructs[energyIndex].foundations.name);
-        document.write(" Superstructure:");
-        document.write(possibleStructs[energyIndex].superstructure.name);
+            //useful display when debugging algorithm
+            document.write(" ");
+            document.write(energyIndex);
+            document.write(" Roof:");
+            document.write(possibleStructs[energyIndex].roof.name);
+            document.write(" Foundation:");
+            document.write(possibleStructs[energyIndex].foundations.name);
+            document.write(" Superstructure:");
+            document.write(possibleStructs[energyIndex].superstructure.name);
 
 
 
 }</script>
-
 </body>
 </html>

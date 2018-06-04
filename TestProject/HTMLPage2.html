@@ -25,13 +25,11 @@
 
 
 <body>
-
-
+    <!--The header is outlined here-->
     <header class="header-search">
-
         <div class="header-limiter">
             <img class="logoImg" src="images/logo.png" />
-
+            <!-- Tabs -->
             <nav>
                 <a href="langselect.html">Change Language</a>
                 <a href="regionselect.html">Change Region</a>
@@ -46,291 +44,258 @@
             </form>
 
         </div>
-
-</header>
-
-
-
+    </header>
+    <!--Large Table with all the output information-->
     <h1 style="margin-bottom: 1vh;">Resource Optimization Ouput</h1>
-
     <div class="section group">
-
         <div class="col output_span_3_of_3" style="min-height: 140%; margin-bottom: 150px;">
-
             <button class="tablink lefttablink" onclick="openTab('Envi', this)" id="defaultOpen">Lowest Environmental Impact</button>
             <button class="tablink" onclick="openTab('Cost_Eff', this)">Lowest Cost</button>
             <button class="tablink righttablink" onclick="openTab('Compromise', this)">Cost and Environment Compromise</button>
 
-
             <div id="Envi" class="tabcontent">
-			<h3 style="margin-top: 3vh">Here is the housing option with the lowest environmental impact:</h3>
-				<table class="OutputTable">
-				<tr>
-				<th colspan="6" class="bigheader">Overview</th>
-				</tr>
-				<tr>
-				<th colspan="2"></th>
-				<th colspan="2" class="mediumheader">Cost Information</th>
-				<th colspan="2" class="mediumheader">Energy Information</th>
-				</tr>
+                <h3 style="margin-top: 3vh">Here is the housing option with the lowest environmental impact:</h3>
+                <table class="OutputTable">
+                    <tr>
+                        <th colspan="6" class="bigheader">Overview</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="2" class="mediumheader">Cost Information</th>
+                        <th colspan="2" class="mediumheader">Energy Information</th>
+                    </tr>
+                    <tr>
+                        <td><strong>House Type:</strong></td>
+                        <td>2 Bedroom, 1 Story</td>
+                        <td><strong>Estimated Total Cost:</strong></td>
+                        <td>$35,000</td>
+                        <td><strong>Total Stored Energy:</strong></td>
+                        <td>4000 kJ</td>
+                    </tr>
+                    <tr>
+                        <th colspan="6" class="bigheader">Materials Selection</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="2" class="mediumheader">Cost Information</th>
+                        <th colspan="2" class="mediumheader">Energy Information</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Roof Material:</strong></td>
+                        <td>500 pounds plywood</td>
+                        <td><strong>Estimated Roof Material Cost:</strong></td>
+                        <td>$10,000</td>
+                        <td><strong>Roof Material Stored Energy:</strong></td>
+                        <td>1000 kJ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wall Material:</strong></td>
+                        <td>1000 pounds brick</td>
+                        <td><strong>Estimated Wall Material Cost:</strong></td>
+                        <td>$15,000</td>
+                        <td><strong>Wall Material Stored Energy:</strong></td>
+                        <td>1000 kJ</td>
+                    <tr></tr>
+                    <td><strong>Foundation Material:</strong></td>
+                    <td>100 pounds cement</td>
+                    <td><strong>Estimated Foundation Material Cost:</strong></td>
+                    <td>$5,000</td>
+                    <td><strong>Foundation Material Stored Energy:</strong></td>
+                    <td>1000 kJ</td>
+                    <tr></tr>
+                    <tr>
+                        <th colspan="6" class="bigheader">Labor</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="2" class="mediumheader">Cost Information</th>
+                        <th colspan="2" class="mediumheader">Timeframe Information</th>
+                    </tr>
+                    <td><strong>Workers Needed:</strong></td>
+                    <td>12</td>
+                    <td><strong>Estimated Salary Costs:</strong></td>
+                    <td>$5,000</td>
+                    <td><strong>Time Until Completion:</strong></td>
+                    <td>6 Weeks</td>
+                    </tr>
 
-				<tr>
-				<td><strong>House Type:</strong></td>
-				<td>2 Bedroom, 1 Story</td>
-				<td><strong>Estimated Total Cost:</strong></td>
-				<td>$35,000</td>
-				<td><strong>Total Stored Energy:</strong></td>
-				<td>4000 kJ</td>
-				</tr>
-
-				<tr>
-				<th colspan="6" class="bigheader">Materials Selection</th>
-				</tr>
-				<tr>
-				<th colspan="2"></th>
-				<th colspan="2" class="mediumheader">Cost Information</th>
-				<th colspan="2" class="mediumheader">Energy Information</th>
-				</tr>
-				<tr>
-				<td><strong>Roof Material:</strong></td>
-				<td>500 pounds plywood</td>
-				<td><strong>Estimated Roof Material Cost:</strong></td>
-				<td>$10,000</td>
-				<td><strong>Roof Material Stored Energy:</strong></td>
-				<td>1000 kJ</td>
-				</tr>
-				<tr>
-				<td><strong>Wall Material:</strong></td>
-				<td>1000 pounds brick</td>
-				<td><strong>Estimated Wall Material Cost:</strong></td>
-				<td>$15,000</td>
-				<td><strong>Wall Material Stored Energy:</strong></td>
-				<td>1000 kJ</td>
-				<tr>
-				</tr>
-				<td><strong>Foundation Material:</strong></td>
-				<td>100 pounds cement</td>
-				<td><strong>Estimated Foundation Material Cost:</strong></td>
-				<td>$5,000</td>
-				<td><strong>Foundation Material Stored Energy:</strong></td>
-				<td>1000 kJ</td>
-				<tr>
-				</tr>
-				<tr>
-				<th colspan="6" class="bigheader">Labor</th>
-				</tr>
-				<tr>
-				<th colspan="2"></th>
-				<th colspan="2" class="mediumheader">Cost Information</th>
-				<th colspan="2" class="mediumheader">Timeframe Information</th>
-				</tr>
-				<td><strong>Workers Needed:</strong></td>
-				<td>12</td>
-				<td><strong>Estimated Salary Costs:</strong></td>
-				<td>$5,000</td>
-				<td><strong>Time Until Completion:</strong></td>
-				<td>6 Weeks</td>
-				</tr>
-
-				</table>
-
-
+                </table>
 
                 <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
-				<a target="_blank" href="helppage.html" class="button smallbutton clearbutton"><span style="width: 17%">+</span>Additional Resources</a>
-				</div>
+                    <a target="_blank" href="helppage.html" class="button smallbutton clearbutton"><span style="width: 17%">+</span>Additional Resources</a>
+                </div>
                 <h6 style="margin-bottom: 2vh;">*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
-
             </div>
-
             <div id="Cost_Eff" class="tabcontent">
                 <h3 style="margin-top: 3vh">Here is the housing option with the lowest cost: </h3>
-                				<table class="OutputTable">
-				<tr>
-				<th colspan="6" class="bigheader">Overview</th>
-				</tr>
-				<tr>
-				<th colspan="2"></th>
-				<th colspan="2" class="mediumheader">Cost Information</th>
-				<th colspan="2" class="mediumheader">Energy Information</th>
-				</tr>
+                <table class="OutputTable">
+                    <tr>
+                        <th colspan="6" class="bigheader">Overview</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="2" class="mediumheader">Cost Information</th>
+                        <th colspan="2" class="mediumheader">Energy Information</th>
+                    </tr>
+                    <tr>
+                        <td><strong>House Type:</strong></td>
+                        <td>2 Bedroom, 1 Story</td>
+                        <td><strong>Estimated Total Cost:</strong></td>
+                        <td>$25,000</td>
+                        <td><strong>Total Stored Energy:</strong></td>
+                        <td>4000 kJ</td>
+                    </tr>
+                    <tr>
+                        <th colspan="6" class="bigheader">Materials Selection</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="2" class="mediumheader">Cost Information</th>
+                        <th colspan="2" class="mediumheader">Energy Information</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Roof Material:</strong></td>
+                        <td>500 pounds plywood</td>
+                        <td><strong>Estimated Roof Material Cost:</strong></td>
+                        <td>$7,000</td>
+                        <td><strong>Roof Material Stored Energy:</strong></td>
+                        <td>1000 kJ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wall Material:</strong></td>
+                        <td>1000 pounds brick</td>
+                        <td><strong>Estimated Wall Material Cost:</strong></td>
+                        <td>$10,000</td>
+                        <td><strong>Wall Material Stored Energy:</strong></td>
+                        <td>1000 kJ</td>
+                    <tr></tr>
+                    <td><strong>Foundation Material:</strong></td>
+                    <td>100 pounds cement</td>
+                    <td><strong>Estimated Foundation Material Cost:</strong></td>
+                    <td>$3,000</td>
+                    <td><strong>Foundation Material Stored Energy:</strong></td>
+                    <td>1000 kJ</td>
+                    <tr></tr>
+                    <tr>
+                        <th colspan="6" class="bigheader">Labor</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="2" class="mediumheader">Cost Information</th>
+                        <th colspan="2" class="mediumheader">Timeframe Information</th>
+                    </tr>
+                    <td><strong>Workers Needed:</strong></td>
+                    <td>12</td>
+                    <td><strong>Estimated Salary Costs:</strong></td>
+                    <td>$5,000</td>
+                    <td><strong>Time Until Completion:</strong></td>
+                    <td>6 Weeks</td>
+                    </tr>
 
-				<tr>
-				<td><strong>House Type:</strong></td>
-				<td>2 Bedroom, 1 Story</td>
-				<td><strong>Estimated Total Cost:</strong></td>
-				<td>$25,000</td>
-				<td><strong>Total Stored Energy:</strong></td>
-				<td>4000 kJ</td>
-				</tr>
-
-				<tr>
-				<th colspan="6" class="bigheader">Materials Selection</th>
-				</tr>
-				<tr>
-				<th colspan="2"></th>
-				<th colspan="2" class="mediumheader">Cost Information</th>
-				<th colspan="2" class="mediumheader">Energy Information</th>
-				</tr>
-				<tr>
-				<td><strong>Roof Material:</strong></td>
-				<td>500 pounds plywood</td>
-				<td><strong>Estimated Roof Material Cost:</strong></td>
-				<td>$7,000</td>
-				<td><strong>Roof Material Stored Energy:</strong></td>
-				<td>1000 kJ</td>
-				</tr>
-				<tr>
-				<td><strong>Wall Material:</strong></td>
-				<td>1000 pounds brick</td>
-				<td><strong>Estimated Wall Material Cost:</strong></td>
-				<td>$10,000</td>
-				<td><strong>Wall Material Stored Energy:</strong></td>
-				<td>1000 kJ</td>
-				<tr>
-				</tr>
-				<td><strong>Foundation Material:</strong></td>
-				<td>100 pounds cement</td>
-				<td><strong>Estimated Foundation Material Cost:</strong></td>
-				<td>$3,000</td>
-				<td><strong>Foundation Material Stored Energy:</strong></td>
-				<td>1000 kJ</td>
-				<tr>
-				</tr>
-				<tr>
-				<th colspan="6" class="bigheader">Labor</th>
-				</tr>
-				<tr>
-				<th colspan="2"></th>
-				<th colspan="2" class="mediumheader">Cost Information</th>
-				<th colspan="2" class="mediumheader">Timeframe Information</th>
-				</tr>
-				<td><strong>Workers Needed:</strong></td>
-				<td>12</td>
-				<td><strong>Estimated Salary Costs:</strong></td>
-				<td>$5,000</td>
-				<td><strong>Time Until Completion:</strong></td>
-				<td>6 Weeks</td>
-				</tr>
-
-				</table>
-                 <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
-				<a target="_blank" href="helppage.html" class="button smallbutton clearbutton"><span style="width: 17%">+</span>Additional Resources</a>
-				</div>
+                </table>
+                <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
+                    <a target="_blank" href="helppage.html" class="button smallbutton clearbutton"><span style="width: 17%">+</span>Additional Resources</a>
+                </div>
                 <h6 style="margin-bottom: 2vh;">*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
-
             </div>
-
             <div id="Compromise" class="tabcontent">
                 <h3 style="margin-top: 3vh">Here is the housing option that is a compromise of cost and environmental impact:</h3>
                 <table class="OutputTable">
-				<tr>
-				<th colspan="6" class="bigheader">Overview</th>
-				</tr>
-				<tr>
-				<th colspan="2"></th>
-				<th colspan="2" class="mediumheader">Cost Information</th>
-				<th colspan="2" class="mediumheader">Energy Information</th>
-				</tr>
+                    <tr>
+                        <th colspan="6" class="bigheader">Overview</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="2" class="mediumheader">Cost Information</th>
+                        <th colspan="2" class="mediumheader">Energy Information</th>
+                    </tr>
+                    <tr>
+                        <td><strong>House Type:</strong></td>
+                        <td>2 Bedroom, 1 Story</td>
+                        <td><strong>Estimated Total Cost:</strong></td>
+                        <td>$35,000</td>
+                        <td><strong>Total Stored Energy:</strong></td>
+                        <td>4000 kJ</td>
+                    </tr>
+                    <tr>
+                        <th colspan="6" class="bigheader">Materials Selection</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="2" class="mediumheader">Cost Information</th>
+                        <th colspan="2" class="mediumheader">Energy Information</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Roof Material:</strong></td>
+                        <td>500 pounds plywood</td>
+                        <td><strong>Estimated Roof Material Cost:</strong></td>
+                        <td>$10,000</td>
+                        <td><strong>Roof Material Stored Energy:</strong></td>
+                        <td>1000 kJ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wall Material:</strong></td>
+                        <td>1000 pounds brick</td>
+                        <td><strong>Estimated Wall Material Cost:</strong></td>
+                        <td>$15,000</td>
+                        <td><strong>Wall Material Stored Energy:</strong></td>
+                        <td>1000 kJ</td>
+                    <tr></tr>
+                    <td><strong>Foundation Material:</strong></td>
+                    <td>100 pounds cement</td>
+                    <td><strong>Estimated Foundation Material Cost:</strong></td>
+                    <td>$5,000</td>
+                    <td><strong>Foundation Material Stored Energy:</strong></td>
+                    <td>1000 kJ</td>
+                    <tr></tr>
+                    <tr>
+                        <th colspan="6" class="bigheader">Labor</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="2" class="mediumheader">Cost Information</th>
+                        <th colspan="2" class="mediumheader">Timeframe Information</th>
+                    </tr>
+                    <td><strong>Workers Needed:</strong></td>
+                    <td>12</td>
+                    <td><strong>Estimated Salary Costs:</strong></td>
+                    <td>$5,000</td>
+                    <td><strong>Time Until Completion:</strong></td>
+                    <td>6 Weeks</td>
+                    </tr>
 
-				<tr>
-				<td><strong>House Type:</strong></td>
-				<td>2 Bedroom, 1 Story</td>
-				<td><strong>Estimated Total Cost:</strong></td>
-				<td>$35,000</td>
-				<td><strong>Total Stored Energy:</strong></td>
-				<td>4000 kJ</td>
-				</tr>
-
-				<tr>
-				<th colspan="6" class="bigheader">Materials Selection</th>
-				</tr>
-				<tr>
-				<th colspan="2"></th>
-				<th colspan="2" class="mediumheader">Cost Information</th>
-				<th colspan="2" class="mediumheader">Energy Information</th>
-				</tr>
-				<tr>
-				<td><strong>Roof Material:</strong></td>
-				<td>500 pounds plywood</td>
-				<td><strong>Estimated Roof Material Cost:</strong></td>
-				<td>$10,000</td>
-				<td><strong>Roof Material Stored Energy:</strong></td>
-				<td>1000 kJ</td>
-				</tr>
-				<tr>
-				<td><strong>Wall Material:</strong></td>
-				<td>1000 pounds brick</td>
-				<td><strong>Estimated Wall Material Cost:</strong></td>
-				<td>$15,000</td>
-				<td><strong>Wall Material Stored Energy:</strong></td>
-				<td>1000 kJ</td>
-				<tr>
-				</tr>
-				<td><strong>Foundation Material:</strong></td>
-				<td>100 pounds cement</td>
-				<td><strong>Estimated Foundation Material Cost:</strong></td>
-				<td>$5,000</td>
-				<td><strong>Foundation Material Stored Energy:</strong></td>
-				<td>1000 kJ</td>
-				<tr>
-				</tr>
-				<tr>
-				<th colspan="6" class="bigheader">Labor</th>
-				</tr>
-				<tr>
-				<th colspan="2"></th>
-				<th colspan="2" class="mediumheader">Cost Information</th>
-				<th colspan="2" class="mediumheader">Timeframe Information</th>
-				</tr>
-				<td><strong>Workers Needed:</strong></td>
-				<td>12</td>
-				<td><strong>Estimated Salary Costs:</strong></td>
-				<td>$5,000</td>
-				<td><strong>Time Until Completion:</strong></td>
-				<td>6 Weeks</td>
-				</tr>
-
-				</table>
-                 <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
-				<a target="_blank" href="helppage.html" class="button smallbutton clearbutton"><span style="width: 17%">+</span>Additional Resources</a>
-				</div>
+                </table>
+                <div class="smallcontainer clearcontainer" onclick='' value='MoreResources'>
+                    <a target="_blank" href="helppage.html" class="button smallbutton clearbutton"><span style="width: 17%">+</span>Additional Resources</a>
+                </div>
                 <h6 style="margin-bottom: 2vh;">*Disclaimer: We cannot take every variable into account. Please use your best judgement when building.</h6>
-
             </div>
-
         </div>
     </div>
+    <!--Footer, including download button, date of last website update (manual entry), and language toggle-->
+    <footer class="footer-search">
+        <div class="footer-limiter">
 
-<footer class="footer-search">
-
-	<div class="footer-limiter">
-
-
-<div class="footer-container">
-	<a href="images/gnu.png" target="_blank" class="button leftfooterbutton"><span>></span>Download</a>
-</div>
-
-        <div class="container">
-    <p>Date of Last Update: May 25th, 2018</p>
-            <p>Version 0.1</p>
-</div>
+            <div class="footer-container">
+                <a href="images/gnu.png" target="_blank" class="button leftfooterbutton"><span>></span>Download</a>
+            </div>
+            <div class="container">
+                <p>Date of Last Update: May 25th, 2018</p>
+                <p>Version 0.1</p>
+            </div>
 
 
-      
-
-		<div class="select-style">
-		<select>
-		<option value="english">English</option>
-		<option value="nepali">Nepali</option>
-		</select>
-		</div>
-
-	</div>
-
-</footer>
-
-    <script>function openTab(tabName, elmnt) {
+            <div class="select-style">
+                <select>
+                    <option value="english">English</option>
+                    <option value="nepali">Nepali</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+    <script>
+    //function for opening a tab
+            function openTab(tabName, elmnt) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
             for (i = 0; i < tabcontent.length; i++) {
@@ -366,7 +331,6 @@ $(document).ready(function() {
 
             });
 });</script>
-
 
 </body>
 </html>
