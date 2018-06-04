@@ -293,44 +293,33 @@
             </div>
         </div>
     </footer>
-    <script>
-    //function for opening a tab
-            function openTab(tabName, elmnt) {
+
+<script>
+
+//function for opening a tab
+     function openTab(tabName, elmnt) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
+			//hide all elements with class name "tabcontent"
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
-
+			//reset the background color of all tablink elements
             tablinks = document.getElementsByClassName("tablink");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].style.backgroundColor = "";
             }
-
+			//display the selected tabcontent element
             document.getElementById(tabName).style.display = "block";
+			//change the background color and text color of the selected tablink
             elmnt.style.backgroundColor = '#55A2B0';
             elmnt.style.color = 'black';
+     }
 
-
-}
-
-//Get the element with id="defaultOpen" and click on it
+//Get the element with id="defaultOpen" and 'click' on it when the page opens
 document.getElementById("defaultOpen").click();
 
-
-$(document).ready(function() {
-
-            $('.header-search form').on('click', function(e) {
-
-                // If the form (which is turned into the search button) was
-                // clicked directly, toggle the visibility of the search box.
-
-                if (e.target == this) {
-                    $(this).find('input').toggle();
-                }
-
-            });
-});</script>
+</script>
 
 </body>
 </html>

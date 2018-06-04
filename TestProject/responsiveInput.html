@@ -57,7 +57,7 @@
                             <td><input type="text" name="Name"></td>
                             <td>Amount (kg):</td>
                             <td><input type="text" name="Amount" /></td>
-                            <td>Cost of Material ($/m<sup>3</sup>):</td>
+                            <td>Material Cost ($/m<sup>3</sup>):</td>
                             <td><input type="text" name="Cost" /></td>
                             <td>Distance (km) from material:</td>
                             <td><input type="text" name="Distance" /></td>
@@ -120,7 +120,8 @@
 
 
 
-    <script>//Get the element with id="defaultOpen" and click on it
+<script>
+//Get the element with id="defaultOpen" and click on it when the page opens
 document.getElementById("defaultOpen").click();
 var newRow = [];
 newRow(0) = 1;
@@ -176,9 +177,8 @@ function addField() {
 
 }
 
-
+ //clears that clears the previously entered information table row by row
 function clearAll() {
-            //clears the previously entered information table row by row
             var tableHeaderRowCount = 1;
             var table = document.getElementById("PrevInfoTable");
             var rowCount = table.rows.length;
@@ -188,20 +188,22 @@ function clearAll() {
 
 }
 
+//function that opens a clicked tab
 function openTab(tabName, elmnt) {
-            //opens a tab when clicked
             var i, tabcontent, tablinks;
+			//hide all elements with class name "tabcontent"
             tabcontent = document.getElementsByClassName("tabcontent");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
-
+			//reset the background color of all tablink elements
             tablinks = document.getElementsByClassName("tablink");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].style.backgroundColor = "";
             }
-
+			//display the selected tabcontent element
             document.getElementById(tabName).style.display = "block";
+			//change the background color and text color of the selected tablink
             elmnt.style.backgroundColor = '#55A2B0';
             elmnt.style.color = 'black';
 
