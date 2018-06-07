@@ -10,23 +10,23 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="WWFlogo.png">
+    <link rel="icon" href="../images/WWFlogo.png">
 
     <title>MEOW | Material Input</title>
     <!--Style Sheet is linked here-->
-	<LINK rel=StyleSheet href="TextFile1.css" type="text/css"> 
+	<LINK rel=StyleSheet href="../css/TextFile1.css" type="text/css"> 
 
 </head>
 <body>
     <!--The header is outlined here-->
     <header class="header-search">
         <div class="header-limiter">
-            <img class="logoImg" src="images/logo.png" />
+            <img class="logoImg" src="../images/logo.png" />
             <!--Tabs-->
             <nav>
-                <a href="langselect.html">Change Language</a>
+                <a href="../index.html">Change Language</a>
                 <a href="regionselect.html">Change Region</a>
-                <a href="responsiveInput.html" class="selected">Materials Input</a>
+                <a href="inputPage.html" class="selected">Materials Input</a>
                 <a href="helppage.html">Help</a>
             </nav>
             <!--NonFunctionalSearchBAR-->
@@ -140,7 +140,7 @@ function addField() {
             var table = document.getElementById("tbl");
             var tablelength = table.rows.length;
             if (table.rows[tablelength - 1].cells[1].children[0].value != "") {
-                table.rows[tablelength - 1].cells[8].children[0].innerHTML = "<div class='smallcontainer addcontainer' onclick = 'addField()' value = 'Add Field'> <a class='button smallbutton addbutton'><span>+</span>Commit</a></div>";
+                table.rows[tablelength - 1].cells[8].children[0].innerHTML = "<div class='smallcontainer addcontainer' onclick = 'addField()' value = 'Add Field'> <a class='button smallbutton addbutton'><span>+</span>Edit</a></div>";
                 var row = table.insertRow(tablelength);
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
