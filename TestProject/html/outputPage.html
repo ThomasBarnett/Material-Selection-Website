@@ -55,7 +55,7 @@
 
             <div id="Envi" class="tabcontent">
                 <h3 style="margin-top: 3vh">Here is the housing option with the lowest environmental impact:</h3>
-                <table class="OutputTable">
+                <table id= "EnviTbl" class="OutputTable">
                     <tr>
                         <th colspan="6" class="bigheader">Overview</th>
                     </tr>
@@ -82,26 +82,26 @@
                     </tr>
                     <tr>
                         <td><strong>Roof Material:</strong></td>
-                        <td>500 pounds plywood</td>
+                        <td>Wood, Slate</td>
                         <td><strong>Estimated Roof Material Cost:</strong></td>
-                        <td>$10,000</td>
+                        <td>$2,236.72</td>
                         <td><strong>Roof Material Stored Energy:</strong></td>
-                        <td>1000 kJ</td>
+                        <td>29.24 GJ</td>
                     </tr>
                     <tr>
                         <td><strong>Wall Material:</strong></td>
-                        <td>1000 pounds brick</td>
+                        <td>Stone, Concrete, Reinforcing Bar, Mortar</td>
                         <td><strong>Estimated Wall Material Cost:</strong></td>
-                        <td>$15,000</td>
+                        <td>$1,394.55</td>
                         <td><strong>Wall Material Stored Energy:</strong></td>
-                        <td>1000 kJ</td>
+                        <td>317.47 GJ</td>
                     <tr></tr>
                     <td><strong>Foundation Material:</strong></td>
-                    <td>100 pounds cement</td>
+                    <td>Stone, Concrete, Reinforcing Bar, Mortar</td>
                     <td><strong>Estimated Foundation Material Cost:</strong></td>
-                    <td>$5,000</td>
+                    <td>$1,988.74</td>
                     <td><strong>Foundation Material Stored Energy:</strong></td>
-                    <td>1000 kJ</td>
+                    <td>476.85 GJ</td>
                     <tr></tr>
                     <tr>
                         <th colspan="6" class="bigheader">Labor</th>
@@ -128,7 +128,7 @@
             </div>
             <div id="Cost_Eff" class="tabcontent">
                 <h3 style="margin-top: 3vh">Here is the housing option with the lowest cost: </h3>
-                <table class="OutputTable">
+                <table id= "CostTbl" class="OutputTable">
                     <tr>
                         <th colspan="6" class="bigheader">Overview</th>
                     </tr>
@@ -155,26 +155,26 @@
                     </tr>
                     <tr>
                         <td><strong>Roof Material:</strong></td>
-                        <td>500 pounds plywood</td>
+                        <td>Plywood, Ceramic Tile, Wood</td>
                         <td><strong>Estimated Roof Material Cost:</strong></td>
-                        <td>$7,000</td>
+                        <td>$1,686.48</td>
                         <td><strong>Roof Material Stored Energy:</strong></td>
-                        <td>1000 kJ</td>
+                        <td>50.00 GJ</td>
                     </tr>
                     <tr>
                         <td><strong>Wall Material:</strong></td>
-                        <td>1000 pounds brick</td>
+                        <td>Stone, Concrete, Reinforcing Bar, Mortar</td>
                         <td><strong>Estimated Wall Material Cost:</strong></td>
-                        <td>$10,000</td>
+                        <td>$1,394.55</td>
                         <td><strong>Wall Material Stored Energy:</strong></td>
-                        <td>1000 kJ</td>
+                        <td>317.47 GJ</td>
                     <tr></tr>
                     <td><strong>Foundation Material:</strong></td>
-                    <td>100 pounds cement</td>
+                    <td>Stone, Concrete, Reinforcing Bar, Mortar</td>
                     <td><strong>Estimated Foundation Material Cost:</strong></td>
-                    <td>$3,000</td>
+                    <td>$1,988.74</td>
                     <td><strong>Foundation Material Stored Energy:</strong></td>
-                    <td>1000 kJ</td>
+                    <td>476.85 GJ</td>
                     <tr></tr>
                     <tr>
                         <th colspan="6" class="bigheader">Labor</th>
@@ -200,7 +200,7 @@
             </div>
             <div id="Compromise" class="tabcontent">
                 <h3 style="margin-top: 3vh">Here is the housing option that is a compromise of cost and environmental impact:</h3>
-                <table class="OutputTable">
+                <table id= "CompTbl" class="OutputTable">
                     <tr>
                         <th colspan="6" class="bigheader">Overview</th>
                     </tr>
@@ -227,26 +227,26 @@
                     </tr>
                     <tr>
                         <td><strong>Roof Material:</strong></td>
-                        <td>500 pounds plywood</td>
+                        <td>Plywood, Ceramic Tile, Wood</td>
                         <td><strong>Estimated Roof Material Cost:</strong></td>
-                        <td>$10,000</td>
+                        <td>$1,686.48</td>
                         <td><strong>Roof Material Stored Energy:</strong></td>
-                        <td>1000 kJ</td>
+                        <td>50.00 GJ</td>
                     </tr>
                     <tr>
                         <td><strong>Wall Material:</strong></td>
-                        <td>1000 pounds brick</td>
+                        <td>Stone, Concrete, Reinforcing Bar, Mortar</td>
                         <td><strong>Estimated Wall Material Cost:</strong></td>
-                        <td>$15,000</td>
+                        <td>$1,394.55</td>
                         <td><strong>Wall Material Stored Energy:</strong></td>
-                        <td>1000 kJ</td>
+                        <td>317.47 GJ</td>
                     <tr></tr>
                     <td><strong>Foundation Material:</strong></td>
-                    <td>100 pounds cement</td>
+                    <td>Stone, Concrete, Reinforcing Bar, Mortar</td>
                     <td><strong>Estimated Foundation Material Cost:</strong></td>
-                    <td>$5,000</td>
+                    <td>$1,988.74</td>
                     <td><strong>Foundation Material Stored Energy:</strong></td>
-                    <td>1000 kJ</td>
+                    <td>476.85 GJ</td>
                     <tr></tr>
                     <tr>
                         <th colspan="6" class="bigheader">Labor</th>
@@ -296,6 +296,8 @@
 
 <script>
 
+    var first = true;
+
 //function for opening a tab
      function openTab(tabName, elmnt) {
             var i, tabcontent, tablinks;
@@ -314,10 +316,76 @@
 			//change the background color and text color of the selected tablink
             elmnt.style.backgroundColor = '#55A2B0';
             elmnt.style.color = 'black';
-     }
+
+         
+
+         
+         setValues();
+         
+    }
+
+    //updates values of table based off of stored solution values
+    function setValues() {
+
+        if (typeof (Storage) !== "undefined") {
+            if (localStorage.update == "true") { //checks that there is a new solution
+            document.getElementById('EnviTbl').rows[5].cells[1].innerText = localStorage.enviRoof; //sets roof
+            document.getElementById('EnviTbl').rows[6].cells[1].innerText = localStorage.enviWall; //sets wall
+            document.getElementById('EnviTbl').rows[8].cells[1].innerText = localStorage.enviFoundation; //sets foundation
+
+            document.getElementById('EnviTbl').rows[5].cells[3].innerText = localStorage.enviRoofCost; //sets roof cost
+            document.getElementById('EnviTbl').rows[6].cells[3].innerText = localStorage.enviWallCost; //sets wall cost
+            document.getElementById('EnviTbl').rows[8].cells[3].innerText = localStorage.enviFoundationCost; //sets foundation cost
+
+            document.getElementById('EnviTbl').rows[5].cells[5].innerText = localStorage.enviRoofEnergy; //sets roof energy
+            document.getElementById('EnviTbl').rows[6].cells[5].innerText = localStorage.enviWallEnergy; //sets wall energy
+            document.getElementById('EnviTbl').rows[8].cells[5].innerText = localStorage.enviFoundationEnergy; //sets foundation energy
+
+            document.getElementById('EnviTbl').rows[2].cells[3].innerText = localStorage.enviTotalCost; //sets total cost
+            document.getElementById('EnviTbl').rows[2].cells[5].innerText = localStorage.enviTotalEnergy; //sets total energy
+
+
+            document.getElementById('CostTbl').rows[5].cells[1].innerText = localStorage.costRoof; //sets roof
+            document.getElementById('CostTbl').rows[6].cells[1].innerText = localStorage.costWall; //sets wall
+            document.getElementById('CostTbl').rows[8].cells[1].innerText = localStorage.costFoundation; //sets foundation
+
+            document.getElementById('CostTbl').rows[5].cells[3].innerText = localStorage.costRoofCost; //sets roof cost
+            document.getElementById('CostTbl').rows[6].cells[3].innerText = localStorage.costWallCost; //sets wall cost
+            document.getElementById('CostTbl').rows[8].cells[3].innerText = localStorage.costFoundationCost; //sets foundation cost
+
+            document.getElementById('CostTbl').rows[5].cells[5].innerText = localStorage.costRoofEnergy; //sets roof energy
+            document.getElementById('CostTbl').rows[6].cells[5].innerText = localStorage.costWallEnergy; //sets wall energy
+            document.getElementById('CostTbl').rows[8].cells[5].innerText = localStorage.costFoundationEnergy; //sets foundation energy
+
+            document.getElementById('CostTbl').rows[2].cells[3].innerText = localStorage.costTotalCost; //sets total cost
+            document.getElementById('CostTbl').rows[2].cells[5].innerText = localStorage.costTotalEnergy; //sets total energy
+
+
+            document.getElementById('CompTbl').rows[5].cells[1].innerText = localStorage.enviRoof; //sets roof
+            document.getElementById('CompTbl').rows[6].cells[1].innerText = localStorage.enviWall; //sets wall
+            document.getElementById('CompTbl').rows[8].cells[1].innerText = localStorage.enviFoundation; //sets foundation
+
+            document.getElementById('CompTbl').rows[5].cells[3].innerText = localStorage.enviRoofCost; //sets roof
+            document.getElementById('CompTbl').rows[6].cells[3].innerText = localStorage.enviWallCost; //sets wall
+            document.getElementById('CompTbl').rows[8].cells[3].innerText = localStorage.enviFoundationCost; //sets foundation
+
+            document.getElementById('CompTbl').rows[5].cells[5].innerText = localStorage.enviRoofEnergy; //sets roof energy
+            document.getElementById('CompTbl').rows[6].cells[5].innerText = localStorage.enviWallEnergy; //sets wall energy
+            document.getElementById('CompTbl').rows[8].cells[5].innerText = localStorage.enviFoundationEnergy; //sets foundation energy
+
+            document.getElementById('CompTbl').rows[2].cells[3].innerText = localStorage.enviTotalCost; //sets total cost
+            document.getElementById('CompTbl').rows[2].cells[5].innerText = localStorage.enviTotalEnergy; //sets total energy
+
+
+            }
+        } else {
+
+        }
+
+    }
 
 //Get the element with id="defaultOpen" and 'click' on it when the page opens
-document.getElementById("defaultOpen").click();
+    document.getElementById("defaultOpen").click();
 
 </script>
 

@@ -92,7 +92,7 @@
         </div>
     </div>
     <div class="section group buttonsection">
-        <div class="container" onclick='babyAlgo()'>
+        <div class="container" onclick='algo()'>
             <a href="outputPage.html" class="button"><span>✓</span>Recommend</a>
         </div>
     </div>
@@ -122,18 +122,22 @@
 
 <script>
 //Get the element with id="defaultOpen" and click on it when the page opens
+
+    var materials = [];
+    var roofs = []; //array of the database's roofs
+    var superstructures = []; //array of the database's superstructures
+    var foundations = []; //array of the database's foundations
+    var userMaterials = []; //array of input materials
+    var avaliableRoofs = []; //array of roofs avalaibe for the user based off entered materials
+    var avaliableSuperstructures = []; //array of superstructures avalaibe for the user based off entered materials
+    var avaliableFoundation = []; //array of foundations avalaibe for the user based off entered materials
+    var possibleStructs = []; //array for combination of avaliable blocks
+
 document.getElementById("defaultOpen").click();
 var newRow = [];
 newRow(0) = 1;
-var materials = [];
-var roofs = [];
-var superstructures = [];
-var foundations = [];
-var userMaterials = [];
-var avaliableRoofs = [];
-var avaliableSuperstructures = [];
-var avaliableFoundation = [];
-var possibleStructs = [];
+
+
 
 function addField() {
             //When the add button is clicked, a new row is added by creating a new row and then populating the cells
@@ -211,7 +215,10 @@ function openTab(tabName, elmnt) {
 }
 
 
-function hardCodeMaterials() {
+    function materialsData() {
+
+            //initializes data for each material, storing them in their respective arrays
+            
             roofs.push(Block('F1', 3546.3, 128.25, ['Wood', 'CGI Sheet']));
             roofs.push(Block("F2", 2236.72, 29.24, ["Wood", "Slate"]));
             roofs.push(Block("F3", 4327, 114.68, ["Bamboo", "CGI Sheet"]));
@@ -230,20 +237,24 @@ function hardCodeMaterials() {
 
 
             foundations.push(Block("F14", 3456.89, 557.34, ["Brick", "Concrete", "Reinforcing Bar", "Mortar"]));
-            foundations.push(Block("F15", 1988.74, 476.85, ["Stone", "Concrete", "Reinforcing Bar", "mortar"]));
+            foundations.push(Block("F15", 1988.74, 476.85, ["Stone", "Concrete", "Reinforcing Bar", "Mortar"]));
             foundations.push(Block("F16", 1988.74, 492.03, ["Brick", "Aerated Concrete", "Reinforcing Bar", "Mortar"]));
 
 
+            //testing data
             roofs.push(Block("butter", 1000, 1, ["butter"]));
             superstructures.push(Block("butter", 100, 1, ["butter"]));
             foundations.push(Block("butter", 20, 1, ["butter"]));
             roofs.push(Block("gum", 2000, 1, ["gum"]));
             superstructures.push(Block("gum", 200, 1, ["gum"]));
             foundations.push(Block("gum", 1, 10, ["gum"]));
+            
 
 }
 
+    //creates objects to cleanly store blocks
 function Block(nameIn, costIn, energyCostIn, constraintsIn) {
+            
             var blck = new Object();
 
             blck.name = nameIn;
@@ -252,9 +263,10 @@ function Block(nameIn, costIn, energyCostIn, constraintsIn) {
             blck.constraints = constraintsIn;
 
             return blck;
+            
 }
 
-
+    //helper function of grab input; Adds object to array of all user materials
 function buildUserMaterials(name) {
 
             var material = new Object();
@@ -263,9 +275,10 @@ function buildUserMaterials(name) {
             userMaterials.push(material);
 }
 
-
+    //determines all blocks avaliable to the user
 function buildBlocks() {
 
+            //checks if each element has the required materials
             for (i = 0; i < roofs.length; i++) {
 
                 if (constraintsMet(roofs[i].constraints) == true) {
@@ -289,13 +302,11 @@ function buildBlocks() {
 
             }
 
-
-
 }
 
-
+    //This function determines is a specific block is avalaible to the user
+    //It is a helper function of build blocks
 function constraintsMet(constraints) {
-
 
             for (j = 0; j < constraints.length; j++) {
                 if (materialEntered(constraints[j]) == false) {
@@ -306,6 +317,8 @@ function constraintsMet(constraints) {
             return true;
 }
 
+    //This function checks if a specific material is avaliable to the user
+    //It is a helper function of constraintsMet
 function materialEntered(input) {
 
             for (k = 0; k < userMaterials.length; k++) {
@@ -317,6 +330,7 @@ function materialEntered(input) {
             return false;
 }
 
+    //Creates struct object and adds it to an array containing all struct combinations for the user.
 function buildStruct(roof, superstructure, foundations) {
 
             var struct = new Object();
@@ -326,18 +340,55 @@ function buildStruct(roof, superstructure, foundations) {
             possibleStructs.push(struct);
 }
 
+    //calculates and sets the energy cost of a block
 function energyCalc(index) {
             possibleStructs[index].energyCost = possibleStructs[index].roof.energyCost + possibleStructs[index].foundations.energyCost + possibleStructs[index].superstructure.energyCost;
-}
+    }
+
+   //calculates and sets the cost of a block
 function costCalc(index) {
             possibleStructs[index].cost = possibleStructs[index].roof.cost + possibleStructs[index].foundations.cost + possibleStructs[index].superstructure.cost;
-}
+    }
 
+    //creates string of component materials for a block
+    function components(block) {
+
+        var compString = block.constraints[0];
+
+        for (i = 1; i < block.constraints.length; i++) {
+            compString = compString.concat(", ", block.constraints[i]);
+        }
+
+        return compString;
+    }
+
+    //creates string of cost for a block
+    function costToString(block) {
+
+        var costString = "$";
+        var costInt = block.cost;
+        var costConverted = costInt.toString();
+        costString = costString.concat(costConverted);
+
+        return costString;
+    }
+
+    //creates string of energy for a block
+    function energyToString(block) {
+
+        var costString = " GJ";
+        var costInt = block.energyCost;
+        var costConverted = costInt.toString();
+        costConverted = costConverted.concat(costString);
+
+        return costConverted;
+    }
+
+    //Grabs all of the inputted materials and stores them in the userMaterials array
 function grabInput() {
 
             var table = document.getElementById("PrevInfoTable");
             var tablelength = table.rows.length;
-
 
             for (i = 1; i < tablelength; i++) {
                 var temp = document.getElementById("PrevInfoTable").rows[i].cells[0].innerText;
@@ -346,8 +397,11 @@ function grabInput() {
 
 }
 
-function babyAlgo() {
-            hardCodeMaterials();
+    //Main function that determines energy and cost solutions
+    function algo() {
+            
+            
+            materialsData();
             grabInput();
 
             buildBlocks();
@@ -355,15 +409,20 @@ function babyAlgo() {
             var curIndex = 0;
             var energyIndex = 0;
             var costIndex = 0;
+            var store = false;
 
 
-            for (i = 0; i < avaliableFoundation.length; i++) {
+        for (i = 0; i < avaliableFoundation.length; i++) {
+            store = true;
                 for (j = 0; j < avaliableSuperstructures.length; j++) {
                     for (k = 0; k < avaliableRoofs.length; k++) {
+                        //builds all possible structs avaliable to the user
                         buildStruct(avaliableRoofs[k], avaliableSuperstructures[j], avaliableFoundation[i]);
                         energyCalc(curIndex);
+                        //if new struct is more cost or energy efficient it becomes the new solution for that
                         if (possibleStructs[curIndex].energyCost < possibleStructs[energyIndex].energyCost) {
                             energyIndex = curIndex;
+                            
                         }
                         costCalc(curIndex);
                         if (possibleStructs[curIndex].cost < possibleStructs[energyIndex].cost) {
@@ -374,29 +433,50 @@ function babyAlgo() {
                 }
             }
 
-
+            
+            localStorage.update = "false";
+            //stores the solution into the backend so that it can be retrived by other pages
             if (typeof (Storage) !== "undefined") {
-                localStorage.setItem("energy solution roof", possibleStructs[energyIndex].roof.name);
-                localStorage.setItem("energy solution foundation", possibleStructs[energyIndex].foundations.name);
-                localStorage.setItem("energy solution roof", possibleStructs[energyIndex].superstructure.name);
-                localStorage.setItem("cost solution roof", possibleStructs[costIndex].roof.name);
-                localStorage.setItem("cost solution foundation", possibleStructs[costIndex].foundations.name);
-                localStorage.setItem("cost solution roof", possibleStructs[costIndex].superstructure.name);
+                    if (store == true) {
+                    localStorage.update = "true";
+                    localStorage.enviRoof = components(possibleStructs[energyIndex].roof);
+                    localStorage.enviFoundation = components(possibleStructs[energyIndex].foundations);
+                    localStorage.enviWall = components(possibleStructs[energyIndex].superstructure);
 
+                    localStorage.costRoof = components(possibleStructs[costIndex].roof);
+                    localStorage.costFoundation = components(possibleStructs[costIndex].foundations);
+                    localStorage.costWall = components(possibleStructs[costIndex].superstructure);
+
+                    localStorage.enviRoofCost = costToString(possibleStructs[energyIndex].roof);
+                    localStorage.enviFoundationCost = costToString(possibleStructs[energyIndex].foundations);
+                    localStorage.enviWallCost = costToString(possibleStructs[energyIndex].superstructure);
+
+                    localStorage.costRoofCost = costToString(possibleStructs[costIndex].roof);
+                    localStorage.costFoundationCost = costToString(possibleStructs[costIndex].foundations);
+                    localStorage.costWallCost = costToString(possibleStructs[costIndex].superstructure);
+
+                    localStorage.enviRoofEnergy = energyToString(possibleStructs[energyIndex].roof);
+                    localStorage.enviFoundationEnergy = energyToString(possibleStructs[energyIndex].foundations);
+                    localStorage.enviWallEnergy = energyToString(possibleStructs[energyIndex].superstructure);
+
+                    localStorage.costRoofEnergy = energyToString(possibleStructs[costIndex].roof);
+                    localStorage.costFoundationEnergy = energyToString(possibleStructs[costIndex].foundations);
+                    localStorage.costWallEnergy = energyToString(possibleStructs[costIndex].superstructure);
+
+                    localStorage.enviTotalCost = costToString(possibleStructs[energyIndex]);
+                    localStorage.enviTotalEnergy = energyToString(possibleStructs[energyIndex]);
+
+                    localStorage.costTotalCost = costToString(possibleStructs[costIndex]);
+                    localStorage.costTotalEnergy = energyToString(possibleStructs[costIndex]);
+
+
+
+                    } else {
+
+                }
             } else {
 
             }
-
-            //useful display when debugging algorithm
-            document.write(" ");
-            document.write(energyIndex);
-            document.write(" Roof:");
-            document.write(possibleStructs[energyIndex].roof.name);
-            document.write(" Foundation:");
-            document.write(possibleStructs[energyIndex].foundations.name);
-            document.write(" Superstructure:");
-            document.write(possibleStructs[energyIndex].superstructure.name);
-
 
 
 }</script>
