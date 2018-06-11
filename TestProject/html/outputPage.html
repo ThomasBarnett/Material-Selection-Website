@@ -329,53 +329,101 @@
 
         if (typeof (Storage) !== "undefined") {
             if (localStorage.update == "true") { //checks that there is a new solution
-            document.getElementById('EnviTbl').rows[5].cells[1].innerText = localStorage.enviRoof; //sets roof
-            document.getElementById('EnviTbl').rows[6].cells[1].innerText = localStorage.enviWall; //sets wall
-            document.getElementById('EnviTbl').rows[8].cells[1].innerText = localStorage.enviFoundation; //sets foundation
+                document.getElementById('EnviTbl').rows[5].cells[1].innerText = localStorage.enviRoof; //sets roof
+                document.getElementById('EnviTbl').rows[6].cells[1].innerText = localStorage.enviWall; //sets wall
+                document.getElementById('EnviTbl').rows[8].cells[1].innerText = localStorage.enviFoundation; //sets foundation
 
-            document.getElementById('EnviTbl').rows[5].cells[3].innerText = localStorage.enviRoofCost; //sets roof cost
-            document.getElementById('EnviTbl').rows[6].cells[3].innerText = localStorage.enviWallCost; //sets wall cost
-            document.getElementById('EnviTbl').rows[8].cells[3].innerText = localStorage.enviFoundationCost; //sets foundation cost
+                document.getElementById('EnviTbl').rows[5].cells[3].innerText = localStorage.enviRoofCost; //sets roof cost
+                document.getElementById('EnviTbl').rows[6].cells[3].innerText = localStorage.enviWallCost; //sets wall cost
+                document.getElementById('EnviTbl').rows[8].cells[3].innerText = localStorage.enviFoundationCost; //sets foundation cost
 
-            document.getElementById('EnviTbl').rows[5].cells[5].innerText = localStorage.enviRoofEnergy; //sets roof energy
-            document.getElementById('EnviTbl').rows[6].cells[5].innerText = localStorage.enviWallEnergy; //sets wall energy
-            document.getElementById('EnviTbl').rows[8].cells[5].innerText = localStorage.enviFoundationEnergy; //sets foundation energy
+                document.getElementById('EnviTbl').rows[5].cells[5].innerText = localStorage.enviRoofEnergy; //sets roof energy
+                document.getElementById('EnviTbl').rows[6].cells[5].innerText = localStorage.enviWallEnergy; //sets wall energy
+                document.getElementById('EnviTbl').rows[8].cells[5].innerText = localStorage.enviFoundationEnergy; //sets foundation energy
 
-            document.getElementById('EnviTbl').rows[2].cells[3].innerText = localStorage.enviTotalCost; //sets total cost
-            document.getElementById('EnviTbl').rows[2].cells[5].innerText = localStorage.enviTotalEnergy; //sets total energy
-
-
-            document.getElementById('CostTbl').rows[5].cells[1].innerText = localStorage.costRoof; //sets roof
-            document.getElementById('CostTbl').rows[6].cells[1].innerText = localStorage.costWall; //sets wall
-            document.getElementById('CostTbl').rows[8].cells[1].innerText = localStorage.costFoundation; //sets foundation
-
-            document.getElementById('CostTbl').rows[5].cells[3].innerText = localStorage.costRoofCost; //sets roof cost
-            document.getElementById('CostTbl').rows[6].cells[3].innerText = localStorage.costWallCost; //sets wall cost
-            document.getElementById('CostTbl').rows[8].cells[3].innerText = localStorage.costFoundationCost; //sets foundation cost
-
-            document.getElementById('CostTbl').rows[5].cells[5].innerText = localStorage.costRoofEnergy; //sets roof energy
-            document.getElementById('CostTbl').rows[6].cells[5].innerText = localStorage.costWallEnergy; //sets wall energy
-            document.getElementById('CostTbl').rows[8].cells[5].innerText = localStorage.costFoundationEnergy; //sets foundation energy
-
-            document.getElementById('CostTbl').rows[2].cells[3].innerText = localStorage.costTotalCost; //sets total cost
-            document.getElementById('CostTbl').rows[2].cells[5].innerText = localStorage.costTotalEnergy; //sets total energy
+                document.getElementById('EnviTbl').rows[2].cells[3].innerText = localStorage.enviTotalCost; //sets total cost
+                document.getElementById('EnviTbl').rows[2].cells[5].innerText = localStorage.enviTotalEnergy; //sets total energy
 
 
-            document.getElementById('CompTbl').rows[5].cells[1].innerText = localStorage.enviRoof; //sets roof
-            document.getElementById('CompTbl').rows[6].cells[1].innerText = localStorage.enviWall; //sets wall
-            document.getElementById('CompTbl').rows[8].cells[1].innerText = localStorage.enviFoundation; //sets foundation
+                document.getElementById('CostTbl').rows[5].cells[1].innerText = localStorage.costRoof; //sets roof
+                document.getElementById('CostTbl').rows[6].cells[1].innerText = localStorage.costWall; //sets wall
+                document.getElementById('CostTbl').rows[8].cells[1].innerText = localStorage.costFoundation; //sets foundation
 
-            document.getElementById('CompTbl').rows[5].cells[3].innerText = localStorage.enviRoofCost; //sets roof
-            document.getElementById('CompTbl').rows[6].cells[3].innerText = localStorage.enviWallCost; //sets wall
-            document.getElementById('CompTbl').rows[8].cells[3].innerText = localStorage.enviFoundationCost; //sets foundation
+                document.getElementById('CostTbl').rows[5].cells[3].innerText = localStorage.costRoofCost; //sets roof cost
+                document.getElementById('CostTbl').rows[6].cells[3].innerText = localStorage.costWallCost; //sets wall cost
+                document.getElementById('CostTbl').rows[8].cells[3].innerText = localStorage.costFoundationCost; //sets foundation cost
 
-            document.getElementById('CompTbl').rows[5].cells[5].innerText = localStorage.enviRoofEnergy; //sets roof energy
-            document.getElementById('CompTbl').rows[6].cells[5].innerText = localStorage.enviWallEnergy; //sets wall energy
-            document.getElementById('CompTbl').rows[8].cells[5].innerText = localStorage.enviFoundationEnergy; //sets foundation energy
+                document.getElementById('CostTbl').rows[5].cells[5].innerText = localStorage.costRoofEnergy; //sets roof energy
+                document.getElementById('CostTbl').rows[6].cells[5].innerText = localStorage.costWallEnergy; //sets wall energy
+                document.getElementById('CostTbl').rows[8].cells[5].innerText = localStorage.costFoundationEnergy; //sets foundation energy
 
-            document.getElementById('CompTbl').rows[2].cells[3].innerText = localStorage.enviTotalCost; //sets total cost
-            document.getElementById('CompTbl').rows[2].cells[5].innerText = localStorage.enviTotalEnergy; //sets total energy
+                document.getElementById('CostTbl').rows[2].cells[3].innerText = localStorage.costTotalCost; //sets total cost
+                document.getElementById('CostTbl').rows[2].cells[5].innerText = localStorage.costTotalEnergy; //sets total energy
 
+
+                document.getElementById('CompTbl').rows[5].cells[1].innerText = localStorage.enviRoof; //sets roof
+                document.getElementById('CompTbl').rows[6].cells[1].innerText = localStorage.enviWall; //sets wall
+                document.getElementById('CompTbl').rows[8].cells[1].innerText = localStorage.enviFoundation; //sets foundation
+
+                document.getElementById('CompTbl').rows[5].cells[3].innerText = localStorage.enviRoofCost; //sets roof
+                document.getElementById('CompTbl').rows[6].cells[3].innerText = localStorage.enviWallCost; //sets wall
+                document.getElementById('CompTbl').rows[8].cells[3].innerText = localStorage.enviFoundationCost; //sets foundation
+
+                document.getElementById('CompTbl').rows[5].cells[5].innerText = localStorage.enviRoofEnergy; //sets roof energy
+                document.getElementById('CompTbl').rows[6].cells[5].innerText = localStorage.enviWallEnergy; //sets wall energy
+                document.getElementById('CompTbl').rows[8].cells[5].innerText = localStorage.enviFoundationEnergy; //sets foundation energy
+
+                document.getElementById('CompTbl').rows[2].cells[3].innerText = localStorage.enviTotalCost; //sets total cost
+                document.getElementById('CompTbl').rows[2].cells[5].innerText = localStorage.enviTotalEnergy; //sets total energy
+
+
+            } else {
+                document.getElementById('EnviTbl').rows[5].cells[1].innerText = "No structures avaliable"; //sets roof
+                document.getElementById('EnviTbl').rows[6].cells[1].innerText = "No structures avaliable"; //sets wall
+                document.getElementById('EnviTbl').rows[8].cells[1].innerText = "No structures avaliable"; //sets foundation
+
+                document.getElementById('EnviTbl').rows[5].cells[3].innerText = "N/A"; //sets roof cost
+                document.getElementById('EnviTbl').rows[6].cells[3].innerText = "N/A"; //sets wall cost
+                document.getElementById('EnviTbl').rows[8].cells[3].innerText = "N/A"; //sets foundation cost
+
+                document.getElementById('EnviTbl').rows[5].cells[5].innerText = "N/A"; //sets roof energy
+                document.getElementById('EnviTbl').rows[6].cells[5].innerText = "N/A"; //sets wall energy
+                document.getElementById('EnviTbl').rows[8].cells[5].innerText = "N/A"; //sets foundation energy
+
+                document.getElementById('EnviTbl').rows[2].cells[3].innerText = "N/A"; //sets total cost
+                document.getElementById('EnviTbl').rows[2].cells[5].innerText = "N/A"; //sets total energy
+
+
+                document.getElementById('CostTbl').rows[5].cells[1].innerText = "No structures avaliable"; //sets roof
+                document.getElementById('CostTbl').rows[6].cells[1].innerText = "No structures avaliable"; //sets wall
+                document.getElementById('CostTbl').rows[8].cells[1].innerText = "No structures avaliable"; //sets foundation
+
+                document.getElementById('CostTbl').rows[5].cells[3].innerText = "N/A"; //sets roof cost
+                document.getElementById('CostTbl').rows[6].cells[3].innerText = "N/A"; //sets wall cost
+                document.getElementById('CostTbl').rows[8].cells[3].innerText = "N/A"; //sets foundation cost
+
+                document.getElementById('CostTbl').rows[5].cells[5].innerText = "N/A"; //sets roof energy
+                document.getElementById('CostTbl').rows[6].cells[5].innerText = "N/A"; //sets wall energy
+                document.getElementById('CostTbl').rows[8].cells[5].innerText = "N/A"; //sets foundation energy
+
+                document.getElementById('CostTbl').rows[2].cells[3].innerText = "N/A"; //sets total cost
+                document.getElementById('CostTbl').rows[2].cells[5].innerText = "N/A"; //sets total energy
+
+
+                document.getElementById('CompTbl').rows[5].cells[1].innerText = "No structures avaliable"; //sets roof
+                document.getElementById('CompTbl').rows[6].cells[1].innerText = "No structures avaliable"; //sets wall
+                document.getElementById('CompTbl').rows[8].cells[1].innerText = "No structures avaliable"; //sets foundation
+
+                document.getElementById('CompTbl').rows[5].cells[3].innerText = "N/A"; //sets roof
+                document.getElementById('CompTbl').rows[6].cells[3].innerText = "N/A"; //sets wall
+                document.getElementById('CompTbl').rows[8].cells[3].innerText = "N/A"; //sets foundation
+
+                document.getElementById('CompTbl').rows[5].cells[5].innerText = "N/A"; //sets roof energy
+                document.getElementById('CompTbl').rows[6].cells[5].innerText = "N/A"; //sets wall energy
+                document.getElementById('CompTbl').rows[8].cells[5].innerText = "N/A"; //sets foundation energy
+
+                document.getElementById('CompTbl').rows[2].cells[3].innerText = "N/A"; //sets total cost
+                document.getElementById('CompTbl').rows[2].cells[5].innerText = "N/A"; //sets total energy
 
             }
         } else {
